@@ -1,1 +1,1 @@
-o# bello.nero
+bello.nero
