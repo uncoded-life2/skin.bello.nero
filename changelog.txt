@@ -1,0 +1,32 @@
+
+v7.0.0 - for Kodi Leia 18.xx (28/10/2017)
+________________________________________________________________________________________________________
+
+- Update and changes to the functionality with Kodi-Leia 18.xx
+- Fixed Addon settings
+- Added select Channel Group window on LiveTV
+- Added Sub Window Select Subtitles Now Playing Video
+- Added support for ClearArt and Clearlogo in Playing Video now with the options in the general settings
+- Added support for DiscArt in all Video Views now with the options in the left-hand menu
+- Added support for cdArt and ClearLogo in all Music View (Album Disc, Artist Logo)
+- Added "ColorLyrics" for Music texts in Playing Music now with the options in the general settings
+- Added support for weather animated icons
+- Added support for weather widgets backgrounds icons
+- WeatherAndClock Home no scroll
+- Added About
+________________________________________________________________________________________________________
+
+v6.0.0n1
+(06/11/2017) (Thanks to iCanuck!)
+- Fixed classic menu overlay setting
+- Modified videoview visibility for plugins
+- Added default texture + text colors for all themes
+- Modified darkspot transparency
+
+v6.0.0n
+(06/07/2017)
+- Fork of Bello v6.0.0 (Thanks to Nessus!)
+- Added Nero Mod + Color Themes
+- Added Home Animation Setting
+- Added Home Menu Overlay Setting
+- Added Classic Home Menu Setting
