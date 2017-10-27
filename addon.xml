@@ -106,7 +106,7 @@
     <license>Creative Commons Attribution-NonCommercial-Share Alike 4.0 International License</license>
     <forum>https://forum.kodi.tv/forumdisplay.php?fid=67</forum>
     <email>kyokusa73@gmail.com</email>
-    <source></source>    
+    <source>https://github.com/kyokusa/skin.bello.nero</source>    
 		<assets>
 			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.jpg</fanart>
