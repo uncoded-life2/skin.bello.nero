@@ -31,4 +31,4 @@ Using ßειισ ηεrσ is free and free without any kind of constraint,
 <br>
 <br>
 <br>
-<br>[![paypal](http://i65.tinypic.com/166f2it.jpg)](https://www.paypal.me/bellonero)
+<br>[![paypal](http://i63.tinypic.com/24nfj39.png)](https://www.paypal.me/bellonero)
