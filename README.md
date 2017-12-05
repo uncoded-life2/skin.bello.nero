@@ -30,5 +30,4 @@ Using ßειισ ηεrσ is free and free without any kind of constraint,
  every donation will be greatly appreciated.
 <br>
 <br>
-<br>
 <br>[![paypal](http://i63.tinypic.com/24nfj39.png)](https://www.paypal.me/bellonero)
