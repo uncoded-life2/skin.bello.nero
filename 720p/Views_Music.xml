@@ -68,11 +68,11 @@
 					</control>
 					<control type="image">
 						<left>550</left>
-						<top>10</top>
-						<width>34</width>
-						<height>24</height>
-				    <colordiffuse>77ffffff</colordiffuse>
-				    <aspectratio align="center" aligny="center">stretch</aspectratio>
+						<top>8</top>
+					    <width>40</width>
+				        <height>22</height>
+				        <colordiffuse>mediaflags</colordiffuse>
+				        <aspectratio align="center">keep</aspectratio>
 						<texture>$VAR[ViewsDef3DFlags]</texture>
 						<visible>Container.Content(MusicVideos)</visible>
 					  <animation effect="slide" start="0,0" end="45,0" condition="!Container.Content(MusicVideos)">Conditional</animation>
@@ -122,10 +122,11 @@
 						</control>
 						<control type="image">
 							<left>550</left>
-							<top>10</top>
-							<width>34</width>
-							<height>24</height>
-					    <aspectratio align="center" aligny="center">stretch</aspectratio>
+							<top>8</top>
+					        <width>40</width>
+				            <height>22</height>
+				            <colordiffuse>mediaflags</colordiffuse>
+				            <aspectratio align="center">keep</aspectratio>
 							<texture>$VAR[ViewsDef3DFlags]</texture>
 							<visible>Container.Content(MusicVideos)</visible>
 						  <animation effect="slide" start="0,0" end="45,0" condition="!Container.Content(MusicVideos)">Conditional</animation>
@@ -641,10 +642,10 @@
                     <label>$VAR[SmallGlobalInfo]</label>
   				</control>
   				<control type="image">
-  					<width>38</width>
-  					<height>25</height>
-  			        <colordiffuse>bbffffff</colordiffuse>
-                    <aspectratio>keep</aspectratio>
+  					<width>40</width>
+				    <height>22</height>
+				    <colordiffuse>mediaflags</colordiffuse>
+				    <aspectratio align="center">keep</aspectratio>
   					<texture>$VAR[ViewsDef3DFlags]</texture>
   					<visible>!String.IsEmpty(ListItem.VideoResolution)</visible>
   				</control>
@@ -910,10 +911,10 @@
 						<control type="image">
 							<left>245</left>
 							<top>205</top>
-							<width>34</width>
-							<height>24</height>
-					    <colordiffuse>99ffffff</colordiffuse>
-					    <aspectratio align="left" aligny="center">stretch</aspectratio>
+							<width>40</width>
+				            <height>22</height>
+				            <colordiffuse>mediaflags</colordiffuse>
+				            <aspectratio align="center">keep</aspectratio>					   
 							<texture>$VAR[ViewsDef3DFlags]</texture>
 						</control>
 						<control type="label">

@@ -67,13 +67,11 @@
         	<visible>String.IsEqual(Window.Property(type),movie)</visible>
   			</control>
   			<control type="image">
-  				<left>0</left>
-  				<top>37</top>
-  				<width>60</width>
-  				<height>25</height>
-  				<align>left</align>
-  				<aligny>center</aligny>
-  		    <colordiffuse>mediaflags</colordiffuse>
+  				<top>34</top>
+  				<width>64</width>
+				<height>23</height>
+				<colordiffuse>mediaflags</colordiffuse>
+				<aspectratio align="center">keep</aspectratio>
   				<texture fallback="flags/mpaa/tv/tv-na.png">$INFO[Window.Property(mpaa),flags/mpaa/tv/,.png]</texture>
         	<visible>String.IsEqual(Window.Property(type),tvshow)</visible>
   			</control>
@@ -248,7 +246,7 @@
 			</control>
 
 <!-- 
-  		Media Flaggs *DISABLED*
+  		Media Flags *DISABLED*
 			<control type="grouplist">
 				<left>375</left>
 				<top>340</top>

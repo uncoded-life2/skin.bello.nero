@@ -36,16 +36,15 @@
 					<height>453</height>
 					<aspectratio align="center" aligny="center">stretch</aspectratio>
 					<texture background="true">views/wall/poster_overlay.png</texture>
-				</control>
-			</control>
-
-  		<control type="group">
+				</control>                
+            </control>
+  		    <control type="group">
   			<left>375</left>
   			<top>150</top>
   			<control type="label">
   				<description>Title</description>
 				<left>-1</left>
-  			    <top>-3</top>
+  			    <top>-11</top>
   				<width>855</width>
   				<font>FontSize_40</font>
   				<label>$VAR[DialogsInfoHeadTitle]</label>
@@ -55,32 +54,27 @@
   				<shadowcolor>99000000</shadowcolor>
   			</control>
   			<control type="image">
-  				<left>-1</left>
-  				<top>37</top>
-  				<width>60</width>
-  				<height>25</height>
-  				<align>left</align>
-  				<aligny>center</aligny>
-  		    <colordiffuse>mediaflags</colordiffuse>
+			    <top>34</top>
+  				<width>64</width>
+				<height>23</height>
+				<colordiffuse>mediaflags</colordiffuse>
+				<aspectratio align="center">keep</aspectratio>
   				<texture fallback="flags/mpaa/film/us/rating-nr.png">$VAR[MPAAFilmRating]</texture>
   				<visible>String.IsEqual(ListItem.DBType,Movie)</visible>
   			</control>
   			<control type="image">
-  				<left>-1</left>
-  				<top>37</top>
-  				<width>60</width>
-  				<height>25</height>
-  				<align>left</align>
-  				<aligny>center</aligny>
-	        <aspectratio>keep</aspectratio>
-  		    <colordiffuse>mediaflags</colordiffuse>
+  				<top>34</top>
+  				<width>64</width>
+				<height>23</height>
+				<colordiffuse>mediaflags</colordiffuse>
+				<aspectratio align="center">scale</aspectratio>
   				<texture fallback="flags/mpaa/tv/tv-na.png">$INFO[ListItem.mpaa,flags/mpaa/tv/,.png]</texture>
   				<visible>!String.IsEqual(ListItem.DBType,Movie) + !String.IsEqual(ListItem.DBType,MusicVideo)</visible>
   			</control>
   			<control type="label">
   				<description>Under Title</description>
   				<left>68</left>
-  				<top>37</top>
+  				<top>33</top>
   				<width>795</width>
   				<height>25</height>
   				<font>FontSize_22</font>
@@ -91,154 +85,174 @@
   				<shadowcolor>99000000</shadowcolor>
 				  <animation effect="slide" start="0,0" end="-68,0" condition="String.IsEqual(ListItem.DBType,MusicVideo)">Conditional</animation>
   			</control>
-  		  <control type="group">
-  			  <left>0</left>
-  				<top>75</top>
+  		    <control type="group">
+  			    <left>0</left>
+  				<top>70</top>
   				<include>VisibleFadeEffect2</include>
-  			  <visible>!String.IsEqual(ListItem.DBType,TVShow) + String.IsEmpty(Window.Property(videoinfo))</visible>
+  			    <visible>!String.IsEqual(ListItem.DBType,TVShow) + String.IsEmpty(Window.Property(videoinfo))</visible>
+			    <!-- Runtime label -->
+  				<control type="grouplist">				
+				    <left>0</left>
+  					<top>-6</top>
+  					<width>850</width>
+  	                <height>30</height>  					
+  				    <orientation>horizontal</orientation>
+  					<control type="label">
+	                <include>VideoInfoDialogLabel</include>
+  				    <label>$LOCALIZE[2050]:</label>
+  					</control>
+  			        <control type="label">
+	                    <include>VideoInfoDialogLabelValue</include>
+                        <label>$VAR[ListItemDuration]</label>
+  	                    <visible>!String.IsEmpty(ListItem.Duration)</visible>
+  		            </control>
+  		        </control>
   				<!-- Director label -->
   				<control type="grouplist">
+				<animation effect="slide" start="0,0" end="0,3" time="250" condition="!Skin.HasSetting(EnableStudioLabelImages)">Conditional</animation>
   					<left>0</left>
-  					<top>0</top>
+  					<top>24</top>
   					<width>850</width>
-  	        <height>30</height>
-  				  <orientation>horizontal</orientation>
+  	                <height>30</height>
+  				    <orientation>horizontal</orientation>
   					<control type="label">
-	            <include>VideoInfoDialogLabel</include>
+	                    <include>VideoInfoDialogLabel</include>
   						<label>$LOCALIZE[20339]:</label>
   					</control>
   					<control type="label">
-	            <include>VideoInfoDialogLabelValue</include>
+	                    <include>VideoInfoDialogLabelValue</include>
   						<label fallback="195">$INFO[ListItem.Director]</label>
   					</control>
   				</control>
   				<!-- Writer label -->
   				<control type="grouplist">
+				<animation effect="slide" start="0,0" end="0,4" time="250" condition="!Skin.HasSetting(EnableStudioLabelImages)">Conditional</animation>
   					<left>0</left>
-  					<top>25</top>
+  					<top>55</top>
   					<width>850</width>
-  	        <height>30</height>
-  				  <orientation>horizontal</orientation>
-  				  <visible>!String.IsEqual(ListItem.DBType,MusicVideo)</visible>
+  	                <height>30</height>
+  				    <orientation>horizontal</orientation>
+  				    <visible>!String.IsEqual(ListItem.DBType,MusicVideo)</visible>
   					<control type="label">
-	            <include>VideoInfoDialogLabel</include>
+	                    <include>VideoInfoDialogLabel</include>
   						<label>$LOCALIZE[20417]:</label>
   					</control>
   					<control type="label">
-	            <include>VideoInfoDialogLabelValue</include>
+	                    <include>VideoInfoDialogLabelValue</include>
   						<label fallback="195">$INFO[ListItem.Writer]</label>
   					</control>
   				</control>
   				<!-- Artist label -->
   				<control type="grouplist">
+				<animation effect="slide" start="0,0" end="0,3" time="250" condition="String.IsEmpty(ListItem.studio) + !Skin.HasSetting(EnableStudioLabelImages)">Conditional</animation>
   					<left>0</left>
-  					<top>25</top>
+  					<top>24</top>
   					<width>850</width>
-  	        <height>30</height>
-  				  <orientation>horizontal</orientation>
-  				  <visible>String.IsEqual(ListItem.DBType,MusicVideo)</visible>
+  	                <height>30</height>
+  				    <orientation>horizontal</orientation>
+  				    <visible>String.IsEqual(ListItem.DBType,MusicVideo)</visible>
   					<control type="label">
-	            <include>VideoInfoDialogLabel</include>
+	                    <include>VideoInfoDialogLabel</include>
   						<label>$LOCALIZE[557]:</label>
   					</control>
   					<control type="label">
-	            <include>VideoInfoDialogLabelValue</include>
+	                    <include>VideoInfoDialogLabelValue</include>
   						<label fallback="195">$INFO[ListItem.Artist]</label>
   					</control>
   				</control>
   				<!-- Album label -->
   				<control type="grouplist">
+				<animation effect="slide" start="0,0" end="0,4" time="250" condition="String.IsEmpty(ListItem.studio) + !Skin.HasSetting(EnableStudioLabelImages)">Conditional</animation>
   					<left>0</left>
-  					<top>50</top>
+  					<top>55</top>
   					<width>850</width>
-  	        <height>30</height>
-  				  <orientation>horizontal</orientation>
-  				  <visible>String.IsEqual(ListItem.DBType,MusicVideo)</visible>
+  	                <height>30</height>
+  				    <orientation>horizontal</orientation>
+  				    <visible>String.IsEqual(ListItem.DBType,MusicVideo)</visible>
   					<control type="label">
-	            <include>VideoInfoDialogLabel</include>
+	                    <include>VideoInfoDialogLabel</include>
   						<label>$LOCALIZE[558]:</label>
   					</control>
   					<control type="label">
-	            <include>VideoInfoDialogLabelValue</include>
+	                    <include>VideoInfoDialogLabelValue</include>
   						<label fallback="195">$INFO[ListItem.Album]</label>
   					</control>
-  				</control>
-  				<!-- Studio label -->
-  				<control type="grouplist">
+  				</control> 
+				<!-- Studios -->
+  				<control type="group">
   					<left>0</left>
-  					<top>50</top>
+  					<top>89</top>
   					<width>850</width>
-  	        <height>30</height>
-  				  <orientation>horizontal</orientation>
-  				  <visible>!String.IsEqual(ListItem.DBType,MusicVideo)</visible>
+  	                <height>45</height>  				    
+  				    <visible>!String.IsEqual(ListItem.DBType,MusicVideo)</visible>
+					<control type="label">
+	                    <include>VideoInfoDialogLabel</include>
+  					    <label>$LOCALIZE[572]:</label>
+  					</control>		    	    
+				    <!-- Studio Images -->					
+					<control type="image">
+				    	<description>Studio Image</description>
+						<top>-10</top>
+						<left>83</left>
+	                    <width>78</width>
+	                    <height>50</height>	                   
+	                    <aspectratio aligny="top">stretch</aspectratio>
+	                    <texture background="true" fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,resource://resource.images.studios.coloured/,.png]</texture>
+						<visible>!String.IsEmpty(ListItem.studio) + Skin.HasSetting(EnableStudioLabelImages)</visible>
+	                </control>					
+					<!-- Studio label -->					
   					<control type="label">
-	            <include>VideoInfoDialogLabel</include>
-  						<label>$LOCALIZE[572]:</label>
-  					</control>
-  					<control type="label">
-	            <include>VideoInfoDialogLabelValue</include>
-  						<label fallback="195">$INFO[ListItem.Studio]</label>
-  					</control>
-  				</control>
-  				<!-- Runtime label -->
-  				<control type="grouplist">
-  					<left>0</left>
-  					<top>75</top>
-  					<width>850</width>
-  	        <height>30</height>
-  				  <orientation>horizontal</orientation>
-  					<control type="label">
-	            <include>VideoInfoDialogLabel</include>
-  						<label>$LOCALIZE[2050]:</label>
-  					</control>
-  					<control type="label">
-	            <include>VideoInfoDialogLabelValue</include>
-              <label>$VAR[ListItemDuration]</label>
-  	          <visible>!String.IsEmpty(ListItem.Duration)</visible>
-  		      </control>
+					    <top>1</top>
+	                    <left>75</left>
+						<include>VideoInfoDialogLabelValue</include>
+  					    <label fallback="195">$INFO[ListItem.Studio]</label>
+						<animation effect="slide" start="0,0" end="100,0" time="250" condition="!String.IsEmpty(ListItem.studio) + Skin.HasSetting(EnableStudioLabelImages)">Conditional</animation>
+  					</control>								        
   				</control>
   			</control>
   			<control type="group">
-  			  <left>0</left>
-  				<top>75</top>
+  			    <left>0</left>
+  				<top>70</top>
   				<include>VisibleFadeEffect2</include>
-  			  <visible>String.IsEqual(ListItem.DBType,TVShow) + String.IsEmpty(Window.Property(videoinfo))</visible>
+  			    <visible>String.IsEqual(ListItem.DBType,TVShow) + String.IsEmpty(Window.Property(videoinfo))</visible>
   				<!-- Status label -->
   				<control type="grouplist">
   					<left>0</left>
-  					<top>0</top>
+  					<top>-6</top>
   					<width>850</width>
-  	        <height>30</height>
-  				  <orientation>horizontal</orientation>
+  	                <height>30</height>
+  				    <orientation>horizontal</orientation>
   					<control type="label">
-	            <include>VideoInfoDialogLabel</include>
+	                    <include>VideoInfoDialogLabel</include>
   						<label>$LOCALIZE[126]:</label>
   					</control>
   					<control type="label">
-	            <include>VideoInfoDialogLabelValue</include>
-  			      <label fallback="195">$INFO[Window(Home).Property(NextAired.Status)]</label>
+	                    <include>VideoInfoDialogLabelValue</include>
+  			            <label fallback="195">$INFO[Window(Home).Property(NextAired.Status)]</label>
   					</control>
   				</control>
   				<!-- Episodes label -->
   				<control type="grouplist">
+  					<animation effect="slide" start="0,0" end="0,3" time="250" condition="!Skin.HasSetting(EnableStudioLabelImages)">Conditional</animation>
   					<left>0</left>
-  					<top>25</top>
+  					<top>24</top>
   					<width>850</width>
-  	        <height>30</height>
-  				  <orientation>horizontal</orientation>
+  	                <height>30</height>
+  				    <orientation>horizontal</orientation>
   					<control type="label">
-	            <include>VideoInfoDialogLabel</include>
+	                    <include>VideoInfoDialogLabel</include>
   						<label>$LOCALIZE[20360]:</label>
   					</control>
   					<control type="label">
-	            <include>VideoInfoDialogLabelValue</include>
+	                     <include>VideoInfoDialogLabelValue</include>
   						<label fallback="195">$INFO[ListItem.Episode] ($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])</label>
   					</control>
   				</control>
   				<!-- Premiered label -->
   				<control type="grouplist">
+  					<animation effect="slide" start="0,0" end="0,4" time="250" condition="!Skin.HasSetting(EnableStudioLabelImages)">Conditional</animation>
   					<left>0</left>
-  					<top>50</top>
+  					<top>55</top>
   					<width>850</width>
   	        <height>30</height>
   				  <orientation>horizontal</orientation>
@@ -251,21 +265,36 @@
   					  <label>$INFO[ListItem.Premiered]</label>
   		      </control>
   				</control>
-  				<!-- Studio label -->
-  				<control type="grouplist">
+  				<!-- Studios -->
+  				<control type="group">
   					<left>0</left>
-  					<top>75</top>
+  					<top>89</top>
   					<width>850</width>
-  	        <height>30</height>
-  				  <orientation>horizontal</orientation>
+  	                <height>45</height>  				    
+  				    <visible>!String.IsEqual(ListItem.DBType,MusicVideo)</visible>
+					<control type="label">
+	                    <include>VideoInfoDialogLabel</include>
+  					    <label>$LOCALIZE[572]:</label>
+  					</control>		    	    
+				    <!-- Studio Images -->					
+					<control type="image">
+				    	<description>Studio Image</description>
+						<top>-10</top>
+						<left>83</left>
+	                    <width>78</width>
+	                    <height>50</height>	                   
+	                    <aspectratio aligny="top">stretch</aspectratio>
+	                    <texture background="true" fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,resource://resource.images.studios.coloured/,.png]</texture>
+						<visible>!String.IsEmpty(ListItem.studio) + Skin.HasSetting(EnableStudioLabelImages)</visible>
+	                </control>					
+					<!-- Studio label -->					
   					<control type="label">
-	            <include>VideoInfoDialogLabel</include>
-  						<label>$LOCALIZE[572]:</label>
-  					</control>
-  					<control type="label">
-	            <include>VideoInfoDialogLabelValue</include>
-  						<label fallback="195">$INFO[ListItem.Studio]</label>
-  					</control>
+					    <top>1</top>
+	                    <left>75</left>
+						<include>VideoInfoDialogLabelValue</include>
+  					    <label fallback="195">$INFO[ListItem.Studio]</label>
+						<animation effect="slide" start="0,0" end="100,0" time="250" condition="!String.IsEmpty(ListItem.studio) + Skin.HasSetting(EnableStudioLabelImages)">Conditional</animation>
+  					</control>								        
   				</control>
   			</control>
   			<control type="group" id="4">
@@ -273,7 +302,7 @@
 				  <visible>String.IsEmpty(Window.Property(videoinfo))</visible>
   				<control type="textbox">
   					<left>0</left>
-  					<top>225</top>
+  					<top>235</top>
   					<width>850</width>
   					<height>185</height>
   					<font>FontSize_22</font>
@@ -286,7 +315,7 @@
   				</control>
   				<control type="textbox">
   					<left>0</left>
-  					<top>225</top>
+  					<top>235</top>
   					<width>850</width>
   					<height>215</height>
   					<font>FontSize_22</font>
@@ -299,7 +328,7 @@
   				</control>
   				<control type="textbox">
   					<left>0</left>
-  					<top>195</top>
+  					<top>205</top>
   					<width>850</width>
   					<height>245</height>
   					<font>FontSize_22</font>
@@ -313,7 +342,7 @@
   				<control type="label">
   					<description>Rated</description>
   					<left>0</left>
-  					<top>410</top>
+  					<top>419</top>
   					<width>850</width>
   					<height>30</height>
   					<font>FontSize_22</font>
@@ -327,17 +356,18 @@
   			</control>
   		</control>
 
-			<!-- Media Flaggs -->
+			<!-- Media Flags -->
 			<control type="grouplist">
 				<left>375</left>
-				<top>340</top>
-                <width>835</width>
+				<top>350</top>
+                <width>850</width>
 				<height>40</height>
 				<align>left</align>
 				<aligny>center</aligny>
 				<itemgap>7</itemgap>
-				<orientation>horizontal</orientation>
+				<orientation>horizontal</orientation>				
 				<include>VideoStereoscopicsFlagsConditions</include>
+				<include>VideoSourceFlagsConditions</include>
 				<include>VideoResFlagsConditions</include>
 				<include>AspectRatioFlagsConditions</include>
 				<include>VideoCodecFlagsConditions</include>
@@ -734,7 +764,7 @@
 			<!-- Local Path -->
 			<control type="grouplist">
 			    <left>46</left>
-			    <top>605</top>
+			    <top>612</top>
 				<width>1188</width>
 				<align>left</align>
 			    <itemgap>6</itemgap>

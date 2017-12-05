@@ -150,7 +150,9 @@ msgctxt "#31034"
 msgid "Teletext"
 msgstr "Televideo"
 
-#empty string id 31035
+msgctxt "#31035"
+msgid "Beginning"
+msgstr "Inizo"
 
 msgctxt "#31036"
 msgid "Close"
@@ -176,7 +178,13 @@ msgctxt "#31041"
 msgid "Creator"
 msgstr "Creatore"
 
-#empty strings from id 31042 to 31079
+#empty strings from id 31042 to 31050
+
+msgctxt "#31051"
+msgid "Enable Studios and RecordLabel Images on Video Info"
+msgstr "Abilita le immagini Studios e RecordLabel in Video Info"
+
+#empty strings from id 31052 to 31079
 #View Type labels
 
 msgctxt "#31080"

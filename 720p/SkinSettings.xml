@@ -220,12 +220,18 @@
 					</control>
 					<control type="radiobutton" id="5107">
 	                    <include>SettingsRadioButton</include>
+						<label>31051</label>
+						<onclick>Skin.ToggleSetting(EnableStudioLabelImages)</onclick>
+						<selected>Skin.HasSetting(EnableStudioLabelImages)</selected>
+					</control>
+					<control type="radiobutton" id="5108">
+	                    <include>SettingsRadioButton</include>
 						<label>31151</label>
 						<onclick>Skin.ToggleSetting(EnableGlobalRSS)</onclick>
 						<selected>Skin.HasSetting(EnableGlobalRSS)</selected>
 						<enable>System.Getbool(lookandfeel.enablerssfeeds)</enable>
 					</control>
-					<control type="button" id="5108">
+					<control type="button" id="5109">
 	                    <include>SettingsButton</include>
 						<label>$LOCALIZE[31104]</label>
 						<label2>[COLOR=$VAR[Text.GlobalColor]]$VAR[FullScreenMusicStyleName][/COLOR]</label2>
@@ -234,7 +240,7 @@
   			            <onclick condition="String.IsEqual(Skin.String(FullScreenMusicStyle),2)">Skin.SetString(FullScreenMusicStyle,1)</onclick>
 					</control>
 					<!-- Select Color Lyrics -->
-					<control type="button" id="5109">
+					<control type="button" id="5110">
 						<description>Hide HomeMenu ExtraInfo</description>
 	                    <include>SettingsRadioButton</include>
 						<label>$LOCALIZE[31440]</label>
@@ -242,7 +248,7 @@
 						<onclick>$VAR[ColorLyricsSelect]</onclick>
 						<onclick>ReloadSkin()</onclick>
 					</control>
-					<control type="button" id="5110">
+					<control type="button" id="5111">
 	                    <include>SettingsButton</include>
 						<label>$LOCALIZE[31105]</label>
 						<label2>[COLOR=$VAR[Text.GlobalColor]]$VAR[FullScreenVideoStyleName][/COLOR]</label2>
@@ -250,7 +256,7 @@
   			            <onclick condition="String.IsEqual(Skin.String(FullScreenVideoStyle),1)">Skin.SetString(FullScreenVideoStyle,2)</onclick>
   			            <onclick condition="String.IsEqual(Skin.String(FullScreenVideoStyle),2)">Skin.SetString(FullScreenVideoStyle,1)</onclick>
 					</control>
-					<control type="button" id="5111">
+					<control type="button" id="5112">
 	                    <include>SettingsButton</include>
 						<label>$LOCALIZE[31106]</label>
 						<label2>[COLOR=$VAR[Text.GlobalColor]]$VAR[DialogSeekBarStyleName][/COLOR]</label2>
@@ -261,20 +267,20 @@
 						<enable>String.IsEqual(Skin.String(FullScreenVideoStyle),1)</enable>
 					</control>
 					<!-- ClearLogo ClearArt Select Video OSD Info -->
-					<control type="button" id="5112">  
+					<control type="button" id="5113">  
 				    	<include>SettingsButton</include>							
 						<label>$LOCALIZE[31436]</label>							
                         <label2>[COLOR=$VAR[Text.GlobalColor]]$VAR[LabelArtSelect][/COLOR]</label2>
 						<onclick>$VAR[PlayerArtSelect]</onclick>
 			            <enable>String.IsEqual(Skin.String(FullScreenVideoStyle),1)</enable>	
 					</control>
-					<control type="button" id="5113">
+					<control type="button" id="5114">
                         <include>SettingsButton</include>
                         <label>$LOCALIZE[31110]</label>
                         <label2>$INFO[Skin.String(MusicLibraryPath)]</label2>
                         <onclick>Skin.SetPath(MusicLibraryPath)</onclick>
                     </control>
-                    <control type="button" id="5114">
+                    <control type="button" id="5115">
                         <include>SettingsButton</include>
                         <label>- $LOCALIZE[31111]</label>
                         <onclick>Skin.Reset(MusicLibraryPath)</onclick>
@@ -796,6 +802,27 @@
 						<label2>$VAR[StatusLanguageFlagsColour]</label2>
 						<onclick condition="System.HasAddon(resource.images.languageflags.colour)">Addon.OpenSettings(resource.images.languageflags.colour)</onclick>
 						<onclick condition="!System.HasAddon(resource.images.languageflags.colour)">InstallAddon(resource.images.languageflags.colour)</onclick>
+					</control>
+					<control type="button" id="5825">
+						<include>SettingsButton</include>
+						<label>resource.images.studios.coloured</label>
+						<label2>$VAR[StatusImagesStudiosWhite]</label2>
+						<onclick condition="System.HasAddon(resource.images.studios.coloured)">Addon.OpenSettings(resource.images.studios.coloured)</onclick>
+						<onclick condition="!System.HasAddon(resource.images.studios.coloured)">InstallAddon(resource.images.studios.coloured)</onclick>
+					</control>
+					<control type="button" id="5826">
+						<include>SettingsButton</include>
+						<label>resource.images.recordlabels.white</label>
+						<label2>$VAR[StatusImagesRecordlabelsWhite]</label2>
+						<onclick condition="System.HasAddon(resource.images.recordlabels.white)">Addon.OpenSettings(resource.images.recordlabels.white)</onclick>
+						<onclick condition="!System.HasAddon(resource.images.recordlabels.white)">InstallAddon(resource.images.recordlabels.white)</onclick>
+					</control>
+					<control type="button" id="5827">
+						<include>SettingsButton</include>
+						<label>resource.images.moviecountryicons.maps</label>
+						<label2>$VAR[StatusMovieCountryIconsMaps]</label2>
+						<onclick condition="System.HasAddon(resource.images.moviecountryicons.maps)">Addon.OpenSettings(resource.images.moviecountryicons.maps)</onclick>
+						<onclick condition="!System.HasAddon(resource.images.moviecountryicons.maps)">InstallAddon(resource.images.moviecountryicons.maps)</onclick>
 					</control>
 				</control>
 				

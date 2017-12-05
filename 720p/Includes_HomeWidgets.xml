@@ -390,9 +390,9 @@
 			</control>
 			<control type="image">
 				<left>0</left>
-				<top>36</top>
-				<width>38</width>
-				<height>24</height>
+				<top>32</top>
+				<width>41</width>
+				<height>30</height>
 		        <colordiffuse>homeinfo</colordiffuse>
                 <aspectratio>keep</aspectratio>
 				<texture background="true">$VAR[HomeWidgetsHDFlags]</texture>
@@ -848,8 +848,10 @@
 	</variable>
 
   <variable name="HomeWidgetsHDFlags">
-    <value condition="Control.HasFocus(25) + Integer.IsGreater(Container(25).ListItem.VideoResolution,719)">flags/def/hd.png</value>
-    <value condition="Control.HasFocus(25) + !String.IsEmpty(Container(25).ListItem.VideoResolution)">flags/def/sd.png</value>
+    <value condition="Control.HasFocus(25) + ListItem.IsStereoscopic">flags/def/3d.png</value>
+	<value condition="Control.HasFocus(25) + String.IsEqual(Container(25).ListItem.VideoResolution,4K) | Integer.IsEqual(Container(25).ListItem.VideoResolution,2160)">flags/def/4k.png</value>
+	<value condition="Control.HasFocus(25) + Integer.IsGreater(Container(25).ListItem.VideoResolution,719)">flags/def/hd.png</value>
+	<value condition="Control.HasFocus(25) + !String.IsEmpty(Container(25).ListItem.VideoResolution)">flags/def/sd.png</value>
   </variable>
 
   <variable name="HomeWidgetsDataProvidersIcons">

@@ -1262,6 +1262,21 @@
 		<value condition="System.HasAddon(resource.images.languageflags.colour)">$INFO[System.AddonVersion(resource.images.languageflags.colour),v.]</value>
 		<value>$LOCALIZE[31017]</value>
 	</variable>
+	
+	<variable name="StatusImagesStudiosWhite">
+		<value condition="System.HasAddon(resource.images.studios.coloured)">$INFO[System.AddonVersion(resource.images.studios.coloured),v.]</value>
+		<value>$LOCALIZE[31017]</value>
+	</variable>
+	
+	<variable name="StatusImagesRecordlabelsWhite">
+		<value condition="System.HasAddon(resource.images.recordlabels.white)">$INFO[System.AddonVersion(resource.images.recordlabels.white),v.]</value>
+		<value>$LOCALIZE[31017]</value>
+	</variable>
+	
+	<variable name="StatusMovieCountryIconsMaps">
+		<value condition="System.HasAddon(resource.images.moviecountryicons.maps)">$INFO[System.AddonVersion(resource.images.moviecountryicons.maps),v.]</value>
+		<value>$LOCALIZE[31017]</value>
+	</variable>
 
 	<variable name="ContainerNumItems">
 		<value condition="Integer.IsGreater(Container(25).NumItems,0)">$INFO[Container(25).CurrentItem,$LOCALIZE[31025] ]$INFO[Container(25).NumItems, $LOCALIZE[31024] ]</value>
@@ -1405,10 +1420,14 @@
 	</variable>
  -->
   <variable name="QuickNavWidgetsDefFlags">
-    <value condition="Control.HasFocus(200) + Integer.IsGreater(Container(200).ListItem.VideoResolution,719)">flags/def/hd.png</value>
-    <value condition="Control.HasFocus(200) + !String.IsEmpty(Container(200).ListItem.VideoResolution)">flags/def/sd.png</value>
-    <value condition="Control.HasFocus(250) + Integer.IsGreater(Container(250).ListItem.VideoResolution,719)">flags/def/hd.png</value>
-    <value condition="Control.HasFocus(250) + !String.IsEmpty(Container(250).ListItem.VideoResolution)">flags/def/sd.png</value>
+    <value condition="Control.HasFocus(200) + ListItem.IsStereoscopic">flags/def/3d.png</value>
+	<value condition="Control.HasFocus(200) + String.IsEqual(Container(200).ListItem.VideoResolution,4K) | Integer.IsEqual(Container(25).ListItem.VideoResolution,2160)">flags/def/4k.png</value>
+	<value condition="Control.HasFocus(200) + Integer.IsGreater(Container(200).ListItem.VideoResolution,719)">flags/def/hd.png</value>
+	<value condition="Control.HasFocus(200) + !String.IsEmpty(Container(200).ListItem.VideoResolution)">flags/def/sd.png</value>
+    <value condition="Control.HasFocus(250) + ListItem.IsStereoscopic">flags/def/3d.png</value>
+	<value condition="Control.HasFocus(250) + String.IsEqual(Container(250).ListItem.VideoResolution,4K) | Integer.IsEqual(Container(25).ListItem.VideoResolution,2160)">flags/def/4k.png</value>
+	<value condition="Control.HasFocus(250) + Integer.IsGreater(Container(250).ListItem.VideoResolution,719)">flags/def/hd.png</value>
+	<value condition="Control.HasFocus(250) + !String.IsEmpty(Container(250).ListItem.VideoResolution)">flags/def/sd.png</value>
   </variable>
 
 	<variable name="QuickNavWidgetsFanart">

@@ -99,10 +99,10 @@
   			<control type="image">
   				<left>1</left>
   				<top>595</top>
-  				<width>33</width>
-  				<height>22</height>
+  				<width>41</width>
+				<height>30</height>
   		    <colordiffuse>homeinfo</colordiffuse>
-  				<aspectratio aligny="center" align="center">stretch</aspectratio>
+  				<aspectratio aligny="center" align="center">keep</aspectratio>
   				<texture background="true">$VAR[QuickNavWidgetsDefFlags]</texture>
   			</control>
   			<control type="label">
@@ -154,10 +154,10 @@
   			<control type="image">
   				<left>1</left>
   				<top>595</top>
-  				<width>33</width>
-  				<height>22</height>
+  				<width>41</width>
+				<height>30</height>
   		    <colordiffuse>77ffffff</colordiffuse>
-  				<aspectratio aligny="center" align="center">stretch</aspectratio>
+  				<aspectratio aligny="center" align="center">keep</aspectratio>
   				<texture background="true">$VAR[QuickNavWidgetsDefFlags]</texture>
   			</control>
   			<control type="label">

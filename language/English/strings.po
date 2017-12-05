@@ -158,7 +158,9 @@ msgctxt "#31034"
 msgid "Teletext"
 msgstr ""
 
-#empty string id 31035
+msgctxt "#31035"
+msgid "Beginning"
+msgstr ""
 
 msgctxt "#31036"
 msgid "Close"
@@ -220,8 +222,11 @@ msgctxt "#31050"
 msgid "Logging off"
 msgstr ""
 
+msgctxt "#31051"
+msgid "Enable Studios and RecordLabel Images on Video Info"
+msgstr ""
 
-#empty strings from id 31051 to 31079
+#empty strings from id 31052 to 31079
 #View Type labels
 
 msgctxt "#31080"

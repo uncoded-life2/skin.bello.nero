@@ -167,10 +167,11 @@
   			<width>1123</width>
   			<height>594</height>
   			<aspectratio align="center" aligny="center">stretch</aspectratio>
-  		  <texture background="true" colordiffuse="$VAR[Textures.GlobalColor]">views/list/shine.png</texture>
-				<visible>!Skin.Hassetting(DisableVideoListView_PosterGlow)</visible>
+  		    <texture background="true" colordiffuse="$VAR[Textures.GlobalColor]">views/list/shine.png</texture>
+			<visible>!Skin.Hassetting(DisableVideoListView_PosterGlow)</visible>
   		</control>
-		<control type="image"> <!-- DiscArt view video -->
+		<!-- DiscArt view video -->
+		<control type="image">
 	        <left>631</left>
 	        <top>189</top>
                 <width>168</width>
@@ -473,41 +474,81 @@
   			<texture>$INFO[Listitem.Icon]</texture>
   			<bordertexture border="31">views/other/panel2.png</bordertexture>
   			<bordersize>10</bordersize>
-			  <visible>![[Container.Content(Genres) | [String.StartsWith(Container.FolderPath,plugin://plugin) + !String.IsEmpty(ListItem.Plot)]] + !ListItem.IsParentFolder]</visible>
+			<visible>![[Container.Content(Studios) | Container.Content(Countries) | Container.Content(Genres) | [String.StartsWith(Container.FolderPath,plugin://plugin) + !String.IsEmpty(ListItem.Plot)]] + !ListItem.IsParentFolder]</visible>
   		</control>
   		<control type="group">
   			<left>979</left>
   			<top>158</top>
-			  <visible>Container.Content(Genres) + !ListItem.IsParentFolder</visible>
+			<visible>Container.Content(Genres) + !ListItem.IsParentFolder</visible>
 	  		<control type="image">
-	  			<width>256</width>
-	  			<height>256</height>
-	  			<aspectratio align="right" aligny="top">stretch</aspectratio>
-	        <texture background="true">views/other/panel2.png</texture>
+	  	        <width>256</width>
+	  	        <height>256</height>
+	  		    <aspectratio align="right" aligny="top">stretch</aspectratio>
+	            <texture background="true">views/other/panel2.png</texture>
 	  		</control>
 	  		<control type="image">
 	  			<width>256</width>
 	  			<height>256</height>
 	  			<aspectratio align="center" aligny="center">scale</aspectratio>
-	        <texture background="true" fallback="special://skin/extras/moviesgenres/default.png">$INFO[ListItem.Label,special://skin/extras/moviesgenres/,.jpg]</texture>
+	            <texture background="true" fallback="special://skin/extras/moviesgenres/default.png">$INFO[ListItem.Label,special://skin/extras/moviesgenres/,.jpg]</texture>
 	  			<bordersize>10</bordersize>
-		      <visible>String.IsEqual(Container.FolderPath,videodb://movies/genres/)</visible>
+		        <visible>String.IsEqual(Container.FolderPath,videodb://movies/genres/)</visible>
 	  		</control>
 	  		<control type="image">
 	  			<width>256</width>
 	  			<height>256</height>
 	  			<aspectratio align="center" aligny="center">scale</aspectratio>
-	        <texture background="true" fallback="special://skin/extras/moviesgenres/default.png">$INFO[ListItem.Label,special://skin/extras/tvshowsgenres/,.jpg]</texture>
+	            <texture background="true" fallback="special://skin/extras/moviesgenres/default.png">$INFO[ListItem.Label,special://skin/extras/tvshowsgenres/,.jpg]</texture>
 	  			<bordersize>10</bordersize>
-		      <visible>String.IsEqual(Container.FolderPath,videodb://tvshows/genres/)</visible>
+		        <visible>String.IsEqual(Container.FolderPath,videodb://tvshows/genres/)</visible>
 	  		</control>
 	  		<control type="image">
 	  			<width>256</width>
 	  			<height>256</height>
 	  			<aspectratio align="center" aligny="center">scale</aspectratio>
-	        <texture background="true" fallback="special://skin/extras/musicgenres/default.png">$INFO[ListItem.Label,resource://resource.images.musicgenreicons.text/,.jpg]</texture>
+	            <texture background="true" fallback="special://skin/extras/musicgenres/default.png">$INFO[ListItem.Label,resource://resource.images.musicgenreicons.text/,.jpg]</texture>
 	  			<bordersize>10</bordersize>
-		      <visible>String.IsEqual(Container.FolderPath,musicdb://genres/) | String.IsEqual(Container.FolderPath,videodb://musicvideos/genres/)</visible>
+		        <visible>String.IsEqual(Container.FolderPath,musicdb://genres/) | String.IsEqual(Container.FolderPath,videodb://musicvideos/genres/)</visible>
+	  		</control>
+	  	</control>
+		<control type="group">
+  			<left>979</left>
+  			<top>158</top>
+			<visible>Container.Content(Studios) + !ListItem.IsParentFolder</visible>
+	  		<control type="image">
+	  	        <width>256</width>
+	  	        <height>256</height>
+	  		    <aspectratio align="right" aligny="top">stretch</aspectratio>
+	            <texture background="true">views/other/panel2.png</texture>
+	  		</control>
+	  		<control type="image">
+			    <left>35</left>
+  			    <top>30</top>
+	  			<width>186</width>
+	  			<height>186</height>
+	  			<aspectratio align="center" aligny="center">keep</aspectratio>
+	            <texture fallback="DefaultStudios.png">$INFO[ListItem.Label,resource://resource.images.studios.coloured/,.png]</texture>
+	  			<bordersize>10</bordersize>
+		        <visible>String.IsEqual(Container.FolderPath,videodb://movies/studios/) | String.IsEqual(Container.FolderPath,videodb://tvshows/studios/)</visible>
+	  		</control>
+	  	</control>
+		<control type="group">
+  			<left>979</left>
+  			<top>158</top>
+			<visible>Container.Content(Countries) + !ListItem.IsParentFolder</visible>
+	  		<control type="image">
+	  	        <width>256</width>
+	  	        <height>256</height>
+	  		    <aspectratio align="right" aligny="top">stretch</aspectratio>
+	            <texture background="true">views/other/panel2.png</texture>
+	  		</control>
+	  		<control type="image">
+			    <width>256</width>
+	  	        <height>256</height>
+	  		    <aspectratio align="right" aligny="top">stretch</aspectratio>
+	            <texture fallback="DefaultCountry.png">$INFO[ListItem.Label,resource://resource.images.moviecountryicons.maps/,.png]</texture>
+	  			<bordersize>10</bordersize>
+		        <visible>String.IsEqual(Container.FolderPath,videodb://movies/countries/)</visible>
 	  		</control>
 	  	</control>
   		<control type="group">
@@ -907,11 +948,11 @@
 					<top>195</top>
 		      <visible>![Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs)]</visible>
 					<control type="image">
-						<colordiffuse>$PARAM[textcolor]</colordiffuse>
+						<colordiffuse>mediaflags</colordiffuse>
 				    <include>SmallDownInfo_Def3DFlags</include>
 					</control>
 					<control type="image">
-						<colordiffuse>$PARAM[textcolor]</colordiffuse>
+						<colordiffuse>mediaflags</colordiffuse>
 				    <include>SmallDownInfo_MPAATVFlags</include>
 					</control>
 					<control type="label">
@@ -935,10 +976,10 @@
 		<!-- Small Down Info -->
 		<!-- =============== -->
     <include name="SmallDownInfo_Def3DFlags">
-			<width>38</width>
-			<height>24</height>
-	    <colordiffuse>9fffffff</colordiffuse>
-      <aspectratio>keep</aspectratio>
+			<width>40</width>
+		    <height>22</height>
+		    <colordiffuse>mediaflags</colordiffuse>
+			<aspectratio align="center">keep</aspectratio>
 			<texture background="true">$VAR[ViewsDef3DFlags]</texture>
 			<visible>[Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)] + !String.IsEmpty(ListItem.VideoResolution)</visible>
     </include>
@@ -950,11 +991,11 @@
       <texture background="true">flags/sets/sets.png</texture>
 			<visible>String.StartsWith(ListItem.Path,videodb://movies/sets/)</visible>
     </include>
-    <include name="SmallDownInfo_MPAATVFlags">
-			<width>58</width>
-			<height>24</height>
-	    <colordiffuse>9fffffff</colordiffuse>
-	    <aspectratio>keep</aspectratio>
+    <include name="SmallDownInfo_MPAATVFlags">			
+  		    <width>64</width>
+		    <height>23</height>
+			<colordiffuse>mediaflags</colordiffuse>
+			<aspectratio align="center">keep</aspectratio>
 			<texture background="true" fallback="flags/mpaa/tv/tv-na.png">$INFO[ListItem.mpaa,flags/mpaa/tv/,.png]</texture>
 			<visible>[Container.Content(TVShows) | Container.Content(Seasons)] + !String.IsEmpty(ListItem.mpaa)</visible>
     </include>
@@ -1502,17 +1543,25 @@
   		<value condition="Control.IsVisible(53) + Skin.Hassetting(Disable3DWallView_PosterGlow)">views/wall/poster_shadow.png</value>
   		<value condition="Control.IsVisible(54) + Skin.Hassetting(DisableWallView_PosterGlow)">views/wall/poster_shadow.png</value>
   		<value condition="Control.IsVisible(58) + Skin.Hassetting(DisableListWallView_PosterGlow)">views/wall/poster_shadow.png</value>
-      <value condition="Control.IsVisible(59) + Skin.Hassetting(Disable3DWallMusicView_ThumbGlow)">views/wall/square_shadow.png</value>
-      <value condition="Control.IsVisible(64) + Skin.Hassetting(DisablePostersView2_PosterGlow)">views/posters/bg_bottom_shadow.png</value>
-      <value condition="Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(58)">views/wall/poster_blue_shadow.png</value>
-      <value condition="Control.IsVisible(59)">views/wall/square_blue_shadow.png</value>
-      <value condition="Control.IsVisible(64)">views/posters/bg_bottom_shadow_glow.png</value>
+        <value condition="Control.IsVisible(59) + Skin.Hassetting(Disable3DWallMusicView_ThumbGlow)">views/wall/square_shadow.png</value>
+        <value condition="Control.IsVisible(64) + Skin.Hassetting(DisablePostersView2_PosterGlow)">views/posters/bg_bottom_shadow.png</value>
+        <value condition="Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(58)">views/wall/poster_blue_shadow.png</value>
+        <value condition="Control.IsVisible(59)">views/wall/square_blue_shadow.png</value>
+        <value condition="Control.IsVisible(64)">views/posters/bg_bottom_shadow_glow.png</value>
     </variable>
 
-		<variable name="ViewsDef3DFlags">
-		  <value condition="ListItem.IsStereoscopic">flags/def/3d.png</value>
-		  <value condition="String.IsEqual(ListItem.VideoResolution,4K) | Integer.IsEqual(ListItem.VideoResolution,2160)">flags/def/4k.png</value>
-		  <value condition="Integer.IsGreater(ListItem.VideoResolution,719)">flags/def/hd.png</value>
-		  <value condition="!String.IsEmpty(ListItem.VideoResolution)">flags/def/sd.png</value>
-		</variable>
+	<variable name="ViewsDef3DFlags">
+	  <value condition="ListItem.IsStereoscopic">flags/def/3d.png</value>
+	  <value condition="String.IsEqual(ListItem.VideoResolution,4K) | Integer.IsEqual(ListItem.VideoResolution,2160)">flags/def/4k.png</value>
+	  <value condition="Integer.IsGreater(ListItem.VideoResolution,719)">flags/def/hd.png</value>
+	  <value condition="!String.IsEmpty(ListItem.VideoResolution)">flags/def/sd.png</value>
+	</variable>
+	<variable name="VideoSourceFlags">
+	    <value condition="String.Contains(ListItem.FileNameAndPath,webdl) | String.Contains(ListItem.FileNameAndPath,web-dl) | String.Contains(ListItem.FileNameAndPath,WEBRip)">flags/def/source/webdl.png</value>
+		<value condition="String.Contains(ListItem.FileNameAndPath,dvd)">flags/def/source/dvd.png</value>
+		<value condition="String.Contains(ListItem.FileNameAndPath,hdtv) | String.Contains(ListItem.FileNameAndPath,pdtv) | String.Contains(ListItem.FileNameAndPath,dsr)">flags/def/source/hdtv.png</value>
+	    <value condition="String.Contains(ListItem.FileNameAndPath,bluray) | String.Contains(ListItem.FileNameAndPath,bdrip) | String.Contains(ListItem.FileNameAndPath,blu-ray) | String.Contains(ListItem.FileNameAndPath,bd25) | String.Contains(ListItem.FileNameAndPath,bd50)">flags/def/source/bluray.png</value>
+		<value condition="ListItem.IsStereoscopic">flags/def/source/3d.png</value>
+		<value condition="String.Contains(ListItem.FileNameAndPath,2160p) | String.Contains(ListItem.FileNameAndPath,UHD) | String.Contains(ListItem.FileNameAndPath,UltraHD) | String.Contains(ListItem.FileNameAndPath,Ultra-HD) | String.Contains(ListItem.FileNameAndPath,4K)">flags/def/source/4k.png</value>				
+	</variable>
 </includes>    

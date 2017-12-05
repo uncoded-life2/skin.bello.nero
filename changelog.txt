@@ -1,12 +1,27 @@
+v7.0.2n - for Kodi Leia 18.xx (07/12/2017)
+________________________________________________________________________________________________________
 
-v7.0.1 - for Kodi Leia 18.xx (25/11/2017)
+- Change all media flags
+- Modified media flags
+- Some corrections TVShow Netflix View
+- Edit for flags Studio-Recordlabel Images Video Info - Music Info - Fullscreen - Globalsearch
+- Added support Addon (Images.moviecountryicons.maps)
+- Added support Addon (Images.recordlabels.white)
+- Added support Addon (Images.studios.coloured)
+- Ability to exclude ImageStudio and ImageRecordLabel in general setting (visibility in Music Info - Video Info)
+- Added support icons 4k [2160]
+- Added icons source Video in Flags
+________________________________________________________________________________________________________
+
+
+v7.0.1n - for Kodi Leia 18.xx (25/11/2017)
 ________________________________________________________________________________________________________
 
 - Added 4K IncludeVideo e image flag 
 - Modified DiscArt View Posters
 ________________________________________________________________________________________________________
 
-v7.0.0 - for Kodi Leia 18.xx (28/10/2017)
+v7.0.0n - for Kodi Leia 18.xx (28/10/2017)
 ________________________________________________________________________________________________________
 
 - Update and changes to the functionality with Kodi-Leia 18.xx

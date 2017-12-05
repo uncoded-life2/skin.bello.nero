@@ -84,13 +84,11 @@
 	  				<shadowcolor>99000000</shadowcolor>
 	  			</control>
 	  			<control type="image">
-	  				<left>-1</left>
 	  				<top>37</top>
-	  				<width>60</width>
-	  				<height>25</height>
-	  				<align>left</align>
-	  				<aligny>center</aligny>
-	  		    <colordiffuse>mediaflags</colordiffuse>
+  				    <width>64</width>
+				    <height>23</height>
+				    <colordiffuse>mediaflags</colordiffuse>
+				    <aspectratio align="center">keep</aspectratio>
 	  				<texture fallback="flags/mpaa/film/us/rating-nr.png">$VAR[MPAAFilmRatingGlobalSearch]</texture>
 	  			</control>
 					<!-- Genre label -->
@@ -190,14 +188,11 @@
 	  				<shadowcolor>99000000</shadowcolor>
 	  			</control>
 	  			<control type="image">
-	  				<left>-1</left>
 	  				<top>37</top>
-	  				<width>60</width>
-	  				<height>25</height>
-	  				<align>left</align>
-	  				<aligny>center</aligny>
-		        <aspectratio>keep</aspectratio>
-	  		    <colordiffuse>mediaflags</colordiffuse>
+  				    <width>64</width>
+				    <height>23</height>
+				    <colordiffuse>mediaflags</colordiffuse>
+				    <aspectratio align="center">keep</aspectratio>
 	  				<texture fallback="flags/mpaa/tv/tv-na.png">$INFO[Container(100).ListItem.Property(MPAA),flags/mpaa/tv/,.png]</texture>
 	  			</control>
 					<!-- Genre label -->
@@ -811,7 +806,7 @@
 				<orientation>horizontal</orientation>
 				<!-- Video Resolution -->
 				<control type="group">
-	        <width>80</width>
+	        <width>70</width>
 	        <visible>!String.IsEmpty(Container(100).ListItem.Property(VideoResolution))</visible>
 					<control type="image">
 						<include>FlagsLayout</include>
@@ -820,7 +815,7 @@
 				</control>
 				<!-- Aspect Ratio -->
 				<control type="group">
-	        <width>80</width>
+	        <width>70</width>
 	        <visible>!String.IsEmpty(Container(100).ListItem.Property(VideoAspect))</visible>
 					<control type="image">
 						<include>FlagsLayout</include>
@@ -829,7 +824,7 @@
 				</control>
 				<!-- Video Codec -->
 				<control type="group">
-	        <width>80</width>
+	        <width>70</width>
 	        <visible>!String.IsEmpty(Container(100).ListItem.Property(VideoCodec))</visible>
 					<control type="image">
 						<include>FlagsLayout</include>
@@ -838,7 +833,7 @@
 				</control>
 				<!-- Audio Channels -->
 				<control type="group">
-	        <width>49</width>
+	        <width>70</width>
 	        <visible>!String.IsEmpty(Container(100).ListItem.Property(AudioChannels))</visible>
 					<control type="image">
 						<include>FlagsLayoutAudioChannels</include>
@@ -847,7 +842,7 @@
 				</control>
 				<!-- Audio Codec -->
 				<control type="group">
-	        <width>80</width>
+	        <width>70</width>
 	        <visible>!String.IsEmpty(Container(100).ListItem.Property(AudioCodec))</visible>
 					<control type="image">
 						<include>FlagsLayout</include>

@@ -46,7 +46,7 @@
 				<control type="label">
 					<description>Head Title</description>
 					<left>-2</left>
-					<top>0</top>
+					<top>-10</top>
 					<width>775</width>
 					<height>30</height>
 					<font>FontSize_40</font>
@@ -59,7 +59,7 @@
 				<control type="label">
 					<description>Sub Title</description>
 					<left>0</left>
-					<top>32</top>
+					<top>22</top>
 					<width>775</width>
 					<height>30</height>
 					<font>FontSize_22</font>
@@ -76,74 +76,76 @@
 					<animation effect="fade" start="0" end="100" time="100" reversible="false">Visible</animation>
 					<animation effect="fade" start="100" end="0" time="100" reversible="false">Hidden</animation>
 					<left>0</left>
-					<top>72</top>
+					<top>70</top>
 					<!-- Artist Formed label -->
 					<control type="grouplist">
 						<left>0</left>
-						<top>0</top>
+						<top>-6</top>
 						<width>775</width>
-		        <height>30</height>
-					  <orientation>horizontal</orientation>
+		                <height>30</height>
+					    <orientation>horizontal</orientation>
 						<control type="label">
-	            <include>MusicInfoDialogLabel</include>
-							<label>$LOCALIZE[21894]:</label>
+	                        <include>MusicInfoDialogLabel</include>
+							<label>$LOCALIZE[31035]:</label>
 						</control>
 						<control type="label">
-	            <include>MusicInfoDialogLabelValue</include>
+	                        <include>MusicInfoDialogLabelValue</include>
 							<label fallback="195">$INFO[ListItem.Property(Artist_Formed)]</label>
 						</control>
 					</control>
 					<!-- Years Active label -->
 					<control type="grouplist">
-						<left>0</left>
-						<top>25</top>
+						<animation effect="slide" start="0,0" end="0,3" time="250" condition="!Skin.HasSetting(EnableStudioLabelImages)">Conditional</animation>
+  					    <left>0</left>
+  					    <top>24</top>
 						<width>775</width>
-		        <height>30</height>
-					  <orientation>horizontal</orientation>
+		                <height>30</height>
+					    <orientation>horizontal</orientation>
 						<control type="label">
-	            <include>MusicInfoDialogLabel</include>
+	                        <include>MusicInfoDialogLabel</include>
 							<label>$LOCALIZE[21898]:</label>
 						</control>
 						<control type="label">
-	            <include>MusicInfoDialogLabelValue</include>
+	                        <include>MusicInfoDialogLabelValue</include>
 							<label fallback="195">$INFO[ListItem.Property(Artist_YearsActive)]</label>
 					    <visible>String.IsEmpty(ListItem.Property(Artist_Disbanded))</visible>
 						</control>
 						<control type="label">
-	            <include>MusicInfoDialogLabelValue</include>
+	                        <include>MusicInfoDialogLabelValue</include>
 							<label fallback="195">$INFO[ListItem.Property(Artist_YearsActive),, ($LOCALIZE[21896])]</label>
 					    <visible>!String.IsEmpty(ListItem.Property(Artist_Disbanded))</visible>
 						</control>
 					</control>
 					<!-- Moods label -->
 					<control type="grouplist">
-						<left>0</left>
-						<top>50</top>
+						<animation effect="slide" start="0,0" end="0,4" time="250" condition="!Skin.HasSetting(EnableStudioLabelImages)">Conditional</animation>
+  					    <left>0</left>
+  					    <top>55</top>
 						<width>775</width>
-		        <height>30</height>
-					  <orientation>horizontal</orientation>
+		                <height>30</height>
+					    <orientation>horizontal</orientation>
 						<control type="label">
-	            <include>MusicInfoDialogLabel</include>
+	                        <include>MusicInfoDialogLabel</include>
 							<label>$LOCALIZE[175]:</label>
 						</control>
 						<control type="label">
-	            <include>MusicInfoDialogLabelValue</include>
+	                        <include>MusicInfoDialogLabelValue</include>
 							<label fallback="195">$INFO[ListItem.Property(Artist_Mood)]</label>
 						</control>
 					</control>
 					<!-- Styles label -->
 					<control type="grouplist">
 						<left>0</left>
-						<top>75</top>
+						<top>89</top>
 						<width>775</width>
-		        <height>30</height>
-					  <orientation>horizontal</orientation>
+		                <height>30</height>
+					    <orientation>horizontal</orientation>
 						<control type="label">
-	            <include>MusicInfoDialogLabel</include>
+	                        <include>MusicInfoDialogLabel</include>
 							<label>$LOCALIZE[176]:</label>
 						</control>
 						<control type="label">
-	            <include>MusicInfoDialogLabelValue</include>
+	                        <include>MusicInfoDialogLabelValue</include>
 							<label fallback="195">$INFO[ListItem.Property(Artist_Style)]</label>
 						</control>
 					</control>
@@ -155,71 +157,87 @@
 					<animation effect="fade" start="0" end="100" time="100" reversible="false">Visible</animation>
 					<animation effect="fade" start="100" end="0" time="100" reversible="false">Hidden</animation>
 					<left>0</left>
-					<top>72</top>
+					<top>70</top>
 					<!-- Genre label -->
 					<control type="grouplist">
 						<left>0</left>
-						<top>0</top>
+						<top>-6</top>
 						<width>775</width>
-		        <height>30</height>
-					  <orientation>horizontal</orientation>
+		                <height>30</height>
+					    <orientation>horizontal</orientation>
 						<control type="label">
-	            <include>MusicInfoDialogLabel</include>
+	                        <include>MusicInfoDialogLabel</include>
 							<label>$LOCALIZE[515]:</label>
 						</control>
 						<control type="label">
-	            <include>MusicInfoDialogLabelValue</include>
+	                        <include>MusicInfoDialogLabelValue</include>
 							<label fallback="195">$INFO[ListItem.Genre]</label>
 						</control>
 					</control>
 					<!-- Year label -->
 					<control type="grouplist">
-						<left>0</left>
-						<top>25</top>
+						<animation effect="slide" start="0,0" end="0,3" time="250" condition="!Skin.HasSetting(EnableStudioLabelImages)">Conditional</animation>
+  					    <left>0</left>
+  					    <top>24</top>
 						<width>775</width>
-		        <height>30</height>
-					  <orientation>horizontal</orientation>
+		                <height>30</height>
+					    <orientation>horizontal</orientation>
 						<control type="label">
-	            <include>MusicInfoDialogLabel</include>
+	                        <include>MusicInfoDialogLabel</include>
 							<label>$LOCALIZE[345]:</label>
 						</control>
 						<control type="label">
-	            <include>MusicInfoDialogLabelValue</include>
+	                        <include>MusicInfoDialogLabelValue</include>
 							<label fallback="195">$INFO[ListItem.Year]</label>
 						</control>
 					</control>
 					<!-- Type label -->
 					<control type="grouplist">
-						<left>0</left>
-						<top>50</top>
+						<animation effect="slide" start="0,0" end="0,4" time="250" condition="!Skin.HasSetting(EnableStudioLabelImages)">Conditional</animation>
+  					    <left>0</left>
+  					    <top>55</top>
 						<width>775</width>
-		        <height>30</height>
-					  <orientation>horizontal</orientation>
+		                <height>30</height>
+					    <orientation>horizontal</orientation>
 						<control type="label">
-	            <include>MusicInfoDialogLabel</include>
+	                        <include>MusicInfoDialogLabel</include>
 							<label>$LOCALIZE[146]</label>
 						</control>
 						<control type="label">
-	            <include>MusicInfoDialogLabelValue</include>
+	                        <include>MusicInfoDialogLabelValue</include>
 							<label fallback="195">$INFO[ListItem.Property(Album_Type)]</label>
 						</control>
 					</control>					
-					<!-- Music Label label -->
-					<control type="grouplist">
-						<left>0</left>
-						<top>75</top>
-						<width>775</width>
-		        <height>30</height>
-					  <orientation>horizontal</orientation>
-						<control type="label">
-	            <include>MusicInfoDialogLabel</include>
-							<label>$LOCALIZE[21899]:</label>
-						</control>
-						<control type="label">
-	            <include>MusicInfoDialogLabelValue</include>
-							<label fallback="195">$INFO[ListItem.Property(Album_Label)]</label>
-						</control>
-					</control>
+					<!-- Music Labels -->
+  				    <control type="group">
+  				    	<left>0</left>
+  				    	<top>89</top>
+  				    	<width>850</width>
+  	                    <height>45</height>  				      				    
+				    	<control type="label">
+	                        <include>MusicInfoDialogLabel</include>
+				    		<label>$LOCALIZE[21899]:</label>
+  				    	</control>		    	    
+				        <!-- Music Label Images -->					
+				    	<control type="image">
+				        	<description>Label Image</description>
+				    		<top>-7</top>
+				    		<left>111</left>
+	                        <width>68</width>
+	                        <height>40</height>	                   
+	                        <aspectratio aligny="top">stretch</aspectratio>
+	                        <texture background="true" fallback="flags/labels/default-label.png">$INFO[ListItem.Property(Album_Label),resource://resource.images.recordlabels.white/,.png]</texture>
+				    		<visible>!String.IsEmpty(ListItem.Property(Album_Label)) + Skin.HasSetting(EnableStudioLabelImages)</visible>
+	                    </control>					
+				    	<!-- Music Label label -->					
+  				    	<control type="label">
+				    	    <top>1</top>
+	                        <left>100</left>
+				    		<include>MusicInfoDialogLabelValue</include>
+  				    	    <label fallback="195">$INFO[ListItem.Property(Album_Label)]</label>
+				    		<animation effect="slide" start="0,0" end="100,0" time="250" condition="!String.IsEmpty(ListItem.Property(Album_Label)) + Skin.HasSetting(EnableStudioLabelImages)">Conditional</animation>
+  				    	</control>								        
+  				    </control>
 				</control>
 				<!-- SONGS -->
 				<control type="group">
@@ -229,53 +247,55 @@
 					<!-- Genre label -->
 					<control type="grouplist">
 						<left>0</left>
-						<top>0</top>
+						<top>-6</top>
 						<width>775</width>
-		        <height>30</height>
+		                <height>30</height>
 					  <orientation>horizontal</orientation>
 						<control type="label">
-	            <include>MusicInfoDialogLabel</include>
+	                        <include>MusicInfoDialogLabel</include>
 							<label>$LOCALIZE[515]:</label>
 						</control>
 						<control type="label">
-	            <include>MusicInfoDialogLabelValue</include>
+	                      <include>MusicInfoDialogLabelValue</include>
 						  <label fallback="195">$INFO[ListItem.Genre]</label>
 						</control>
 					</control>
 					<!-- Year label -->
 					<control type="grouplist">
-						<left>0</left>
-						<top>25</top>
+						<animation effect="slide" start="0,0" end="0,3" time="250" condition="!Skin.HasSetting(EnableStudioLabelImages)">Conditional</animation>
+  					    <left>0</left>
+  					    <top>24</top>
 						<width>775</width>
-		        <height>30</height>
-					  <orientation>horizontal</orientation>
+		                <height>30</height>
+					    <orientation>horizontal</orientation>
 						<control type="label">
-	            <include>MusicInfoDialogLabel</include>
+	                        <include>MusicInfoDialogLabel</include>
 							<label>$LOCALIZE[562]:</label>
 						</control>
 						<control type="label">
-	            <include>MusicInfoDialogLabelValue</include>
+	                        <include>MusicInfoDialogLabelValue</include>
 							<label fallback="195">$INFO[ListItem.Year]</label>
 						</control>
 					</control>				
 					<!-- Track Number label -->
 					<control type="grouplist">
-						<left>0</left>
-						<top>50</top>
+						<animation effect="slide" start="0,0" end="0,4" time="250" condition="!Skin.HasSetting(EnableStudioLabelImages)">Conditional</animation>
+  					    <left>0</left>
+  					    <top>55</top>
 						<width>775</width>
-		        <height>30</height>
-					  <orientation>horizontal</orientation>
+		                <height>30</height>
+					    <orientation>horizontal</orientation>
 						<control type="label">
-	            <include>MusicInfoDialogLabel</include>
+	                        <include>MusicInfoDialogLabel</include>
 							<label>$LOCALIZE[554]:</label>
 						</control>
 						<control type="label">
-	            <include>MusicInfoDialogLabelValue</include>
+	                        <include>MusicInfoDialogLabelValue</include>
 							<label fallback="195">$INFO[ListItem.TrackNumber,#]</label>
 						  <visible>Integer.IsGreater(ListItem.TrackNumber,9)</visible>
 						</control>
 						<control type="label">
-	            <include>MusicInfoDialogLabelValue</include>
+	                        <include>MusicInfoDialogLabelValue</include>
 							<label fallback="195">$INFO[ListItem.TrackNumber,#0]</label>
 						  <visible>!Integer.IsGreater(ListItem.TrackNumber,9)</visible>
 						</control>
@@ -283,16 +303,16 @@
 					<!-- Rating label -->
 					<control type="grouplist">
 						<left>0</left>
-						<top>75</top>
+						<top>89</top>
 						<width>775</width>
-		        <height>30</height>
-					  <orientation>horizontal</orientation>
+		                <height>30</height>
+				   	    <orientation>horizontal</orientation>
 						<control type="label">
-	            <include>MusicInfoDialogLabel</include>
+	                        <include>MusicInfoDialogLabel</include>
 							<label>$LOCALIZE[38018]:</label>
 						</control>
 						<control type="label">
-              <include>MusicInfoDialogLabelValue</include>
+                            <include>MusicInfoDialogLabelValue</include>
 							<label fallback="195">$INFO[ListItem.Rating]</label>
 						</control>
 					</control>
@@ -302,7 +322,7 @@
 			<!-- Descriptions -->
 			<control type="textbox">
 				<left>455</left>
-				<top>360</top>
+				<top>370</top>
 				<width>775</width>
 				<height>185</height>
 				<font>FontSize_22</font>

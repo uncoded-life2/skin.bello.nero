@@ -47,30 +47,38 @@
 	</variable>
 
 	<include name="FlagsLayout">
-			<width>80</width>
-			<height>30</height>
+			<width>70</width>
+			<height>33</height>
 			<colordiffuse>mediaflags</colordiffuse>
-			<aspectratio align="center">keep</aspectratio>
+			<aspectratio align="center">scale</aspectratio>
 	</include>
 
 	<include name="FlagsLayoutAudioChannels">
-			<width>49</width>
-			<height>30</height>
+			<width>70</width>
+			<height>33</height>
 			<colordiffuse>mediaflags</colordiffuse>
-			<aspectratio align="center">keep</aspectratio>
+			<aspectratio align="center">scale</aspectratio>
 	</include>
 
 	<include name="FlagsOSDLayout">
-			<width>76</width>
-			<height>28</height>
+			<width>70</width>
+			<height>33</height>
 			<colordiffuse>mediaflags</colordiffuse>
-			<aspectratio align="center">keep</aspectratio>
+			<aspectratio align="center">scale</aspectratio>
 	</include>
 	<include name="FlagsOSDLayoutAudioChannels">
-			<width>45</width>
-			<height>28</height>
+			<width>70</width>
+			<height>33</height>
 			<colordiffuse>mediaflags</colordiffuse>
-			<aspectratio align="center">keep</aspectratio>
+			<aspectratio align="center">scale</aspectratio>
+	</include>	
+	
+	<include name="VideoSourceFlagsConditions">
+		<control type="image">
+			<description>Video Source Image</description>
+			<include>FlagsLayout</include>
+			<texture fallback="flags/na.png">$VAR[VideoSourceFlags]</texture>
+		</control>
 	</include>
 
 	<include name="AspectRatioFlagsConditions">
@@ -242,10 +250,10 @@
 	</include>
 
 	<include name="VideoLanguageFlagsLayout">
-			<left>32</left>
-			<top>2</top>
-			<width>30</width>
-			<height>27</height>
+			<left>35</left>
+			<top>5</top>
+			<width>28</width>
+			<height>24</height>
 			<aspectratio>stretch</aspectratio>
 	</include>
 
@@ -256,10 +264,10 @@
 				<orientation>horizontal</orientation>
 				<!-- Audio Language -->
 				<control type="group">
-          <width>68</width>
+          <width>73</width>
           <visible>!String.IsEmpty(ListItem.Property(AudioLanguage.1))</visible>
 				  <control type="image">
-						<width>66</width>
+						<width>70</width>
 				    <include>FlagsLayout</include>
 				    <texture>flags/language/language_flag.png</texture>
 				  </control>
@@ -269,11 +277,11 @@
 				  </control>
 				</control>
 				<control type="group">
-          <width>68</width>
+          <width>73</width>
           <visible>!String.IsEmpty(ListItem.Property(AudioLanguage.2))</visible>
           <visible>!String.IsEqual(ListItem.Property(AudioLanguage.1),ListItem.Property(AudioLanguage.2))</visible>
 				  <control type="image">
-			      <width>66</width>
+			      <width>70</width>
 				    <include>FlagsLayout</include>
 				    <texture>flags/language/language_flag.png</texture>
 				  </control>
@@ -283,12 +291,12 @@
 				  </control>
 				</control>
 				<control type="group">
-          <width>68</width>
+          <width>73</width>
           <visible>!String.IsEmpty(ListItem.Property(AudioLanguage.3))</visible>
           <visible>!String.IsEqual(ListItem.Property(AudioLanguage.1),ListItem.Property(AudioLanguage.3))</visible>
           <visible>!String.IsEqual(ListItem.Property(AudioLanguage.2),ListItem.Property(AudioLanguage.3))</visible>
 				  <control type="image">
-			      <width>66</width>
+			      <width>70</width>
 				    <include>FlagsLayout</include>
 				    <texture>flags/language/language_flag.png</texture>
 				  </control>
@@ -299,10 +307,10 @@
 				</control>
 				<!-- Subtitle Language -->
 				<control type="group">
-          <width>68</width>
+          <width>73</width>
 				  <visible>!String.IsEmpty(ListItem.Property(SubtitleLanguage.1))</visible>
 				  <control type="image">
-			      <width>66</width>
+			      <width>70</width>
 				    <include>FlagsLayout</include>
 				    <texture>flags/language/subtitle_flag.png</texture>
 				  </control>
@@ -312,11 +320,11 @@
 				  </control>
 				</control>
 				<control type="group">
-          <width>68</width>
+          <width>73</width>
           <visible>!String.IsEmpty(ListItem.Property(SubtitleLanguage.2))</visible>
           <visible>!String.IsEqual(ListItem.Property(SubtitleLanguage.1),ListItem.Property(SubtitleLanguage.2))</visible>
 				  <control type="image">
-			      <width>66</width>
+			      <width>70</width>
 				    <include>FlagsLayout</include>
 				    <texture>flags/language/subtitle_flag.png</texture>
 				  </control>
@@ -326,12 +334,12 @@
 				  </control>
 				</control>
 				<control type="group">
-          <width>68</width>
+          <width>73</width>
           <visible>!String.IsEmpty(ListItem.Property(SubtitleLanguage.3))</visible>
           <visible>!String.IsEqual(ListItem.Property(SubtitleLanguage.1),ListItem.Property(SubtitleLanguage.3))</visible>
           <visible>!String.IsEqual(ListItem.Property(SubtitleLanguage.2),ListItem.Property(SubtitleLanguage.3))</visible>
 				  <control type="image">
-			      <width>66</width>
+			      <width>70</width>
 				    <include>FlagsLayout</include>
 				    <texture>flags/language/subtitle_flag.png</texture>
 				  </control>
@@ -341,13 +349,13 @@
 				  </control>
 				</control>
 				<control type="group">
-          <width>68</width>
+          <width>73</width>
           <visible>!String.IsEmpty(ListItem.Property(SubtitleLanguage.4))</visible>
           <visible>!String.IsEqual(ListItem.Property(SubtitleLanguage.1),ListItem.Property(SubtitleLanguage.4))</visible>
           <visible>!String.IsEqual(ListItem.Property(SubtitleLanguage.2),ListItem.Property(SubtitleLanguage.4))</visible>
           <visible>!String.IsEqual(ListItem.Property(SubtitleLanguage.3),ListItem.Property(SubtitleLanguage.4))</visible>
 				  <control type="image">
-			      <width>66</width>
+			      <width>70</width>
 				    <include>FlagsLayout</include>
 				    <texture>flags/language/subtitle_flag.png</texture>
 				  </control>
@@ -357,14 +365,14 @@
 				  </control>
 				</control>
 				<control type="group">
-          <width>68</width>
+          <width>73</width>
           <visible>!String.IsEmpty(ListItem.Property(SubtitleLanguage.5))</visible>
           <visible>!String.IsEqual(ListItem.Property(SubtitleLanguage.1),ListItem.Property(SubtitleLanguage.5))</visible>
           <visible>!String.IsEqual(ListItem.Property(SubtitleLanguage.2),ListItem.Property(SubtitleLanguage.5))</visible>
           <visible>!String.IsEqual(ListItem.Property(SubtitleLanguage.3),ListItem.Property(SubtitleLanguage.5))</visible>
           <visible>!String.IsEqual(ListItem.Property(SubtitleLanguage.4),ListItem.Property(SubtitleLanguage.5))</visible>
 				  <control type="image">
-			      <width>66</width>
+			      <width>70</width>
 				    <include>FlagsLayout</include>
 				    <texture>flags/language/subtitle_flag.png</texture>
 				  </control>
@@ -374,7 +382,7 @@
 				  </control>
 				</control>
 				<control type="group">
-          <width>68</width>
+          <width>73</width>
           <visible>!String.IsEmpty(ListItem.Property(SubtitleLanguage.6))</visible>
           <visible>!String.IsEqual(ListItem.Property(SubtitleLanguage.1),ListItem.Property(SubtitleLanguage.6))</visible>
           <visible>!String.IsEqual(ListItem.Property(SubtitleLanguage.2),ListItem.Property(SubtitleLanguage.6))</visible>
@@ -382,7 +390,7 @@
           <visible>!String.IsEqual(ListItem.Property(SubtitleLanguage.4),ListItem.Property(SubtitleLanguage.6))</visible>
           <visible>!String.IsEqual(ListItem.Property(SubtitleLanguage.5),ListItem.Property(SubtitleLanguage.6))</visible>
 				  <control type="image">
-			      <width>66</width>
+			      <width>70</width>
 				    <include>FlagsLayout</include>
 				    <texture>flags/language/subtitle_flag.png</texture>
 				  </control>
