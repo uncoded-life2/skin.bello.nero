@@ -29,4 +29,4 @@ Using ßειισ ηεrσ is free and free without any kind of constraint,
  but if you have appreciated my efforts to continue using the new GUI with the next version of KODI
  every donation will be greatly appreciated.
 <br>
-<br>[![paypal](https://ibb.co/dLzrpb)](https://www.paypal.me/bellonero)
+<br>[!(https://ibb.co/dLzrpb)](https://www.paypal.me/bellonero)
