@@ -1664,6 +1664,7 @@
 						<include>SmallDownInfo_SmallGlobalInfo</include>
   				</control>
   		  </control>
+		  <!-- added Tagline -->
 				<control type="textbox">
 					<description>Plot</description>
 					<left>18</left>
@@ -1674,7 +1675,7 @@
 					<align>justify</align>
 					<textcolor>98ffffff</textcolor>
 					<shadowcolor>77000000</shadowcolor>
-					<label>$INFO[ListItem.Tagline,[B],[/B][CR]][CR]$INFO[ListItem.Plot]</label> <!-- added Tagline -->
+					<label>$INFO[ListItem.Tagline,[B],[/B][CR]][CR]$INFO[ListItem.Plot]</label> 
 					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
 					<visible>!ListItem.IsParentFolder</visible>
 				</control>
@@ -1861,8 +1862,14 @@
                 <effect type="slide" start="200,0" end="0,0" center="auto" time="900" delay="100" loop="false" tween="cubic" easing="inout"/>
             	<effect type="fade" start="0" end="100" time="200" delay="500"/>
             </animation>
-			<include>CommonViews_HorizontalAnimation</include>
-	        <include>InfoDialogsVisible_ZoomAnimation</include>
+			<animation type="WindowOpen" reversible="false">
+			    <effect type="fade" start="0" end="100" tween="sine" easing="in" time="500" delay="400"/>
+                <effect type="slide" start="170,0" end="0,0" tween="back" easing="in" time="900"/>                
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="slide" start="0,0" end="400,0" tween="back" easing="inout" time="900"/>
+                <effect type="fade" start="100" end="0" tween="sine" easing="out" time="300" delay="200"/>
+            </animation>
 		    <visible>Control.IsVisible(55) + ![Skin.HasSetting(DisableVideoPostersView_DiscArt) | Window.IsActive(movieinformation) | Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogInfo.xml) | Window.IsActive(favourites) | Window.IsActive(playercontrols)] + String.IsEmpty(Window(Home).Property(infodialogs.active))</visible>
         </control>
 		<control type="group">

@@ -1,6 +1,7 @@
 v7.0.2n - for Kodi Leia 18.xx (07/12/2017)
 ________________________________________________________________________________________________________
 
+- Correction DiscArt View Posters
 - Modified DiscArt View Thumbnails
 - Change all media flags
 - Modified media flags
