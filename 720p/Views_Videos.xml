@@ -281,7 +281,8 @@
 		<control type="group">
 			<visible>Control.IsVisible(66)</visible>
 			<include>OpenCloseSlideAnimationTwo</include>
-			<control type="image"> <!-- DiscArt view video -->
+			<!-- DiscArt view video -->
+			<control type="image"> 
 			    <left>48</left>
 			    <top>269</top>
 	            <width>137</width>
@@ -571,6 +572,10 @@
 					<include>FlagsOSDLayout</include>
 					<texture fallback="flags/na.png">$INFO[ListItem.VideoResolution,flags/res/,.png]</texture>
 				</control>
+				<control type="image">			        
+			        <include>FlagsLayout</include>
+			        <texture fallback="flags/na.png">$VAR[VideoCodec,flags/video/,.png]</texture>
+		        </control>
 				<control type="image">
 					<include>FlagsOSDLayout</include>
 					<texture fallback="flags/na.png">$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
@@ -802,7 +807,8 @@
 		    <include>FullscreenDimensions</include>
 				<texture background="true">views/slide/top_bottom_shadows_videos.png</texture>
 			</control>
-			<control type="image"> <!-- DiscArt view video -->
+			<!-- DiscArt view video -->
+			<control type="image">
 			    <left>53</left>
 			    <top>309</top>
 	            <width>225</width>
@@ -1005,7 +1011,8 @@
 		    <include>FullscreenDimensions</include>
 				<texture background="true">views/gallery/top_bottom_shadows.png</texture>
 			</control>
-			<control type="image"> <!-- DiscArt view video -->
+			<!-- DiscArt view video -->
+			<control type="image"> 
 			    <left>670</left>
 			    <top>116</top>
 	            <width>302</width>
@@ -1440,20 +1447,7 @@
 	<include name="ThumbnailsView_Videos_Posters">
 		<control type="group">
 			<visible>Control.IsVisible(561)</visible>
-	    <include>CommonViews_VerticalAnimation</include>
-		    <control type="image"> <!-- DiscArt view video -->
-			    <left>499</left>
-			    <top>689</top>
-	            <width>287</width>
-	            <height>287</height>
-	            <aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-                <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>				
-				<animation type="Conditional" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">
-			        <effect type="slide" end="0,-85" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"/>
-					<effect type="fade" start="0" end="100" time="200" delay="200"/>
-		        </animation>
-				<visible>![Skin.HasSetting(DisableVideoThumbnailsView_DiscArt) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
-            </control>
+	    <include>CommonViews_VerticalAnimation</include>		    
 			<control type="panel" id="561">
 				<left>40</left>
 				<top>95</top>
@@ -1470,8 +1464,7 @@
 				<preloaditems>4</preloaditems>
 				<viewtype label="31085">icons</viewtype>
         <scrolltime tween="Quadratic" easing="out">300</scrolltime>
-        <visible>[Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(MusicVideos)]</visible>
-			  <visible></visible>
+        <visible>[Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(MusicVideos)]</visible>			
 				<itemlayout height="246" width="171">
 					<control type="image">
 						<left>5</left>
@@ -1510,6 +1503,8 @@
 						<aspectratio align="center" aligny="center">stretch</aspectratio>
 						<texture border="30">views/other/panel2.png</texture>
 					</control>
+					<!-- DiscArt view video -->
+					<include>ThumbnailsDiscArtLayout</include> 
 					<control type="image">
 						<left>5</left>
 						<top>5</top>
@@ -1539,7 +1534,7 @@
 						<texture border="30">views/other/focus_panel.png</texture>
 	          <include>ThumbnailsFocusAnimation</include>
 					</control>
-				</focusedlayout>
+				</focusedlayout>				
 			</control>
 
 			<control type="group">
@@ -1733,7 +1728,8 @@
 		<control type="group">
 			<visible>Control.IsVisible(562)</visible>
 	    <include>CommonViews_HorizontalAnimation</include>
-		    <control type="image"> <!-- DiscArt view video -->
+		    <!-- DiscArt view video -->
+		    <control type="image"> 
 			    <left>90</left>
 			    <top>320</top>
 	            <width>285</width>
@@ -1853,7 +1849,8 @@
             <visible>Control.IsVisible(55) + ![Window.IsActive(movieinformation) | Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogInfo.xml) | Window.IsActive(favourites) | Window.IsActive(playercontrols)] + String.IsEmpty(Window(Home).Property(infodialogs.active))</visible>
 			<visible>!Skin.Hassetting(DisablePostersView_PosterGlow)</visible>
 		</control>
-		<control type="image"> <!-- DiscArt view video -->
+		<!-- DiscArt view video -->
+		<control type="image">
             <left>355</left>
             <top>300</top>
             <width>302</width>
@@ -2085,7 +2082,8 @@
 		<control type="group">
 			<visible>Control.IsVisible(64)</visible>
 			<include>CommonViews_HorizontalAnimation</include>
-			<control type="image"> <!-- DiscArt view video -->
+			<!-- DiscArt view video -->
+			<control type="image">
 			    <left>762</left>
 			    <top>320</top>
 	            <width>285</width>
@@ -2203,7 +2201,8 @@
 	<include name="BannersView_Videos">
 		<control type="group">
 			<visible>Control.IsVisible(57)</visible>
-			<control type="image"> <!-- DiscArt view video -->
+			<!-- DiscArt view video -->
+			<control type="image">
 			    <left>289</left>
 			    <top>133</top>
 	            <width>205</width>
@@ -2653,7 +2652,8 @@
 						<effect type="fade" start="100" end="0" time="500" delay="0"/>
 					</animation>
   		  </control>
-		  <control type="image"> <!-- DiscArt view video -->
+		  <!-- DiscArt view video -->
+		  <control type="image">
 			    <left>273</left>
 			    <top>236</top>
 	            <width>248</width>
@@ -2954,7 +2954,8 @@
 						<effect type="fade" start="100" end="0" time="500" delay="0" tween="sine" easing="out"/>
 					</animation>
   		  </control>
-		  <control type="image"> <!-- DiscArt view video -->
+		  <!-- DiscArt view video -->
+		  <control type="image">
 			    <left>273</left>
 			    <top>236</top>
 	            <width>248</width>

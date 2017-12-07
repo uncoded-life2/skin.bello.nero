@@ -640,6 +640,69 @@
 				<viewtype label="31085">Thumbs</viewtype>
         <scrolltime tween="Quadratic" easing="out">350</scrolltime>
     </include>
+	
+	<include name="ThumbnailsDiscArtLayout">
+	    <control type="group">
+		    <top>22</top>
+			<left>-5</left>
+			<width>205</width>
+			<height>205</height>
+		<visible>![Container(561).Column(4) + Container(561).Row(0) | Container(561).Column(4) + Container(561).Row(1)
+			     | Container(561).Column(5) + Container(561).Row(0) | Container(561).Column(5) + Container(561).Row(1)
+			     | Container(561).Column(6) + Container(561).Row(0) | Container(561).Column(6) + Container(561).Row(1)]
+			     + ![Container.Scrolling | Skin.HasSetting(DisableVideoThumbnailsView_DiscArt) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]
+		</visible>
+	    <control type="image">
+		    <top>-40</top>			
+            <width>285</width>
+			<height>285</height>	
+	        <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+            <texture background="true">views/Thumbnail/rounded_blue_shadow.png</texture>				
+	    	    <animation type="Focus" reversible="false">
+				    <effect type="fade" start="0" end="100" time="200" delay="500"/>
+	    		    <effect type="slide" end="60,0" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"/>	    		    
+	    	    </animation> 	    	
+            </control>
+	    <control type="image">            
+	        <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+            <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>				
+	    	    <animation type="Focus" reversible="false">
+				    <effect type="fade" start="0" end="100" time="200" delay="500"/>
+	    		    <effect type="slide" end="85,0" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"/>	    		    
+	    	    </animation> 	    	
+            </control>
+		</control>
+		<control type="group">
+		    <top>22</top>
+			<left>-5</left>
+			<width>205</width>
+			<height>205</height>
+		<visible>[Container(561).Column(4) + Container(561).Row(0) | Container(561).Column(4) + Container(561).Row(1)
+			     | Container(561).Column(5) + Container(561).Row(0) | Container(561).Column(5) + Container(561).Row(1)
+			     | Container(561).Column(6) + Container(561).Row(0) | Container(561).Column(6) + Container(561).Row(1)]
+			     + ![Container.Scrolling | Skin.HasSetting(DisableVideoThumbnailsView_DiscArt) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]
+		</visible>
+	    <control type="image">
+		    <top>-40</top>			
+            <width>285</width>
+			<height>285</height>	
+	        <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+            <texture background="true">views/Thumbnail/rounded_blue_shadow.png</texture>				
+	    	    <animation type="Focus" reversible="false">
+				    <effect type="fade" start="0" end="100" time="200" delay="500"/>
+	    		    <effect type="slide" end="-160,0" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"/>	    		    
+	    	    </animation> 	    	
+            </control>
+	    <control type="image">            
+	        <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+            <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>				
+	    	    <animation type="Focus" reversible="false">
+				    <effect type="fade" start="0" end="100" time="200" delay="500"/>
+	    		    <effect type="slide" end="-107,0" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"/>	    		    
+	    	    </animation> 	    	
+            </control>
+		</control>		
+	</include>	
 
     <include name="ThumbnailsLayout">
 			<control type="image">
