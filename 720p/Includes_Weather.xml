@@ -185,7 +185,7 @@
 					<control type="label">
 							<description>last update</description>
 							<left>0</left>
-							<top>23</top>
+							<top>27</top>
 							<width>380</width>
 							<height>30</height>
 							<font>FontSize_20</font>
@@ -199,8 +199,8 @@
 					<!-- Current Weather Provider -->	
 					<control type="label">
 							<description>current provider</description>
-							<left>0</left>
-							<top>46</top>
+							<left>-170</left>
+							<top>57</top>
 							<width>380</width>
 							<height>30</height>
 							<font>FontSize_20</font>
@@ -208,8 +208,18 @@
 							<align>right</align>
 							<aligny>center</aligny>
 							<scroll>false</scroll>
-				      <label>$INFO[Window.Property(WeatherProvider),[COLOR=ddC6C6C8]$LOCALIZE[31230]: [/COLOR]]</label>
+				      <label>[COLOR=ddC6C6C8]$LOCALIZE[31230]: [/COLOR]</label>
 							<shadowcolor>ff0d0d0d</shadowcolor>
+					</control>					
+					<control type="image">
+					    <description>Weather Provider Logo</description>
+					    <left>210</left>
+						<top>28</top>
+						<width>170</width>
+						<height>90</height>
+  					    <colordiffuse>99ffffff</colordiffuse>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<texture>$INFO[Window(Weather).Property(WeatherProviderLogo)]</texture>						
 					</control>
 				</control>
 		    </control>
@@ -241,17 +251,45 @@
 				<orientation>horizontal</orientation>
 				<viewtype label="535">list</viewtype>
 			  <scrolltime tween="cubic" easing="out">350</scrolltime>
-				<include>Weather10Days_ItemLayout</include>
-				<include>Weather10Days_FocusedLayout</include>
+				<include>Default_Weather10Days_ItemLayout</include>
+				<include>Default_Weather10Days_FocusedLayout</include>
 				<content>
+				        <item>
+		                    <thumb>resource://resource.images.weathericons.default/$INFO[Window(Weather).Property(Daily.1.OutlookIcon)]</thumb>
+		                	<label>$INFO[Window(Weather).Property(Daily.1.LongDay)]</label>
+		                	<label2>$INFO[Window(Weather).Property(Daily.1.LongDate)]</label2>
+		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.1.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.1.WindSpeed)]</property>
+		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.1.Outlook)]</property>
+		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.1.HighTemperature),[COLOR red],[/COLOR]]</property>
+		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.1.LowTemperature),[COLOR blue],[/COLOR]]</property>
+		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.1.FeelsLike)]</property>
+		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.1.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.1.Humidity)]</property>
+		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.1.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
+		                	<onclick condition="!WIndow.IsVisible(Weather)">ActivateWindow(Weather)</onclick>
+		                	<visible>!String.IsEmpty(Window(Weather).Property(Daily.IsFetched)) + !String.IsEmpty(Skin.String(weathericons.multi))</visible>
+		                </item>
+						<item>
+		                    <icon>$VAR[WeatherIconsPathMulti]$INFO[Window.Property(Daily.1.FanartCode)]$VAR[WeatherIconsMulti]</icon>
+		                	<label>$INFO[Window(Weather).Property(Daily.1.LongDay)]</label>
+		                	<label2>$INFO[Window(Weather).Property(Daily.1.LongDate)]</label2>
+		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.1.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.1.WindSpeed)]</property>
+		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.1.Outlook)]</property>                         
+		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.1.HighTemperature),[COLOR red],[/COLOR]]</property>
+		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.1.LowTemperature),[COLOR blue],[/COLOR]]</property>
+		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.1.FeelsLike)]</property>
+		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.1.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.1.Humidity)]</property>
+		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.1.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
+		                	<onclick condition="!WIndow.IsVisible(Weather)">ActivateWindow(Weather)</onclick>
+		                	<visible>!String.IsEmpty(Window(Weather).Property(Daily.IsFetched)) + String.IsEmpty(Skin.String(weathericons.multi))</visible>
+		                </item>
 	                    <item>
 		                    <thumb>resource://resource.images.weathericons.default/$INFO[Window(Weather).Property(Daily.2.OutlookIcon)]</thumb>
 		                	<label>$INFO[Window(Weather).Property(Daily.2.LongDay)]</label>
 		                	<label2>$INFO[Window(Weather).Property(Daily.2.LongDate)]</label2>
 		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.2.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.2.WindSpeed)]</property>
 		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.2.Outlook)]</property>
-		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.2.HighTemperature)]</property>
-		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.2.LowTemperature)]</property>
+		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.2.HighTemperature),[COLOR red],[/COLOR]]</property>
+		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.2.LowTemperature),[COLOR blue],[/COLOR]]</property>
 		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.2.FeelsLike)]</property>
 		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.2.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.2.Humidity)]</property>
 		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.2.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
@@ -264,8 +302,8 @@
 		                	<label2>$INFO[Window(Weather).Property(Daily.2.LongDate)]</label2>
 		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.2.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.2.WindSpeed)]</property>
 		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.2.Outlook)]</property>
-		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.2.HighTemperature)]</property>
-		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.2.LowTemperature)]</property>
+		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.2.HighTemperature),[COLOR red],[/COLOR]]</property>
+		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.2.LowTemperature),[COLOR blue],[/COLOR]]</property>
 		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.2.FeelsLike)]</property>
 		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.2.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.2.Humidity)]</property>
 		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.2.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
@@ -278,8 +316,8 @@
 		                	<label2>$INFO[Window(Weather).Property(Daily.3.LongDate)]</label2>
 		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.3.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.3.WindSpeed)]</property>
 		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.3.Outlook)]</property>
-		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.3.HighTemperature)]</property>
-		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.3.LowTemperature)]</property>
+		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.3.HighTemperature),[COLOR red],[/COLOR]]</property>
+		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.3.LowTemperature),[COLOR blue],[/COLOR]]</property>
 		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.3.FeelsLike)]</property>
 		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.3.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.3.Humidity)]</property>
 		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.3.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
@@ -292,8 +330,8 @@
 		                	<label2>$INFO[Window(Weather).Property(Daily.3.LongDate)]</label2>
 		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.3.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.3.WindSpeed)]</property>
 		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.3.Outlook)]</property>
-		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.3.HighTemperature)]</property>
-		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.3.LowTemperature)]</property>
+		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.3.HighTemperature),[COLOR red],[/COLOR]]</property>
+		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.3.LowTemperature),[COLOR blue],[/COLOR]]</property>
 		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.3.FeelsLike)]</property>
 		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.3.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.3.Humidity)]</property>
 		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.3.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
@@ -306,8 +344,8 @@
 		                	<label2>$INFO[Window(Weather).Property(Daily.4.LongDate)]</label2>
 		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.4.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.4.WindSpeed)]</property>
 		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.4.Outlook)]</property>
-		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.4.HighTemperature)]</property>
-		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.4.LowTemperature)]</property>
+		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.4.HighTemperature),[COLOR red],[/COLOR]]</property>
+		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.4.LowTemperature),[COLOR blue],[/COLOR]]</property>
 		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.4.FeelsLike)]</property>
 		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.4.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.4.Humidity)]</property>
 		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.4.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
@@ -320,8 +358,8 @@
 		                	<label2>$INFO[Window(Weather).Property(Daily.4.LongDate)]</label2>
 		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.4.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.4.WindSpeed)]</property>
 		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.4.Outlook)]</property>
-		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.4.HighTemperature)]</property>
-		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.4.LowTemperature)]</property>
+		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.4.HighTemperature),[COLOR red],[/COLOR]]</property>
+		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.4.LowTemperature),[COLOR blue],[/COLOR]]</property>
 		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.4.FeelsLike)]</property>
 		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.4.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.4.Humidity)]</property>
 		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.4.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
@@ -334,8 +372,8 @@
 		                	<label2>$INFO[Window(Weather).Property(Daily.5.LongDate)]</label2>
 		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.5.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.5.WindSpeed)]</property>
 		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.5.Outlook)]</property>
-		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.5.HighTemperature)]</property>
-		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.5.LowTemperature)]</property>
+		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.5.HighTemperature),[COLOR red],[/COLOR]]</property>
+		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.5.LowTemperature),[COLOR blue],[/COLOR]]</property>
 		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.5.FeelsLike)]</property>
 		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.5.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.5.Humidity)]</property>
 		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.5.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
@@ -348,8 +386,8 @@
 		                	<label2>$INFO[Window(Weather).Property(Daily.5.LongDate)]</label2>
 		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.5.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.5.WindSpeed)]</property>
 		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.5.Outlook)]</property>
-		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.5.HighTemperature)]</property>
-		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.5.LowTemperature)]</property>
+		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.5.HighTemperature),[COLOR red],[/COLOR]]</property>
+		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.5.LowTemperature),[COLOR blue],[/COLOR]]</property>
 		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.5.FeelsLike)]</property>
 		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.5.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.5.Humidity)]</property>
 		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.5.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
@@ -362,8 +400,8 @@
 		                	<label2>$INFO[Window(Weather).Property(Daily.6.LongDate)]</label2>
 		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.6.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.6.WindSpeed)]</property>
 		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.6.Outlook)]</property>
-		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.6.HighTemperature)]</property>
-		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.6.LowTemperature)]</property>
+		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.6.HighTemperature),[COLOR red],[/COLOR]]</property>
+		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.6.LowTemperature),[COLOR blue],[/COLOR]]</property>
 		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.6.FeelsLike)]</property>
 		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.6.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.6.Humidity)]</property>
 		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.6.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
@@ -376,8 +414,8 @@
 		                	<label2>$INFO[Window(Weather).Property(Daily.6.LongDate)]</label2>
 		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.6.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.6.WindSpeed)]</property>
 		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.6.Outlook)]</property>
-		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.6.HighTemperature)]</property>
-		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.6.LowTemperature)]</property>
+		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.6.HighTemperature),[COLOR red],[/COLOR]]</property>
+		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.6.LowTemperature),[COLOR blue],[/COLOR]]</property>
 		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.6.FeelsLike)]</property>
 		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.6.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.6.Humidity)]</property>
 		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.6.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
@@ -390,8 +428,8 @@
 		                	<label2>$INFO[Window(Weather).Property(Daily.7.LongDate)]</label2>
 		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.7.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.7.WindSpeed)]</property>
 		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.7.Outlook)]</property>
-		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.7.HighTemperature)]</property>
-		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.7.LowTemperature)]</property>
+		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.7.HighTemperature),[COLOR red],[/COLOR]]</property>
+		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.7.LowTemperature),[COLOR blue],[/COLOR]]</property>
 		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.7.FeelsLike)]</property>
 		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.7.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.7.Humidity)]</property>
 		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.7.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
@@ -404,8 +442,8 @@
 		                	<label2>$INFO[Window(Weather).Property(Daily.7.LongDate)]</label2>
 		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.7.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.7.WindSpeed)]</property>
 		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.7.Outlook)]</property>
-		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.7.HighTemperature)]</property>
-		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.7.LowTemperature)]</property>
+		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.7.HighTemperature),[COLOR red],[/COLOR]]</property>
+		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.7.LowTemperature),[COLOR blue],[/COLOR]]</property>
 		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.7.FeelsLike)]</property>
 		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.7.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.7.Humidity)]</property>
 		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.7.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
@@ -418,8 +456,8 @@
 		                	<label2>$INFO[Window(Weather).Property(Daily.8.LongDate)]</label2>
 		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.8.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.8.WindSpeed)]</property>
 		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.8.Outlook)]</property>
-		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.8.HighTemperature)]</property>
-		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.8.LowTemperature)]</property>
+		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.8.HighTemperature),[COLOR red],[/COLOR]]</property>
+		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.8.LowTemperature),[COLOR blue],[/COLOR]]</property>
 		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.8.FeelsLike)]</property>
 		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.8.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.8.Humidity)]</property>
 		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.8.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
@@ -432,8 +470,8 @@
 		                	<label2>$INFO[Window(Weather).Property(Daily.8.LongDate)]</label2>
 		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.8.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.8.WindSpeed)]</property>
 		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.8.Outlook)]</property>
-		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.8.HighTemperature)]</property>
-		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.8.LowTemperature)]</property>
+		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.8.HighTemperature),[COLOR red],[/COLOR]]</property>
+		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.8.LowTemperature),[COLOR blue],[/COLOR]]</property>
 		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.8.FeelsLike)]</property>
 		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.8.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.8.Humidity)]</property>
 		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.8.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
@@ -446,8 +484,8 @@
 		                	<label2>$INFO[Window(Weather).Property(Daily.9.LongDate)]</label2>
 		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.9.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.9.WindSpeed)]</property>
 		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.9.Outlook)]</property>
-		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.9.HighTemperature)]</property>
-		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.9.LowTemperature)]</property>
+		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.9.HighTemperature),[COLOR red],[/COLOR]]</property>
+		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.9.LowTemperature),[COLOR blue],[/COLOR]]</property>
 		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.9.FeelsLike)]</property>
 		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.9.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.9.Humidity)]</property>
 		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.9.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
@@ -460,8 +498,8 @@
 		                	<label2>$INFO[Window(Weather).Property(Daily.9.LongDate)]</label2>
 		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.9.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.9.WindSpeed)]</property>
 		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.9.Outlook)]</property>
-		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.9.HighTemperature)]</property>
-		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.9.LowTemperature)]</property>
+		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.9.HighTemperature),[COLOR red],[/COLOR]]</property>
+		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.9.LowTemperature),[COLOR blue],[/COLOR]]</property>
 		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.9.FeelsLike)]</property>
 		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.9.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.9.Humidity)]</property>
 		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.9.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
@@ -474,8 +512,8 @@
 		                	<label2>$INFO[Window(Weather).Property(Daily.10.LongDate)]</label2>
 		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.10.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.10.WindSpeed)]</property>
 		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.10.Outlook)]</property>
-		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.10.HighTemperature)]</property>
-		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.10.LowTemperature)]</property>
+		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.10.HighTemperature),[COLOR red],[/COLOR]]</property>
+		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.10.LowTemperature),[COLOR blue],[/COLOR]]</property>
 		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.10.FeelsLike)]</property>
 		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.10.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.10.Humidity)]</property>
 		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.10.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
@@ -488,42 +526,14 @@
 		                	<label2>$INFO[Window(Weather).Property(Daily.10.LongDate)]</label2>
 		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.10.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.10.WindSpeed)]</property>
 		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.10.Outlook)]</property>
-		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.10.HighTemperature)]</property>
-		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.10.LowTemperature)]</property>
+		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.10.HighTemperature),[COLOR red],[/COLOR]]</property>
+		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.10.LowTemperature),[COLOR blue],[/COLOR]]</property>
 		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.10.FeelsLike)]</property>
 		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.10.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.10.Humidity)]</property>
 		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.10.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
 		                	<onclick condition="!WIndow.IsVisible(Weather)">ActivateWindow(Weather)</onclick>
 		                	<visible>!String.IsEmpty(Window(Weather).Property(Daily.IsFetched)) + String.IsEmpty(Skin.String(weathericons.multi))</visible>
-		                </item>
-						<item>
-		                    <thumb>resource://resource.images.weathericons.default/$INFO[Window(Weather).Property(Daily.11.OutlookIcon)]</thumb>
-		                	<label>$INFO[Window(Weather).Property(Daily.11.LongDay)]</label>
-		                	<label2>$INFO[Window(Weather).Property(Daily.11.LongDate)]</label2>
-		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.11.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.11.WindSpeed)]</property>
-		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.11.Outlook)]</property>
-		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.11.HighTemperature)]</property>
-		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.11.LowTemperature)]</property>
-		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.11.FeelsLike)]</property>
-		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.11.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.11.Humidity)]</property>
-		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.11.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
-		                	<onclick condition="!WIndow.IsVisible(Weather)">ActivateWindow(Weather)</onclick>
-		                	<visible>!String.IsEmpty(Window(Weather).Property(Daily.IsFetched)) + !String.IsEmpty(Skin.String(weathericons.multi))</visible>
-		                </item>
-						<item>
-		                    <icon>$VAR[WeatherIconsPathMulti]$INFO[Window.Property(Daily.11.FanartCode)]$VAR[WeatherIconsMulti]</icon>
-		                	<label>$INFO[Window(Weather).Property(Daily.11.LongDay)]</label>
-		                	<label2>$INFO[Window(Weather).Property(Daily.11.LongDate)]</label2>
-		                	<property name="WindSpeed">[COLOR=ddC6C6C8]$LOCALIZE[383]:[/COLOR] $LOCALIZE[31227] $INFO[Window(Weather).Property(Daily.11.WindDirection)] $LOCALIZE[31228] $INFO[Window(Weather).Property(Daily.11.WindSpeed)]</property>
-		                	<property name="Outlook">$INFO[Window(Weather).Property(Daily.11.Outlook)]</property>
-		                	<property name="HighTemperature">$INFO[Window(Weather).Property(Daily.11.HighTemperature)]</property>
-		                	<property name="LowTemperature">$INFO[Window(Weather).Property(Daily.11.LowTemperature)]</property>
-		                	<property name="FeelsLike">[COLOR=ddC6C6C8]$LOCALIZE[402]:[/COLOR] $INFO[Window(Weather).Property(Daily.11.FeelsLike)]</property>
-		                	<property name="DewPointAndHumidity">[COLOR=ddC6C6C8]$LOCALIZE[405]:[/COLOR] $INFO[Window(Weather).Property(Daily.11.DewPoint)]$COMMA [COLOR=ddC6C6C8]$LOCALIZE[33023]:[/COLOR] $INFO[Window(Weather).Property(Daily.11.Humidity)]</property>
-		                	<property name="Cloudiness">$INFO[Window(Weather).Property(Daily.11.Cloudiness),[COLOR=ddC6C6C8]$LOCALIZE[31236]: [/COLOR]]</property>
-		                	<onclick condition="!WIndow.IsVisible(Weather)">ActivateWindow(Weather)</onclick>
-		                	<visible>!String.IsEmpty(Window(Weather).Property(Daily.IsFetched)) + String.IsEmpty(Skin.String(weathericons.multi))</visible>
-		                </item>
+		                </item>						
 					</content>
 			</control>
 	  </control>  
@@ -3138,7 +3148,207 @@
 		<value condition="String.Contains(Skin.String(weathericons.path),animated)"/>
 		<value condition="!String.IsEmpty(Skin.String(weathericons.multi))">$INFO[Skin.String(weathericons.multi)]</value>
 		<value>.png</value>
-	</variable>	
+	</variable>
+
+  <include name="Default_Weather10Days_ItemLayout">
+		<itemlayout height="325" width="300">
+			<control type="image">
+				<left>4</left>
+				<top>14</top>
+				<width>292</width>
+				<height>317</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture border="30">views/other/panel2.png</texture>
+			</control>
+			<control type="label">
+			  <left>80</left>
+				<top>10</top>
+				<width>200</width>
+				<height>60</height>
+				<font>FontSize_24</font>
+				<textcolor>white</textcolor>
+                <shadowcolor>99000000</shadowcolor>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+			<control type="label">
+			  <left>80</left>
+				<top>35</top>
+				<width>200</width>
+				<height>60</height>
+				<font>FontSize_22</font>
+				<textcolor>ddC6C6C8</textcolor>
+                <shadowcolor>99000000</shadowcolor>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+			  <left>22</left>
+				<top>180</top>
+				<width>265</width>
+				<height>60</height>
+				<font>FontSize_24</font>
+				<textcolor>white</textcolor>
+                <shadowcolor>99000000</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<label>[CAPITALIZE]$INFO[ListItem.Property(Outlook)][/CAPITALIZE]</label>
+			</control>			
+			<control type="group">
+				<left>22</left>
+				<control type="label">
+					<top>240</top>
+					<width>265</width>
+					<height>30</height>
+					<font>FontSize_18</font>
+					<textcolor>white</textcolor>
+	                <shadowcolor>99000000</shadowcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Property(HighTemperature),[COLOR=ddC6C6C8]$LOCALIZE[419]: [/COLOR],]</label>
+				</control>
+				<control type="label">
+					<top>265</top>
+					<width>265</width>
+					<height>30</height>
+					<font>FontSize_18</font>
+					<textcolor>white</textcolor>
+	                <shadowcolor>99000000</shadowcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Property(LowTemperature),[COLOR=ddC6C6C8]$LOCALIZE[418]: [/COLOR],]</label>
+				</control>				
+			</control>
+			<control type="image">
+				<left>40</left>
+				<top>30</top>
+				<width>160</width>
+				<height>160</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$INFO[ListItem.Thumb]</texture>
+			</control>
+			<control type="multiimage">				
+				<left>40</left>
+				<top>30</top>
+				<width>160</width>
+				<height>160</height>
+				<aspectratio>keep</aspectratio>
+				<imagepath>$INFO[ListItem.Icon]</imagepath>
+				<aspectratio>keep</aspectratio>
+				<timeperimage>70</timeperimage>
+				<fadetime>1</fadetime>
+				<randomize>false</randomize>
+			</control>
+		</itemlayout>
+  </include>
+
+  <include name="Default_Weather10Days_FocusedLayout">
+		<focusedlayout height="325" width="300">
+			<control type="image">
+				<left>4</left>
+				<top>14</top>
+				<width>292</width>
+				<height>317</height>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture border="30">views/other/panel2.png</texture>
+			</control>
+			<control type="image">
+				<left>4</left>
+				<top>14</top>
+				<width>292</width>
+				<height>317</height>
+        <colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<texture border="30">views/other/focus_panel.png</texture>
+        <include>ThumbnailsFocusAnimation</include>
+			</control>
+			<control type="label">
+			  <left>80</left>
+				<top>10</top>
+				<width>200</width>
+				<height>60</height>
+				<font>FontSize_24</font>
+				<textcolor>white</textcolor>
+                <shadowcolor>99000000</shadowcolor>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+			<control type="label">
+			  <left>80</left>
+				<top>35</top>
+				<width>200</width>
+				<height>60</height>
+				<font>FontSize_22</font>
+				<textcolor>ddC6C6C8</textcolor>
+                <shadowcolor>99000000</shadowcolor>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+			  <left>22</left>
+				<top>180</top>
+				<width>265</width>
+				<height>60</height>
+				<font>FontSize_24</font>
+				<textcolor>white</textcolor>
+                <shadowcolor>99000000</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<label>[CAPITALIZE]$INFO[ListItem.Property(Outlook)][/CAPITALIZE]</label>
+			</control>			
+			<control type="group">
+				<left>22</left>
+				<control type="label">
+					<top>240</top>
+					<width>265</width>
+					<height>30</height>
+					<font>FontSize_18</font>
+					<textcolor>white</textcolor>
+	                <shadowcolor>99000000</shadowcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Property(HighTemperature),[COLOR=ddC6C6C8]$LOCALIZE[419]: [/COLOR],]</label>
+				</control>
+				<control type="label">
+					<top>265</top>
+					<width>265</width>
+					<height>30</height>
+					<font>FontSize_18</font>
+					<textcolor>white</textcolor>
+	                <shadowcolor>99000000</shadowcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Property(LowTemperature),[COLOR=ddC6C6C8]$LOCALIZE[418]: [/COLOR],]</label>
+				</control>				
+			</control>
+			<control type="image">
+				<left>40</left>
+				<top>30</top>
+				<width>160</width>
+				<height>160</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$INFO[ListItem.Thumb]</texture>
+			</control>
+			<control type="multiimage">				
+				<left>40</left>
+				<top>30</top>
+				<width>160</width>
+				<height>160</height>
+				<aspectratio>keep</aspectratio>
+				<imagepath>$INFO[ListItem.Icon]</imagepath>
+				<aspectratio>keep</aspectratio>
+				<timeperimage>70</timeperimage>
+				<fadetime>1</fadetime>
+				<randomize>false</randomize>
+			</control>
+		</focusedlayout>
+  </include>	
 	
   <include name="Weather10Days_ItemLayout">
 		<itemlayout height="325" width="300">

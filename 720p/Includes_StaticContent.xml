@@ -312,6 +312,9 @@
   </include>
 
   <include name="Weather10Days_Forecast">
+        <include content="Weather10Days_Item">
+			<param name="DailyIndex" value="1"/>
+		</include>
 		<include content="Weather10Days_Item">
 			<param name="DailyIndex" value="2"/>
 		</include>
@@ -338,10 +341,7 @@
 		</include>
 		<include content="Weather10Days_Item">
 			<param name="DailyIndex" value="10"/>
-		</include>
-		<include content="Weather10Days_Item">
-			<param name="DailyIndex" value="11"/>
-		</include>
+		</include>		
   </include>
 
 

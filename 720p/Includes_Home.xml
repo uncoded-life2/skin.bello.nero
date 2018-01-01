@@ -874,7 +874,7 @@
 					<control type="image">
 						<width>270</width>
 						<height>90</height>
-  					<colordiffuse>99ffffff</colordiffuse>
+  					    <colordiffuse>99ffffff</colordiffuse>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture>$INFO[Window(Weather).Property(WeatherProviderLogo)]</texture>
 						<animation type="Conditional" condition="true" loop="true" reversible="false">
