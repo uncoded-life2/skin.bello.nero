@@ -8,7 +8,8 @@
 			<include>VisibleHiddenSlideAnimation</include>
                 <animation effect="slide" start="0,0" end="0,50" time="200" tween="sine" easing="out" condition="!Control.HasFocus(23)">Conditional</animation>
     		<control type="image">
-				<visible>!Skin.HasSetting(HomeMenuOverlay)</visible><!-- NERO MOD -->
+			<!-- NERO MOD -->
+				<visible>!Skin.HasSetting(HomeMenuOverlay)</visible>
 	            <include>FullscreenDimensions</include>
     			<texture background="true">windows/home/menu_overlay.png</texture>
 				<include>HomeMenu_OpenCloseSlideAnimation</include>

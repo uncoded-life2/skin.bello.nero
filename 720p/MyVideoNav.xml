@@ -193,7 +193,8 @@
 				  <include>TopLeftMenusButton</include>
 				  <visible>Control.IsVisible(661) + [Container.Content(Files) | Container.Content(Videos)] + ![[Container.HasFolders + Container.HasFiles] | Container.HasFiles]</visible>
 				</control>
-				<control type="togglebutton" id="300"> <!-- Top Left Menu DiscArt Buttons -->
+				<!-- Top Left Menu DiscArt Buttons -->
+				<control type="togglebutton" id="300"> 
   			  <description>Show DiscArt</description>
   			  <include>TopLeftMenusButton</include>
           <label>$LOCALIZE[31434]: $LOCALIZE[31011]</label>

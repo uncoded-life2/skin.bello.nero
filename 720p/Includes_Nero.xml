@@ -7,66 +7,124 @@
 	
 	<variable name="Textures.GlobalColor">
 		<value condition="!String.IsEmpty(Skin.String(Textures.GlobalColor))">$INFO[Skin.String(Textures.GlobalColor)]</value>
-		<value condition="String.IsEmpty(Skin.String(Textures.GlobalColor)) + Skin.HasTheme(Bello)">FFCB2BFF</value>		
-		<value condition="String.IsEmpty(Skin.String(Textures.GlobalColor)) + Skin.HasTheme(Blue)">FF12B2E7</value>	
-		<value condition="String.IsEmpty(Skin.String(Textures.GlobalColor)) + Skin.HasTheme(Green)">FF507B00</value>	
-		<value condition="String.IsEmpty(Skin.String(Textures.GlobalColor)) + Skin.HasTheme(Midnight)">FF4D4D4D</value>		
-		<value condition="String.IsEmpty(Skin.String(Textures.GlobalColor)) + Skin.HasTheme(Nero)">FF4D4D4D</value>	
+		<value condition="String.IsEmpty(Skin.String(Textures.GlobalColor)) + Skin.HasTheme(ßειισ ηεrσ)">FF4D4D4D</value>
+		<value condition="String.IsEmpty(Skin.String(Textures.GlobalColor)) + Skin.HasTheme(ßειισ)">FFCB2BFF</value>
+		<value condition="String.IsEmpty(Skin.String(Textures.GlobalColor)) + Skin.HasTheme(Green)">FF507B00</value>
+		<value condition="String.IsEmpty(Skin.String(Textures.GlobalColor)) + Skin.HasTheme(Orange)">FFF88017</value>
 		<value condition="String.IsEmpty(Skin.String(Textures.GlobalColor)) + Skin.HasTheme(Pink)">FFD800C6</value>	
-		<value condition="String.IsEmpty(Skin.String(Textures.GlobalColor)) + Skin.HasTheme(Red)">FFB80034</value>		
-		<value>FF12B2E7</value>
+		<value condition="String.IsEmpty(Skin.String(Textures.GlobalColor)) + Skin.HasTheme(Red)">FFd70000</value>
+		<value condition="String.IsEmpty(Skin.String(Textures.GlobalColor)) + Skin.HasTheme(Sky)">FF3BB9FF</value>
+		<value>FF2554C7</value>
 	</variable>
 
 	<variable name="Text.GlobalColor">
 		<value condition="!String.IsEmpty(Skin.String(Text.GlobalColor))">$INFO[Skin.String(Text.GlobalColor)]</value>
-		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasTheme(Bello)">FFCB2BFF</value>		
-		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasTheme(Blue)">FF12B2E7</value>	
-		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasTheme(Green)">FF507B00</value>	
-		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasTheme(Midnight)">FF4D4D4D</value>		
-		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasTheme(Nero)">FF4D4D4D</value>	
+		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasTheme(ßειισ ηεrσ)">FF4D4D4D</value>
+		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasTheme(ßειισ)">FFCB2BFF</value>
+		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasTheme(Green)">FF507B00</value>
+		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasTheme(Orange)">FFF88017</value>
 		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasTheme(Pink)">FFCF00D3</value>	
-		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasTheme(Red)">FFB80034</value>
-		<value>FF12B2E7</value>
+		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasTheme(Red)">FFd70000</value>
+		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasTheme(Sky)">FF3BB9FF</value>
+		<value>FF2554C7</value>
 	</variable>	
 	
 	<variable name="BG.GlobalColor">
 		<value condition="!String.IsEmpty(Skin.String(BG.GlobalColor))">$INFO[Skin.String(BG.GlobalColor)]</value>
-		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasTheme(Bello)">FFCB2BFF</value>		
-		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasTheme(Blue)">FF1856B4</value>	
-		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasTheme(Green)">FF507B00</value>	
-		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasTheme(Midnight)">FF4D4D4D</value>		
-		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasTheme(Nero)">FF3E3E3E</value>	
+		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasTheme(ßειισ ηεrσ)">FF3E3E3E</value>
+		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasTheme(ßειισ)">FFCB2BFF</value>
+		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasTheme(Green)">FF507B00</value>
+		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasTheme(Orange)">FFF88017</value>
 		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasTheme(Pink)">FFFF00C6</value>	
-		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasTheme(Red)">FFB80034</value>
-		<value>FF1856B4</value>
+		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasTheme(Red)">FFd70000</value>
+		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasTheme(Sky)">FF3BB9FF</value>
+		<value>FF2554C7</value>
 	</variable>
 	
-	<variable name="darkpulse">
-		<value condition="Skin.HasTheme(Bello)">special://skin/extras/neropulse/bello_dark_pulse.png</value>
-		<value condition="Skin.HasTheme(Blue)">special://skin/extras/neropulse/blue_dark_pulse.png</value>
-		<value condition="Skin.HasTheme(Green)">special://skin/extras/neropulse/green_dark_pulse.png</value>
-		<value condition="Skin.HasTheme(Midnight)">special://skin/extras/neropulse/midnite_dark_pulse.png</value>		
-		<value condition="Skin.HasTheme(Nero)">special://skin/extras/neropulse/nero_dark_pulse.png</value>
-		<value condition="Skin.HasTheme(Pink)">special://skin/extras/neropulse/pink_dark_pulse.png</value>
-		<value condition="Skin.HasTheme(Red)">special://skin/extras/neropulse/red_dark_pulse.png</value>		
-		<value>special://skin/extras/neropulse/blue_dark_pulse.png</value>
+	<variable name="realpulse1">
+	    <value condition="Skin.HasTheme(ßειισ ηεrσ)">special://skin/extras/neropulse/nero_pulse1.png</value>
+		<value condition="Skin.HasTheme(ßειισ)">special://skin/extras/neropulse/bello_pulse1.png</value>		
+		<value condition="Skin.HasTheme(Green)">special://skin/extras/neropulse/green_pulse1.png</value>
+		<value condition="Skin.HasTheme(Orange)">special://skin/extras/neropulse/orange_pulse1.png</value>
+		<value condition="Skin.HasTheme(Pink)">special://skin/extras/neropulse/pink_pulse1.png</value>
+		<value condition="Skin.HasTheme(Red)">special://skin/extras/neropulse/red_pulse1.png</value>
+		<value condition="Skin.HasTheme(Sky)">special://skin/extras/neropulse/sky_pulse1.png</value>
+		<value>special://skin/extras/neropulse/real_pulse1.png</value>
+	</variable>
+    <variable name="realpulse2">
+	    <value condition="Skin.HasTheme(ßειισ ηεrσ)">special://skin/extras/neropulse/nero_pulse2.png</value>
+		<value condition="Skin.HasTheme(ßειισ)">special://skin/extras/neropulse/bello_pulse2.png</value>				
+		<value condition="Skin.HasTheme(Green)">special://skin/extras/neropulse/green_pulse2.png</value>
+		<value condition="Skin.HasTheme(Orange)">special://skin/extras/neropulse/orange_pulse2.png</value>
+		<value condition="Skin.HasTheme(Pink)">special://skin/extras/neropulse/pink_pulse2.png</value>
+		<value condition="Skin.HasTheme(Red)">special://skin/extras/neropulse/red_pulse2.png</value>
+		<value condition="Skin.HasTheme(Sky)">special://skin/extras/neropulse/sky_pulse2.png</value>
+		<value>special://skin/extras/neropulse/real_pulse2.png</value>
+	</variable>
+    <variable name="realpulse3">
+	    <value condition="Skin.HasTheme(ßειισ ηεrσ)">special://skin/extras/neropulse/nero_pulse3.png</value>
+		<value condition="Skin.HasTheme(ßειισ)">special://skin/extras/neropulse/bello_pulse3.png</value>				
+		<value condition="Skin.HasTheme(Green)">special://skin/extras/neropulse/green_pulse3.png</value>
+		<value condition="Skin.HasTheme(Orange)">special://skin/extras/neropulse/orange_pulse3.png</value>
+		<value condition="Skin.HasTheme(Pink)">special://skin/extras/neropulse/pink_pulse3.png</value>
+		<value condition="Skin.HasTheme(Red)">special://skin/extras/neropulse/red_pulse3.png</value>
+		<value condition="Skin.HasTheme(Sky)">special://skin/extras/neropulse/sky_pulse3.png</value>
+		<value>special://skin/extras/neropulse/real_pulse3.png</value>
+	</variable>
+    <variable name="realpulse4">
+	    <value condition="Skin.HasTheme(ßειισ ηεrσ)">special://skin/extras/neropulse/nero_pulse4.png</value>
+		<value condition="Skin.HasTheme(ßειισ)">special://skin/extras/neropulse/bello_pulse4.png</value>				
+		<value condition="Skin.HasTheme(Green)">special://skin/extras/neropulse/green_pulse4.png</value>
+		<value condition="Skin.HasTheme(Orange)">special://skin/extras/neropulse/orange_pulse4.png</value>
+		<value condition="Skin.HasTheme(Pink)">special://skin/extras/neropulse/pink_pulse4.png</value>
+		<value condition="Skin.HasTheme(Red)">special://skin/extras/neropulse/red_pulse4.png</value>
+		<value condition="Skin.HasTheme(Sky)">special://skin/extras/neropulse/sky_pulse4.png</value>
+		<value>special://skin/extras/neropulse/real_pulse4.png</value>
+	</variable>
+    <variable name="realpulse5">
+	    <value condition="Skin.HasTheme(ßειισ ηεrσ)">special://skin/extras/neropulse/nero_pulse5.png</value>
+		<value condition="Skin.HasTheme(ßειισ)">special://skin/extras/neropulse/bello_pulse5.png</value>				
+		<value condition="Skin.HasTheme(Green)">special://skin/extras/neropulse/green_pulse5.png</value>
+		<value condition="Skin.HasTheme(Orange)">special://skin/extras/neropulse/orange_pulse5.png</value>
+		<value condition="Skin.HasTheme(Pink)">special://skin/extras/neropulse/pink_pulse5.png</value>
+		<value condition="Skin.HasTheme(Red)">special://skin/extras/neropulse/red_pulse5.png</value>
+		<value condition="Skin.HasTheme(Sky)">special://skin/extras/neropulse/sky_pulse5.png</value>
+		<value>special://skin/extras/neropulse/real_pulse5.png</value>
 	</variable>	
 	
-	<variable name="darkpulsediffuse">
-		<value condition="Skin.HasTheme(Bello)">DD000000</value>
-		<value condition="Skin.HasTheme(Pink)">99000000</value>		
-		<!-- value condition="Skin.HasTheme(Blue)"></value>
-		<value condition="Skin.HasTheme(Green)"></value>
-		<value condition="Skin.HasTheme(Midnight)"></value>		
-		<value condition="Skin.HasTheme(Nero)"></value>
-		<value condition="Skin.HasTheme(Red)"></value -->		
-		<value>EE000000</value>
+	<variable name="pulsediffuse">
+		<value condition="Skin.HasTheme(ßειισ) | Skin.HasTheme(Pink) | Skin.HasTheme(Sky)">88000000</value>			
+		<!-- <value condition="Skin.HasTheme(Green)"></value>
+		<value condition="Skin.HasTheme(Orange)"></value>
+		<value condition="Skin.HasTheme(ßειισ ηεrσ)"></value>
+		<value condition="Skin.HasTheme(Red)"></value -->
+		<value>99000000</value>
 	</variable>		
 	
-	<variable name="lightpulse">
-		<value condition="Skin.HasTheme(Bello)|Skin.HasTheme(Midnight)|Skin.HasTheme(Nero)">special://skin/extras/neropulse/light_pulse_gray.png</value>	
-		<value condition="Skin.HasTheme(Blue)|Skin.HasTheme(Green)|Skin.HasTheme(Pink)|Skin.HasTheme(Red)">special://skin/extras/neropulse/light_pulse_blk.png</value>		
-		<value>special://skin/extras/neropulse/light_pulse_blk.png</value>
+	<variable name="shadowpulse1">
+		<value condition="Skin.HasTheme(ßειισ) | Skin.HasTheme(Pink) | Skin.HasTheme(Sky)">special://skin/extras/neropulse/shadow_gray1.png</value>		
+		<value condition="Skin.HasTheme(Green) | Skin.HasTheme(ßειισ ηεrσ) | Skin.HasTheme(Red) | Skin.HasTheme(Orange)">special://skin/extras/neropulse/shadow_blk1.png</value>		
+		<value>special://skin/extras/neropulse/shadow_blk1.png</value>
+	</variable>	
+	<variable name="shadowpulse2">
+		<value condition="Skin.HasTheme(ßειισ) | Skin.HasTheme(Pink) | Skin.HasTheme(Sky)">special://skin/extras/neropulse/shadow_gray2.png</value>		
+		<value condition="Skin.HasTheme(Green) | Skin.HasTheme(ßειισ ηεrσ) | Skin.HasTheme(Red) | Skin.HasTheme(Orange)">special://skin/extras/neropulse/shadow_blk2.png</value>		
+		<value>special://skin/extras/neropulse/shadow_blk2.png</value>
+	</variable>
+	<variable name="shadowpulse3">
+		<value condition="Skin.HasTheme(ßειισ) | Skin.HasTheme(Pink) | Skin.HasTheme(Sky)">special://skin/extras/neropulse/shadow_gray3.png</value>		
+		<value condition="Skin.HasTheme(Green) | Skin.HasTheme(ßειισ ηεrσ) | Skin.HasTheme(Red) | Skin.HasTheme(Orange)">special://skin/extras/neropulse/shadow_blk3.png</value>		
+		<value>special://skin/extras/neropulse/shadow_blk3.png</value>
+	</variable>
+	<variable name="shadowpulse4">
+		<value condition="Skin.HasTheme(ßειισ) | Skin.HasTheme(Pink) | Skin.HasTheme(Sky)">special://skin/extras/neropulse/shadow_gray4.png</value>		
+		<value condition="Skin.HasTheme(Green) | Skin.HasTheme(ßειισ ηεrσ) | Skin.HasTheme(Red) | Skin.HasTheme(Orange)">special://skin/extras/neropulse/shadow_blk4.png</value>		
+		<value>special://skin/extras/neropulse/shadow_blk4.png</value>
+	</variable>
+	<variable name="shadowpulse5">
+		<value condition="Skin.HasTheme(ßειισ) | Skin.HasTheme(Pink) | Skin.HasTheme(Sky)">special://skin/extras/neropulse/shadow_gray5.png</value>		
+		<value condition="Skin.HasTheme(Green) | Skin.HasTheme(ßειισ ηεrσ) | Skin.HasTheme(Red) | Skin.HasTheme(Orange)">special://skin/extras/neropulse/shadow_blk5.png</value>		
+		<value>special://skin/extras/neropulse/shadow_blk5.png</value>
 	</variable>	
 	
 <!-- ============= -->
@@ -76,91 +134,109 @@
 	<include name="PULSE">
 	<!-- - PULSE MOD -->
 		<control type="Group" description="Static Pulse">
-			<visible>Skin.HasSetting(HomeMenuAnimation)</visible>
-			<!-- DARK PULSE -->	
-			<top>40</top>	
+			<visible>Skin.HasSetting(HomeMenuAnimation)</visible>				
+			<!-- SHADOW PULSE -->						
 			<control type="image">
-				<height>720</height>
-				<width>1280</width>
-				<texture>$VAR[darkpulse]</texture>
-			</control>	
-			<!-- LIGHT PULSE -->						
+			    <top>270</top>
+				<height>230</height>
+				<width>2280</width>
+				<texture flipy="true">$VAR[shadowpulse3]</texture>
+			</control>			
 			<control type="image">
-				<height>720</height>
-				<width>1280</width>
-				<texture>$VAR[lightpulse]</texture>
+			    <top>345</top>
+				<height>230</height>
+				<width>2280</width>
+				<texture>$VAR[shadowpulse2]</texture>
+			</control>			
+			<!--<control type="image">
+			    <top>246</top>
+				<height>230</height>
+				<width>2280</width>
+				<texture>$VAR[shadowpulse1]</texture>
+			</control>-->
+			<control type="image">
+			    <top>278</top>
+				<height>230</height>
+				<width>2280</width>
+				<texture>$VAR[shadowpulse5]</texture>
 			</control>
-			<!-- DARKSPOT -->		
+			<!-- REAL PULSE -->	
 			<control type="image">
-			<visible>!Skin.HasSetting(ClassicHomeMenu)</visible>
-				<left>-480</left>
-				<height>720</height>
-				<width>1280</width>
-				<texture colordiffuse="$VAR[darkpulsediffuse]">windows/bg/darkspot.png</texture>
-				<align>center</align>
-				<aligny>center</aligny>
+			    <top>270</top>
+				<height>230</height>
+				<width>2280</width>
+				<texture>$VAR[realpulse1]</texture>	
+			</control>			
+			<control type="image">
+			    <top>280</top>
+				<height>230</height>
+				<width>2280</width>
+				<texture>$VAR[realpulse2]</texture>
 			</control>
-			<!-- DARKSPOT -- CLASSIC MENU -->
 			<control type="image">
-			<visible>Skin.HasSetting(ClassicHomeMenu)</visible>
+			    <top>227</top>
+				<height>230</height>
+				<width>2280</width>
+				<texture>$VAR[realpulse3]</texture>
+			</control>
+			<control type="image">
+			    <top>286</top>
+				<height>230</height>
+				<width>2280</width>
+				<texture>$VAR[realpulse4]</texture>
+			</control>
+			<!--<control type="image">
+			    <top>212</top>
+				<height>230</height>
+				<width>2280</width>
+				<texture flipy="true">$VAR[realpulse5]</texture>
+			</control>-->
+			<!-- DARKSPOT -->			
+			<control type="image">
+				<visible>!Skin.HasSetting(ClassicHomeMenu) + !Skin.HasSetting(HomeMenuOverlay)</visible>
 				<left>0</left>
 				<height>720</height>
 				<width>1280</width>
-				<texture colordiffuse="$VAR[darkpulsediffuse]">windows/bg/darkspot.png</texture>
+				<texture colordiffuse="$VAR[pulsediffuse]">windows/bg/darkspot.png</texture>
 				<align>center</align>
-				<aligny>center</aligny>
+				<aligny>center</aligny>					
+			</control>
+			<!-- DARKSPOT -- CLASSIC MENU -->		
+			<control type="image">
+				<visible>Skin.HasSetting(ClassicHomeMenu) + !Skin.HasSetting(HomeMenuOverlay)</visible>
+				<left>0</left>
+				<height>720</height>
+				<width>1280</width>
+				<texture colordiffuse="$VAR[pulsediffuse]" >windows/bg/centerdarkspot.png</texture>
+				<align>center</align>
+				<aligny>center</aligny>					
 			</control>				
 		</control>
 		<control type="Group" description="Animated Pulse">
 			<visible>!Skin.HasSetting(HomeMenuAnimation)</visible>
-			<!-- DARK PULSE -->	
-			<top>40</top>	
-			<control type="image">
-				<height>720</height>
-				<width>3280</width>
-				<texture>$VAR[darkpulse]</texture>
-					<animation type="Conditional" condition="true" loop="true" reversible="false">
-						<effect type="slide" start="-2000,0" end="0,0" time="30350"/>
-						<effect type="slide" start="0,0" end="-2000,0" time="30350" delay="30350"/>
-					</animation>
-			</control>	
-			<!-- LIGHT PULSE -->						
-			<control type="image">
-				<height>720</height>
-				<width>3280</width>
-				<texture>$VAR[lightpulse]</texture>
-					<animation type="Conditional" condition="true" loop="true" reversible="false">
-						<effect type="slide" start="0,0" end="-2000,0" time="30350"/>
-						<effect type="slide" start="0,0" end="2000,0" time="30350" delay="30350"/>
-					</animation>
-			</control>
+			<!-- SHADOW PULSE -->						
+			<include>ShadowPulse</include>
+			<!-- REAL PULSE -->
+			<include>NeroPulse</include>			
 			<!-- DARKSPOT -->			
 			<control type="image">
-				<visible>!Skin.HasSetting(ClassicHomeMenu)</visible>
-				<left>-800</left>
+				<visible>!Skin.HasSetting(ClassicHomeMenu) + !Skin.HasSetting(HomeMenuOverlay)</visible>
+				<left>0</left>
 				<height>720</height>
-				<width>1920</width>
-				<texture colordiffuse="$VAR[darkpulsediffuse]">windows/bg/darkspot.png</texture>
+				<width>1280</width>
+				<texture colordiffuse="$VAR[pulsediffuse]">windows/bg/darkspot.png</texture>
 				<align>center</align>
-				<aligny>center</aligny>
-					<animation type="Conditional" condition="true" loop="true" reversible="false">
-						<effect type="fade" start="30" end="94" time="5000"/>  
-						<effect type="fade" start="94" end="30" time="5000" delay="30350"/>             
-					</animation>
+				<aligny>center</aligny>					
 			</control>
 			<!-- DARKSPOT -- CLASSIC MENU -->		
 			<control type="image">
-				<visible>Skin.HasSetting(ClassicHomeMenu)</visible>
-				<left>-333</left>
+				<visible>Skin.HasSetting(ClassicHomeMenu) + !Skin.HasSetting(HomeMenuOverlay)</visible>
+				<left>0</left>
 				<height>720</height>
-				<width>1920</width>
-				<texture colordiffuse="$VAR[darkpulsediffuse]">windows/bg/darkspot.png</texture>
+				<width>1280</width>
+				<texture colordiffuse="$VAR[pulsediffuse]" >windows/bg/centerdarkspot.png</texture>
 				<align>center</align>
-				<aligny>center</aligny>
-					<animation type="Conditional" condition="true" loop="true" reversible="false">
-						<effect type="fade" start="30" end="94" time="5000"/>  
-						<effect type="fade" start="94" end="30" time="5000" delay="30350"/>             
-					</animation>
+				<aligny>center</aligny>					
 			</control>			
 		</control>
 	</include>
@@ -174,7 +250,8 @@
 		    <include>VisibleHiddenSlideAnimation</include>
             <animation effect="slide" start="0,0" end="0,50" time="200" tween="sine" easing="out" condition="!Control.HasFocus(23)">Conditional</animation>
     		<control type="image">
-			<visible>!Skin.HasSetting(HomeMenuOverlay)</visible><!-- NERO MOD -->
+			<!-- NERO MOD -->
+			<visible>!Skin.HasSetting(HomeMenuOverlay)</visible>
 	        <include>FullscreenDimensions</include>
     			<texture background="true">windows/home/menu_overlay.png</texture>
 		        <include>HomeMenu_OpenCloseSlideAnimation</include>
@@ -1276,5 +1353,116 @@
 				<selected>Skin.HasSetting(ClassicHomeMenu)</selected>
 			</control>
 		</include>
-	
+		
+		
+	<!-- ========== -->
+    <!-- REAL PULSE -->
+    <!-- ========== -->	
+	<include name="NeroPulse">
+			<control type="image">
+			    <top>293</top>
+				<height>230</height>
+				<width>2280</width>
+				<texture>$VAR[realpulse1]</texture>				    
+					<animation type="Conditional" condition="true" loop="true" reversible="false">
+						<effect type="slide" start="2000,0" end="0,0" time="27000"/>
+						<effect type="slide" start="0,0" end="2000,0" time="34000"/>
+					</animation>
+			</control>			
+			<control type="image">
+			    <top>300</top>
+				<height>230</height>
+				<width>2280</width>
+				<texture flipy="true">$VAR[realpulse2]</texture>				    
+					<animation type="Conditional" condition="true" loop="true" reversible="false">
+						<effect type="slide" start="2000,0" end="-2000,0" time="19000"/>
+						<effect type="slide" start="-2000,0" end="2000,0" time="24000"/>
+					</animation>
+			</control>
+			<control type="image">
+			    <top>250</top>
+				<height>230</height>
+				<width>2280</width>
+				<texture>$VAR[realpulse3]</texture>				   
+					<animation type="Conditional" condition="true" loop="true" reversible="false">
+						<effect type="slide" start="500,0" end="-1500,0" time="15000"/>
+						<effect type="slide" start="-1500,0" end="500,0" time="11000"/>
+					</animation>
+			</control>
+			<control type="image">
+			    <top>285</top>
+				<height>230</height>
+				<width>2280</width>
+				<texture>$VAR[realpulse4]</texture>				    
+					<animation type="Conditional" condition="true" loop="true" reversible="false">
+						<effect type="slide" start="1000,0" end="-1000,0" time="9000"/>
+						<effect type="slide" start="-1000,0" end="1000,0" time="14000"/>
+					</animation>
+			</control>
+			<control type="image">
+			    <top>200</top>
+				<height>230</height>
+				<width>2280</width>
+				<texture flipy="true">$VAR[realpulse5]</texture>				    
+					<animation type="Conditional" condition="true" loop="true" reversible="false">
+						<effect type="slide" start="1000,0" end="-1000,0" time="12120"/>
+						<effect type="slide" start="-1000,0" end="1000,0" time="15120"/>
+					</animation>
+			</control>
+	    </include>
+	<!-- ============ -->
+    <!-- SHADOW PULSE -->
+    <!-- ============ -->	
+	<include name="ShadowPulse">
+			<control type="image">
+			    <top>235</top>
+				<height>230</height>
+				<width>2280</width>
+				<texture flipy="true">$VAR[shadowpulse2]</texture>				    
+					<animation type="Conditional" condition="true" loop="true" reversible="false">
+						<effect type="slide" start="0,0" end="-1000,0" time="11350"/>
+						<effect type="slide" start="0,0" end="1000,0" time="14350" delay="18350"/>
+					</animation>
+			</control>			
+			<control type="image">
+			    <top>248</top>
+				<height>230</height>
+				<width>2280</width>
+				<texture>$VAR[shadowpulse5]</texture>				    
+					<animation type="Conditional" condition="true" loop="true" reversible="false">
+						<effect type="slide" start="-1000,0" end="0,0" time="19250"/>
+						<effect type="slide" start="0,0" end="-1000,0" time="21350" delay="9350"/>
+					</animation>
+			</control>
+			<control type="image">
+			    <top>305</top>
+				<height>230</height>
+				<width>2280</width>
+				<texture flipy="true">$VAR[shadowpulse1]</texture>				   
+					<animation type="Conditional" condition="true" loop="true" reversible="false">
+						<effect type="slide" start="-1000,0" end="0,0" time="16250"/>
+						<effect type="slide" start="0,0" end="-1000,0" time="15350" delay="11350"/>
+					</animation>
+			</control>
+			<control type="image">
+			    <top>280</top>
+				<height>230</height>
+				<width>2280</width>
+				<texture>$VAR[shadowpulse3]</texture>				    
+					<animation type="Conditional" condition="true" loop="true" reversible="false">
+						<effect type="slide" start="-1000,0" end="0,0" time="13000"/>
+						<effect type="slide" start="0,0" end="-1000,0" time="16000" delay="15350"/>
+					</animation>
+			</control>
+			<control type="image">
+			    <top>280</top>
+				<height>230</height>
+				<width>2280</width>
+				<texture>$VAR[shadowpulse4]</texture>				    
+					<animation type="Conditional" condition="true" loop="true" reversible="false">
+						<effect type="slide" start="0,0" end="-1000,0" time="20350"/>
+						<effect type="slide" start="0,0" end="1000,0" time="12350" delay="13350"/>
+					</animation>
+			</control>
+	    </include>
 </includes>

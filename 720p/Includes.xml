@@ -881,20 +881,20 @@
 				<top>0</top>
 			  <visible>!String.Contains(Window(Weather).Property(Current.ConditionIcon),na)</visible>
 				<control type="image" id="1">
-					<left>0</left>
-					<top>0</top>
-					<height>26</height>
-					<width>26</width>
+					<left>-7</left>
+					<top>-5</top>
+					<height>46</height>
+					<width>46</width>
 			    <align>right</align>
 					<aligny>center</aligny>
 				  <texture>$INFO[Window(Weather).Property(Current.FanartCode),weather/icons.default.small/,.png]</texture>
 					<visible>Weather.IsFetched + !String.IsEmpty(Skin.String(weathericons.multi))</visible>		
 				</control>
 				<control type="multiimage" id="1">
-					<left>0</left>
-					<top>0</top>
-					<height>26</height>
-					<width>26</width>
+					<left>-7</left>
+					<top>-5</top>
+					<height>46</height>
+					<width>46</width>
 			    <align>right</align>
 					<aligny>center</aligny>
 					<imagepath>$VAR[WeatherIconsPathMulti]$INFO[Window(Weather).Property(Current.FanartCode)]$VAR[WeatherIconsMulti]</imagepath>
@@ -905,8 +905,8 @@
 					<visible>Weather.IsFetched + String.IsEmpty(Skin.String(weathericons.multi))</visible>
 				</control>
 				<control type="label" id="1">
-					<left>-100</left>
-					<top>0</top>
+					<left>-112</left>
+					<top>3</top>
 			    <width>100</width>
 			    <height>26</height>
 			    <font>FontSize_20</font>
@@ -922,7 +922,7 @@
 		  <!-- Time -->
 			<control type="label" id="1">
 		    <width min="10" max="200">auto</width>
-		    <height>26</height>
+		    <height>33</height>
 		    <font>FontSize_20</font>
 				<textcolor>$VAR[Text.GlobalColor]</textcolor>
 				<shadowcolor>77000000</shadowcolor>
