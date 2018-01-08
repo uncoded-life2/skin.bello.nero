@@ -1,7 +1,8 @@
-v7.0.3n - for Kodi Leia 18.xx (06/01/2018)
+v7.0.3n - for Kodi Leia 18.xx (08/01/2018)
 ________________________________________________________________________________________________________
 
-- Recreated new NeroPulse Home + Themes + Modifications Themes
+- Added fullscreen music playback
+- Modify the new NeroPulse Home + Themes + Modifications Themes
 - correct Home weather clock
 - Weather optimized for operation with Yahoo Weather Add-on
 ________________________________________________________________________________________________________

@@ -226,7 +226,11 @@ msgctxt "#31051"
 msgid "Enable Studios and RecordLabel Images on Video Info"
 msgstr ""
 
-#empty strings from id 31052 to 31079
+msgctxt "#31052"
+msgid "Enable full-screen music playback"
+msgstr ""
+
+#empty strings from id 31053 to 31079
 #View Type labels
 
 msgctxt "#31080"

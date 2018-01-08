@@ -3,7 +3,9 @@
 	<defaultcontrol></defaultcontrol>
 	<onload condition="String.IsEmpty(Skin.String(FullScreenMusicStyle))">Skin.SetString(FullScreenMusicStyle,1)</onload>
 	<onload condition="Window.IsActive(PlayerControls)">Dialog.Close(PlayerControls)</onload>
-  <onunload condition="Window.IsActive(script-cu-lrclyrics-main.xml)">Dialog.Close(script-cu-lrclyrics-main.xml)</onunload>
+    <onunload condition="Window.IsActive(script-cu-lrclyrics-main.xml)">Dialog.Close(script-cu-lrclyrics-main.xml)</onunload>
+    <onload>SetProperty(Music.WasFullscreen,True,Home)</onload>
+	<onunload>ClearProperty(Music.WasFullscreen,Home)</onunload>
 	<controls>
 	  <include>BackgroundItems</include>
 

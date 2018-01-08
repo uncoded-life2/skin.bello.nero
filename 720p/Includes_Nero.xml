@@ -137,60 +137,76 @@
 			<visible>Skin.HasSetting(HomeMenuAnimation)</visible>				
 			<!-- SHADOW PULSE -->						
 			<control type="image">
-			    <top>270</top>
+			    <top>225</top>
+				<left>-500</left>
 				<height>230</height>
 				<width>2280</width>
-				<texture flipy="true">$VAR[shadowpulse3]</texture>
+				<texture flipy="true">$VAR[shadowpulse2]</texture>
 			</control>			
 			<control type="image">
-			    <top>345</top>
-				<height>230</height>
-				<width>2280</width>
-				<texture>$VAR[shadowpulse2]</texture>
-			</control>			
-			<!--<control type="image">
-			    <top>246</top>
-				<height>230</height>
-				<width>2280</width>
-				<texture>$VAR[shadowpulse1]</texture>
-			</control>-->
-			<control type="image">
-			    <top>278</top>
+			    <top>248</top>
+				<left>-500</left>
 				<height>230</height>
 				<width>2280</width>
 				<texture>$VAR[shadowpulse5]</texture>
 			</control>
-			<!-- REAL PULSE -->	
 			<control type="image">
-			    <top>270</top>
+			    <top>305</top>
+				<left>-500</left>
 				<height>230</height>
 				<width>2280</width>
-				<texture>$VAR[realpulse1]</texture>	
-			</control>			
-			<control type="image">
-			    <top>280</top>
-				<height>230</height>
-				<width>2280</width>
-				<texture>$VAR[realpulse2]</texture>
+				<texture flipy="true">$VAR[shadowpulse3]</texture>
 			</control>
 			<control type="image">
-			    <top>227</top>
+			    <top>330</top>
+				<left>-600</left>
 				<height>230</height>
 				<width>2280</width>
+				<texture flipy="true">$VAR[shadowpulse1]</texture>
+			</control>
+			<control type="image">
+			    <top>310</top>
+				<left>-310</left>
+				<height>230</height>
+				<width>2280</width>
+				<texture flipy="true">$VAR[shadowpulse4]</texture>
+			</control>
+			<!-- REAL PULSE -->	
+			<control type="image">
+			    <top>115</top>
+				<left>-1200</left>
+				<height>470</height>
+				<width>3080</width>
+				<texture>$VAR[realpulse1]</texture>
+			</control>			
+			<control type="image">
+			    <top>103</top>
+				<left>-1200</left>
+				<height>470</height>
+				<width>4080</width>
+				<texture  flipy="true">$VAR[realpulse2]</texture>
+			</control>
+			<control type="image">
+			    <top>243</top>
+				<left>-700</left>
+				<height>370</height>
+				<width>4080</width>
 				<texture>$VAR[realpulse3]</texture>
 			</control>
 			<control type="image">
-			    <top>286</top>
-				<height>230</height>
-				<width>2280</width>
-				<texture>$VAR[realpulse4]</texture>
+			    <top>97</top>
+				<left>-500</left>
+				<height>470</height>
+				<width>4080</width>
+				<texture flipy="true">$VAR[realpulse4]</texture>
 			</control>
-			<!--<control type="image">
-			    <top>212</top>
-				<height>230</height>
-				<width>2280</width>
+			<control type="image">
+			    <top>232</top>
+				<left>-1280</left>
+				<height>470</height>
+				<width>3080</width>
 				<texture flipy="true">$VAR[realpulse5]</texture>
-			</control>-->
+			</control>
 			<!-- DARKSPOT -->			
 			<control type="image">
 				<visible>!Skin.HasSetting(ClassicHomeMenu) + !Skin.HasSetting(HomeMenuOverlay)</visible>
@@ -1360,53 +1376,58 @@
     <!-- ========== -->	
 	<include name="NeroPulse">
 			<control type="image">
-			    <top>293</top>
-				<height>230</height>
-				<width>2280</width>
-				<texture>$VAR[realpulse1]</texture>				    
+			    <top>159</top>
+				<left>1900</left>
+				<height>470</height>
+				<width>3080</width>
+				<texture flipy="true">$VAR[realpulse1]</texture>				    
 					<animation type="Conditional" condition="true" loop="true" reversible="false">
-						<effect type="slide" start="2000,0" end="0,0" time="27000"/>
-						<effect type="slide" start="0,0" end="2000,0" time="34000"/>
+						<effect type="slide" start="-3000,0" end="1200,0" time="39000"/>
+						<effect type="slide" start="1200,0" end="-3000,0" time="28000"/>
 					</animation>
 			</control>			
 			<control type="image">
-			    <top>300</top>
-				<height>230</height>
-				<width>2280</width>
+			    <top>120</top>
+				<left>1800</left>
+				<height>470</height>
+				<width>4080</width>
 				<texture flipy="true">$VAR[realpulse2]</texture>				    
 					<animation type="Conditional" condition="true" loop="true" reversible="false">
-						<effect type="slide" start="2000,0" end="-2000,0" time="19000"/>
-						<effect type="slide" start="-2000,0" end="2000,0" time="24000"/>
+						<effect type="slide" start="-3000,0" end="1200,0" time="39000"/>
+						<effect type="slide" start="1200,0" end="-3000,0" time="28000"/>
 					</animation>
 			</control>
 			<control type="image">
-			    <top>250</top>
-				<height>230</height>
-				<width>2280</width>
-				<texture>$VAR[realpulse3]</texture>				   
+			    <top>193</top>
+				<left>-2000</left>
+				<height>370</height>
+				<width>4080</width>
+				<texture flipy="true">$VAR[realpulse3]</texture>				   
 					<animation type="Conditional" condition="true" loop="true" reversible="false">
-						<effect type="slide" start="500,0" end="-1500,0" time="15000"/>
-						<effect type="slide" start="-1500,0" end="500,0" time="11000"/>
+						<effect type="slide" start="-2900,0" end="2900,0" time="33000"/>
+						<effect type="slide" start="2900,0" end="-2900,0" time="49000"/>
 					</animation>
 			</control>
 			<control type="image">
-			    <top>285</top>
-				<height>230</height>
-				<width>2280</width>
-				<texture>$VAR[realpulse4]</texture>				    
+			    <top>109</top>
+				<left>150</left>
+				<height>470</height>
+				<width>4080</width>
+				<texture flipy="true">$VAR[realpulse4]</texture>				    
 					<animation type="Conditional" condition="true" loop="true" reversible="false">
-						<effect type="slide" start="1000,0" end="-1000,0" time="9000"/>
-						<effect type="slide" start="-1000,0" end="1000,0" time="14000"/>
+						<effect type="slide" start="2300,0" end="-3100,0" time="26000"/>
+						<effect type="slide" start="-3100,0" end="2300,0" time="34000"/>
 					</animation>
 			</control>
 			<control type="image">
-			    <top>200</top>
-				<height>230</height>
-				<width>2280</width>
+			    <top>190</top>
+				<left>-100</left>
+				<height>470</height>
+				<width>3080</width>
 				<texture flipy="true">$VAR[realpulse5]</texture>				    
 					<animation type="Conditional" condition="true" loop="true" reversible="false">
-						<effect type="slide" start="1000,0" end="-1000,0" time="12120"/>
-						<effect type="slide" start="-1000,0" end="1000,0" time="15120"/>
+						<effect type="slide" start="3000,0" end="-3000,0" time="23000"/>
+						<effect type="slide" start="-3000,0" end="3000,0" time="33000"/>
 					</animation>
 			</control>
 	    </include>

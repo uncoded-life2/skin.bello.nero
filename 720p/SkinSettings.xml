@@ -231,16 +231,22 @@
 						<selected>Skin.HasSetting(EnableGlobalRSS)</selected>
 						<enable>System.Getbool(lookandfeel.enablerssfeeds)</enable>
 					</control>
-					<control type="button" id="5109">
+					<control type="radiobutton" id="5109">
+				        <include>SettingsRadioButton</include>
+				        <label>$LOCALIZE[31052]</label>
+				        <onclick>Skin.ToggleSetting(FullScreenMusic)</onclick>
+				        <selected>Skin.HasSetting(FullScreenMusic)</selected>
+			        </control>
+					<control type="button" id="5110">
 	                    <include>SettingsButton</include>
 						<label>$LOCALIZE[31104]</label>
 						<label2>[COLOR=$VAR[Text.GlobalColor]]$VAR[FullScreenMusicStyleName][/COLOR]</label2>
   			            <onclick condition="String.IsEqual(Skin.String(FullScreenMusicStyle),2)">Skin.SetString(FullScreenMusicStyle,1)</onclick>
   			            <onclick condition="String.IsEqual(Skin.String(FullScreenMusicStyle),1)">Skin.SetString(FullScreenMusicStyle,2)</onclick>
   			            <onclick condition="String.IsEqual(Skin.String(FullScreenMusicStyle),2)">Skin.SetString(FullScreenMusicStyle,1)</onclick>
-					</control>
+					</control>					
 					<!-- Select Color Lyrics -->
-					<control type="button" id="5110">
+					<control type="button" id="5111">
 						<description>Hide HomeMenu ExtraInfo</description>
 	                    <include>SettingsRadioButton</include>
 						<label>$LOCALIZE[31440]</label>
@@ -248,7 +254,7 @@
 						<onclick>$VAR[ColorLyricsSelect]</onclick>
 						<onclick>ReloadSkin()</onclick>
 					</control>
-					<control type="button" id="5111">
+					<control type="button" id="5112">
 	                    <include>SettingsButton</include>
 						<label>$LOCALIZE[31105]</label>
 						<label2>[COLOR=$VAR[Text.GlobalColor]]$VAR[FullScreenVideoStyleName][/COLOR]</label2>
@@ -256,7 +262,7 @@
   			            <onclick condition="String.IsEqual(Skin.String(FullScreenVideoStyle),1)">Skin.SetString(FullScreenVideoStyle,2)</onclick>
   			            <onclick condition="String.IsEqual(Skin.String(FullScreenVideoStyle),2)">Skin.SetString(FullScreenVideoStyle,1)</onclick>
 					</control>
-					<control type="button" id="5112">
+					<control type="button" id="5113">
 	                    <include>SettingsButton</include>
 						<label>$LOCALIZE[31106]</label>
 						<label2>[COLOR=$VAR[Text.GlobalColor]]$VAR[DialogSeekBarStyleName][/COLOR]</label2>
@@ -267,20 +273,20 @@
 						<enable>String.IsEqual(Skin.String(FullScreenVideoStyle),1)</enable>
 					</control>
 					<!-- ClearLogo ClearArt Select Video OSD Info -->
-					<control type="button" id="5113">  
+					<control type="button" id="5114">  
 				    	<include>SettingsButton</include>							
 						<label>$LOCALIZE[31436]</label>							
                         <label2>[COLOR=$VAR[Text.GlobalColor]]$VAR[LabelArtSelect][/COLOR]</label2>
 						<onclick>$VAR[PlayerArtSelect]</onclick>
 			            <enable>String.IsEqual(Skin.String(FullScreenVideoStyle),1)</enable>	
 					</control>
-					<control type="button" id="5114">
+					<control type="button" id="5115">
                         <include>SettingsButton</include>
                         <label>$LOCALIZE[31110]</label>
                         <label2>$INFO[Skin.String(MusicLibraryPath)]</label2>
                         <onclick>Skin.SetPath(MusicLibraryPath)</onclick>
                     </control>
-                    <control type="button" id="5115">
+                    <control type="button" id="5116">
                         <include>SettingsButton</include>
                         <label>- $LOCALIZE[31111]</label>
                         <onclick>Skin.Reset(MusicLibraryPath)</onclick>
