@@ -316,12 +316,12 @@
 			<font>FontSize_20</font>
 			<textcolor>77ffffff</textcolor>
 			<focusedcolor>white</focusedcolor>
-		  <disabledcolor>33ffffff</disabledcolor>
+		    <disabledcolor>33ffffff</disabledcolor>
 			<shadowcolor>99000000</shadowcolor>
 			<texturefocus border="1">windows/settings/settings_left_fo.png</texturefocus>
 			<texturenofocus></texturenofocus>
 			<align>right</align>
-		  <textwidth>250</textwidth>
+		    <textwidth>250</textwidth>
 			<textoffsetx>15</textoffsetx>
 	</include>
 	<include name="SettingsButton">
@@ -331,7 +331,7 @@
 			<font>FontSize_20</font>
 			<textcolor>77ffffff</textcolor>
 			<focusedcolor>white</focusedcolor>
-		  <disabledcolor>33ffffff</disabledcolor>
+		    <disabledcolor>33ffffff</disabledcolor>
 			<shadowcolor>99000000</shadowcolor>
 			<texturefocus border="1">windows/settings/settings_right_fo.png</texturefocus>
 			<texturenofocus></texturenofocus>
@@ -344,7 +344,7 @@
 			<font>FontSize_20</font>
 			<textcolor>77ffffff</textcolor>
 			<focusedcolor>white</focusedcolor>
-		  <disabledcolor>33ffffff</disabledcolor>
+		    <disabledcolor>33ffffff</disabledcolor>
 			<shadowcolor>99000000</shadowcolor>
 			<texturefocus border="1">windows/settings/settings_right_fo.png</texturefocus>
 			<texturenofocus></texturenofocus>
@@ -359,7 +359,7 @@
 			<font>FontSize_20</font>
 			<textcolor>77ffffff</textcolor>
 			<focusedcolor>white</focusedcolor>
-		  <disabledcolor>33ffffff</disabledcolor>
+		    <disabledcolor>33ffffff</disabledcolor>
 			<shadowcolor>99000000</shadowcolor>
 			<texturefocus border="1">windows/settings/settings_right_fo.png</texturefocus>
 			<spinposx>16</spinposx>
@@ -369,19 +369,18 @@
 	<include name="SettingsSliderex">
 			<description>Default Slider</description>
 			<width>784</width>
-		  <height>50</height>
-		  <font>FontSize_20</font>
+		    <height>50</height>
+		    <font>FontSize_20</font>
 			<textcolor>77ffffff</textcolor>
 			<focusedcolor>white</focusedcolor>
-		  <disabledcolor>33ffffff</disabledcolor>
+		    <disabledcolor>33ffffff</disabledcolor>
 			<shadowcolor>99000000</shadowcolor>
 			<texturefocus border="1">windows/settings/settings_right_fo.png</texturefocus>
 			<texturenofocus></texturenofocus>
 			<sliderwidth>150</sliderwidth>
 			<sliderheight>18</sliderheight>
 		  <textoffsetx>15</textoffsetx>
-	</include>
-
+	</include>	
 	<include name="TopLeftMenusButton">
 			<width>405</width>
 			<height>37</height>
@@ -407,7 +406,7 @@
 			<textcolor>77ffffff</textcolor>
 			<focusedcolor>white</focusedcolor>
 			<!-- <focusedcolor>FFB326B8</focusedcolor> -->
-		  <disabledcolor>44ffffff</disabledcolor>
+		    <disabledcolor>44ffffff</disabledcolor>
 			<align>left</align>
 			<aligny>top</aligny>
 			<textwidth>270</textwidth>
@@ -1629,7 +1628,7 @@
 	<!-- cdArt MusicVisualisation -->
 	<variable name="MusicCdArt">       				
     <!-- Select Directory for Emby Addon Music Library whit EXAMPLE -->
-	<!-- <value>smb://ASUS-E402M/F/Multimedia/Musica/$INFO[MusicPlayer.Artist]/$INFO[MusicPlayer.Artist]-$INFO[MusicPlayer.Album]-$INFO[MusicPlayer.Year]/cdart.png</value> -->
+	<!-- <value>smb://AKIRA/F/Multimedia/Musica/$INFO[MusicPlayer.Artist]/$INFO[MusicPlayer.Artist]-$INFO[MusicPlayer.Album]-$INFO[MusicPlayer.Year]/cdart.png</value> -->
 		<value>$INFO[Player.FolderPath]$INFO[Player.,cdart.png]</value>
 		<!-- <value>$INFO[ListItem.Thumb]</value> -->
     </variable>
@@ -1650,7 +1649,21 @@
 	<variable name="MusicView_Logo">
 		<value condition="!String.IsEmpty(Skin.String(MusicLibraryPath))">$INFO[Skin.String(MusicLibraryPath)]$INFO[ListItem.Artist]/logo.png</value>
 		<value>$INFO[ListItem.Art(clearlogo)]</value>
-    </variable>	
+    </variable>
+
+	<!-- label Discart On-Off&Rotation -->
+	<variable name="LabelDiscartSelect">
+		<value condition="String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled)">$LOCALIZE[31012]</value> <!-- Disabled -->
+		<value condition="String.IsEqual(Skin.String(OSD.DiscartSelect),Off)">$LOCALIZE[31441]</value> <!-- Rotate Off -->		
+		<value condition="String.IsEmpty(Skin.String(OSD.DiscartSelect))">$LOCALIZE[31442]</value> <!-- Rotate -->
+	</variable>
+	
+	<!-- Select Discart On-Off&Rotation -->
+	<variable name="DiscartSelect"> 
+		<value condition="String.IsEmpty(Skin.String(OSD.DiscartSelect))">Skin.SetString(OSD.DiscartSelect,Disabled)</value>
+        <value condition="String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled)">Skin.SetString(OSD.DiscartSelect,Off)</value>
+		<value condition="String.IsEqual(Skin.String(OSD.DiscartSelect),Off)">Skin.Reset(OSD.DiscartSelect)</value>		
+    </variable>
 	
 	<!-- animation Discart -->
 	<include name="Animation_Discart">

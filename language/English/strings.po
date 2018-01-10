@@ -1157,3 +1157,11 @@ msgstr ""
 msgctxt "#31440"
 msgid "Select the type of Lyrics"
 msgstr ""
+
+msgctxt "#31441"
+msgid "Rotation On"
+msgstr ""
+
+msgctxt "#31442"
+msgid "Rotation Off"
+msgstr ""

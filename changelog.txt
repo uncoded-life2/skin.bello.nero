@@ -1,6 +1,10 @@
-v7.0.3n - for Kodi Leia 18.xx (08/01/2018)
+v7.0.3n - for Kodi Leia 18.xx (10/01/2018)
 ________________________________________________________________________________________________________
 
+- Added rotating disc, Video and Music visuals
+  Note: For the Music Icons view you need to write your own direct path to the music arts,
+  inside "Includes_Views.xml (line 733) and (line 763)".
+  
 - Added fullscreen music playback
 - Modify the new NeroPulse Home + Themes + Modifications Themes
 - correct Home weather clock

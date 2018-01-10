@@ -193,149 +193,122 @@
 				  <include>TopLeftMenusButton</include>
 				  <visible>Control.IsVisible(661) + [Container.Content(Files) | Container.Content(Videos)] + ![[Container.HasFolders + Container.HasFiles] | Container.HasFiles]</visible>
 				</control>
-				<!-- Top Left Menu DiscArt Buttons -->
-				<control type="togglebutton" id="300"> 
-  			  <description>Show DiscArt</description>
-  			  <include>TopLeftMenusButton</include>
-          <label>$LOCALIZE[31434]: $LOCALIZE[31011]</label>
-          <altlabel>$LOCALIZE[31434]: $LOCALIZE[31012]</altlabel>
-  				<onclick>Skin.ToggleSetting(DisableVideoListView_DiscArt)</onclick>
-  				<selected>Skin.HasSetting(DisableVideoListView_DiscArt)</selected>
-  			  <visible>Control.IsVisible(50) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
-  			</control>
-			<control type="togglebutton" id="303">
-  			  <description>Show DiscArt</description>
-  			  <include>TopLeftMenusButton</include>
-          <label>$LOCALIZE[31434]: $LOCALIZE[31011]</label>
-          <altlabel>$LOCALIZE[31434]: $LOCALIZE[31012]</altlabel>
-  				<onclick>Skin.ToggleSetting(DisableVideoBelloView_DiscArt)</onclick>
-  				<selected>Skin.HasSetting(DisableVideoBelloView_DiscArt)</selected>
-  			  <visible>Control.IsVisible(66) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
-  			</control>
-			<control type="togglebutton" id="302">
-  			  <description>Show DiscArt</description>
-  			  <include>TopLeftMenusButton</include>
-          <label>$LOCALIZE[31434]: $LOCALIZE[31011]</label>
-          <altlabel>$LOCALIZE[31434]: $LOCALIZE[31012]</altlabel>
-  				<onclick>Skin.ToggleSetting(DisableVideoSlideView_DiscArt)</onclick>
-  				<selected>Skin.HasSetting(DisableVideoSlideView_DiscArt)</selected>
-  			  <visible>Control.IsVisible(51) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
-  			</control>
-			<control type="togglebutton" id="301">
-  			  <description>Show DiscArt</description>
-  			  <include>TopLeftMenusButton</include>
-          <label>$LOCALIZE[31434]: $LOCALIZE[31011]</label>
-          <altlabel>$LOCALIZE[31434]: $LOCALIZE[31012]</altlabel>
-  				<onclick>Skin.ToggleSetting(DisableVideoGalleryView_DiscArt)</onclick>
-  				<selected>Skin.HasSetting(DisableVideoGalleryView_DiscArt)</selected>
-  			  <visible>Control.IsVisible(52) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
-  			</control>
-			<control type="togglebutton" id="305">
-  			  <description>Show DiscArt</description>
-  			  <include>TopLeftMenusButton</include>
-          <label>$LOCALIZE[31434]: $LOCALIZE[31011]</label>
-          <altlabel>$LOCALIZE[31434]: $LOCALIZE[31012]</altlabel>
-  				<onclick>Skin.ToggleSetting(DisableVideoThumbnailsView_DiscArt)</onclick>
-  				<selected>Skin.HasSetting(DisableVideoThumbnailsView_DiscArt)</selected>
-  			  <visible>Control.IsVisible(561) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
-  			</control>
-			<control type="togglebutton" id="307">
-  			  <description>Show DiscArt</description>
-  			  <include>TopLeftMenusButton</include>
-          <label>$LOCALIZE[31434]: $LOCALIZE[31011]</label>
-          <altlabel>$LOCALIZE[31434]: $LOCALIZE[31012]</altlabel>
-  				<onclick>Skin.ToggleSetting(DisableVideoTilesView_DiscArt)</onclick>
-  				<selected>Skin.HasSetting(DisableVideoTilesView_DiscArt)</selected>
-  			  <visible>Control.IsVisible(562) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
-  			</control>
-			<control type="togglebutton" id="304">
-  			  <description>Show DiscArt</description>
-  			  <include>TopLeftMenusButton</include>
-          <label>$LOCALIZE[31434]: $LOCALIZE[31011]</label>
-          <altlabel>$LOCALIZE[31434]: $LOCALIZE[31012]</altlabel>
-  				<onclick>Skin.ToggleSetting(DisableVideoPostersView_DiscArt)</onclick>
-  				<selected>Skin.HasSetting(DisableVideoPostersView_DiscArt)</selected>
-  			  <visible>Control.IsVisible(55) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
-  			</control>
-			<control type="togglebutton" id="306">
-  			  <description>Show DiscArt</description>
-  			  <include>TopLeftMenusButton</include>
-          <label>$LOCALIZE[31434]: $LOCALIZE[31011]</label>
-          <altlabel>$LOCALIZE[31434]: $LOCALIZE[31012]</altlabel>
-  				<onclick>Skin.ToggleSetting(DisableVideoPosters2View_DiscArt)</onclick>
-  				<selected>Skin.HasSetting(DisableVideoPosters2View_DiscArt)</selected>
-  			  <visible>Control.IsVisible(64) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
-  			</control>
-			<control type="togglebutton" id="313">
-  			  <description>Show DiscArt</description>
-  			  <include>TopLeftMenusButton</include>
-          <label>$LOCALIZE[31434]: $LOCALIZE[31011]</label>
-          <altlabel>$LOCALIZE[31434]: $LOCALIZE[31012]</altlabel>
-  				<onclick>Skin.ToggleSetting(DisableVideoBannersView_DiscArt)</onclick>
-  				<selected>Skin.HasSetting(DisableVideoBannersView_DiscArt)</selected>
-  			  <visible>Control.IsVisible(57) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
-  			</control>
-			<control type="togglebutton" id="311">
-  			  <description>Show DiscArt</description>
-  			  <include>TopLeftMenusButton</include>
-          <label>$LOCALIZE[31434]: $LOCALIZE[31011]</label>
-          <altlabel>$LOCALIZE[31434]: $LOCALIZE[31012]</altlabel>
-  				<onclick>Skin.ToggleSetting(DisableVideo3DWallView_DiscArt)</onclick>
-  				<selected>Skin.HasSetting(DisableVideo3DWallView_DiscArt)</selected>
-  			  <visible>Control.IsVisible(53) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
-  			</control>
-			<control type="togglebutton" id="316">
-  			  <description>Show DiscArt</description>
-  			  <include>TopLeftMenusButton</include>
-          <label>$LOCALIZE[31434]: $LOCALIZE[31011]</label>
-          <altlabel>$LOCALIZE[31434]: $LOCALIZE[31012]</altlabel>
-  				<onclick>Skin.ToggleSetting(DisableVideoWallView_DiscArt)</onclick>
-  				<selected>Skin.HasSetting(DisableVideoWallView_DiscArt)</selected>
-  			  <visible>Control.IsVisible(54) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
-  			</control>
-			<control type="togglebutton" id="319">
-  			  <description>Show DiscArt</description>
-  			  <include>TopLeftMenusButton</include>
-          <label>$LOCALIZE[31434]: $LOCALIZE[31011]</label>
-          <altlabel>$LOCALIZE[31434]: $LOCALIZE[31012]</altlabel>
-  				<onclick>Skin.ToggleSetting(DisableVideoListWallView_DiscArt)</onclick>
-				<onclick>ReloadSkin()</onclick>
-  				<selected>Skin.HasSetting(DisableVideoListWallView_DiscArt)</selected>				
-  			  <visible>Control.IsVisible(58) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
-  			</control>
-			<control type="togglebutton" id="314">
-  			  <description>Show DiscArt</description>
-  			  <include>TopLeftMenusButton</include>
-          <label>$LOCALIZE[31434]: $LOCALIZE[31011]</label>
-          <altlabel>$LOCALIZE[31434]: $LOCALIZE[31012]</altlabel>
-  				<onclick>Skin.ToggleSetting(DisableVideoNetfilxView_DiscArt)</onclick>
-  				<selected>Skin.HasSetting(DisableVideoNetfilxView_DiscArt)</selected>
-  			  <visible>Control.IsVisible(59) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
-  			</control>
-  			<control type="button" id="3">
-  				<description>Sort by</description>
-  			  <include>TopLeftMenusButton</include>
-  			</control>
-  			<control type="togglebutton" id="4">
+				<!-- Top Left Menu DiscArt Select Buttons -->				
+				<control type="button" id="300">  
+				   	<description>Show DiscArt</description>
+  			        <include>TopLeftMenusButton</include>							
+					<label>$LOCALIZE[31434]: [COLOR=$VAR[Text.GlobalColor]]$VAR[LabelDiscartSelect][/COLOR]</label>
+					<onclick>$VAR[DiscartSelect]</onclick>			        
+					<visible>Control.IsVisible(50) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
+				</control>			
+				<control type="button" id="303">  
+				   	<description>Show DiscArt</description>
+  			        <include>TopLeftMenusButton</include>							
+					<label>$LOCALIZE[31434]: [COLOR=$VAR[Text.GlobalColor]]$VAR[LabelDiscartSelect][/COLOR]</label>
+					<onclick>$VAR[DiscartSelect]</onclick>			        
+					<visible>Control.IsVisible(66) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
+				</control>
+				<control type="button" id="302">  
+				   	<description>Show DiscArt</description>
+  			        <include>TopLeftMenusButton</include>							
+					<label>$LOCALIZE[31434]: [COLOR=$VAR[Text.GlobalColor]]$VAR[LabelDiscartSelect][/COLOR]</label>
+					<onclick>$VAR[DiscartSelect]</onclick>			        
+					<visible>Control.IsVisible(51) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
+				</control>
+				<control type="button" id="301">  
+				   	<description>Show DiscArt</description>
+  			        <include>TopLeftMenusButton</include>							
+					<label>$LOCALIZE[31434]: [COLOR=$VAR[Text.GlobalColor]]$VAR[LabelDiscartSelect][/COLOR]</label>
+					<onclick>$VAR[DiscartSelect]</onclick>			        
+					<visible>Control.IsVisible(52) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
+				</control>
+				<control type="button" id="305">  
+				   	<description>Show DiscArt</description>
+  			        <include>TopLeftMenusButton</include>							
+					<label>$LOCALIZE[31434]: [COLOR=$VAR[Text.GlobalColor]]$VAR[LabelDiscartSelect][/COLOR]</label>
+					<onclick>$VAR[DiscartSelect]</onclick>			        
+					<visible>Control.IsVisible(561) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
+				</control>
+				<control type="button" id="307">  
+				   	<description>Show DiscArt</description>
+  			        <include>TopLeftMenusButton</include>							
+					<label>$LOCALIZE[31434]: [COLOR=$VAR[Text.GlobalColor]]$VAR[LabelDiscartSelect][/COLOR]</label>
+					<onclick>$VAR[DiscartSelect]</onclick>			        
+					<visible>Control.IsVisible(562) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
+				</control>
+			    <control type="button" id="304">  
+				   	<description>Show DiscArt</description>
+  			        <include>TopLeftMenusButton</include>							
+					<label>$LOCALIZE[31434]: [COLOR=$VAR[Text.GlobalColor]]$VAR[LabelDiscartSelect][/COLOR]</label>
+					<onclick>$VAR[DiscartSelect]</onclick>			        
+					<visible>Control.IsVisible(55) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
+				</control>
+			    <control type="button" id="306">  
+				   	<description>Show DiscArt</description>
+  			        <include>TopLeftMenusButton</include>							
+					<label>$LOCALIZE[31434]: [COLOR=$VAR[Text.GlobalColor]]$VAR[LabelDiscartSelect][/COLOR]</label>
+					<onclick>$VAR[DiscartSelect]</onclick>			        
+					<visible>Control.IsVisible(64) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
+				</control>
+			    <control type="button" id="313">  
+				   	<description>Show DiscArt</description>
+  			        <include>TopLeftMenusButton</include>							
+					<label>$LOCALIZE[31434]: [COLOR=$VAR[Text.GlobalColor]]$VAR[LabelDiscartSelect][/COLOR]</label>
+					<onclick>$VAR[DiscartSelect]</onclick>			        
+					<visible>Control.IsVisible(57) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
+				</control>
+			    <control type="button" id="311">  
+				   	<description>Show DiscArt</description>
+  			        <include>TopLeftMenusButton</include>							
+					<label>$LOCALIZE[31434]: [COLOR=$VAR[Text.GlobalColor]]$VAR[LabelDiscartSelect][/COLOR]</label>
+					<onclick>$VAR[DiscartSelect]</onclick>			        
+					<visible>Control.IsVisible(53) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
+				</control>
+			    <control type="button" id="316">  
+				   	<description>Show DiscArt</description>
+  			        <include>TopLeftMenusButton</include>							
+					<label>$LOCALIZE[31434]: [COLOR=$VAR[Text.GlobalColor]]$VAR[LabelDiscartSelect][/COLOR]</label>
+					<onclick>$VAR[DiscartSelect]</onclick>			        
+					<visible>Control.IsVisible(54) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
+				</control>
+			    <control type="button" id="319">  
+				   	<description>Show DiscArt</description>
+  			        <include>TopLeftMenusButton</include>							
+					<label>$LOCALIZE[31434]: [COLOR=$VAR[Text.GlobalColor]]$VAR[LabelDiscartSelect][/COLOR]</label>
+					<onclick>$VAR[DiscartSelect]</onclick>			        
+					<visible>Control.IsVisible(58) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
+				</control>
+			    <control type="button" id="314">  
+				   	<description>Show DiscArt</description>
+  			        <include>TopLeftMenusButton</include>							
+					<label>$LOCALIZE[31434]: [COLOR=$VAR[Text.GlobalColor]]$VAR[LabelDiscartSelect][/COLOR]</label>
+					<onclick>$VAR[DiscartSelect]</onclick>			        
+					<visible>Control.IsVisible(59) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.IsEqual(Container.FolderPath,addons://sources/video)]</visible>
+				</control>
+  			    <control type="button" id="3">
+  				    <description>Sort by</description>
+  			        <include>TopLeftMenusButton</include>
+  			    </control>
+  			    <control type="togglebutton" id="4">
 					<description>Sort Ascending/Descending</description>
-          <label>$LOCALIZE[21429]: $LOCALIZE[584]</label>
-          <altlabel>$LOCALIZE[21429]: $LOCALIZE[585]</altlabel>
-  			  <include>TopLeftMenusButton</include>
-  			</control>
-  			<control type="button" id="310">
-  				<description>All/Watched/Unwatched Toggle</description>
-  			  <include>TopLeftMenusButton</include>
+                    <label>$LOCALIZE[21429]: $LOCALIZE[584]</label>
+                    <altlabel>$LOCALIZE[21429]: $LOCALIZE[585]</altlabel>
+  			        <include>TopLeftMenusButton</include>
+  			    </control>
+  			    <control type="button" id="310">
+  				    <description>All/Watched/Unwatched Toggle</description>
+  			        <include>TopLeftMenusButton</include>
 					<label>$INFO[Control.GetLabel(10)]$INFO[Container.NumItems,: ]</label>
 					<onclick>SendClick(10)</onclick>
-  			</control>
-  			<control type="edit" id="19">
-  				<description>Filter</description>
+  			    </control>
+  			    <control type="edit" id="19">
+  				    <description>Filter</description>
 					<label>$LOCALIZE[587]</label>
-				  <textwidth>305</textwidth>
-  			  <include>TopLeftMenusButton</include>
-  				<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
-  			</control>
-  		  <control type="button" id="98">
+				    <textwidth>305</textwidth>
+  			        <include>TopLeftMenusButton</include>
+  				    <visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
+  			    </control>
+  		        <control type="button" id="98">
 					<description>FilterAdvanced</description>
 					<label>$LOCALIZE[587]</label>
 					<include>TopLeftMenusButton</include>
@@ -344,52 +317,52 @@
 					<onclick>Filter</onclick>
 					<visible>Container.CanFilterAdvanced</visible>
 				</control>
-  			<control type="button" id="308">
-  				<description>Search</description>
+  			    <control type="button" id="308">
+  				    <description>Search</description>
 					<label>$LOCALIZE[137]</label>
   			        <include>TopLeftMenusButton</include>
 					<onclick>Action(right)</onclick>
 					<onclick>SendClick(8)</onclick>
-  			</control>
+  			    </control>
 				<control type="button" id="96">
 					<description>Files</description>
 					<label>$LOCALIZE[744]</label>
-  			  <include>TopLeftMenusButton</include>
-          <onclick>ActivateWindow(videos,files,return)</onclick>
+  			        <include>TopLeftMenusButton</include>
+                    <onclick>ActivateWindow(videos,files,return)</onclick>
 					<visible>[Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)] + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons)| Container.Content(Episodes) | Container.Content(MusicVideos)]</visible>
 				</control>
-  			<control type="button" id="97">
-  				<description>TVGuide</description>
-  			  <include>TopLeftMenusButton</include>
-  				<label>31001</label>
-  				<onclick>RunScript(script.tv.show.next.aired)</onclick>
-          <visible>[Container.Content(TVShows) | Container.Content(Seasons)| Container.Content(Episodes)] + System.HasAddon(script.tv.show.next.aired)</visible>
-  			</control>
+  			    <control type="button" id="97">
+  				    <description>TVGuide</description>
+  			        <include>TopLeftMenusButton</include>
+  				    <label>31001</label>
+  				    <onclick>RunScript(script.tv.show.next.aired)</onclick>
+                    <visible>[Container.Content(TVShows) | Container.Content(Seasons)| Container.Content(Episodes)] + System.HasAddon(script.tv.show.next.aired)</visible>
+  		    	</control>
 				<control type="togglebutton" id="16">
 					<description>Party Mode</description>
-	        <label>$LOCALIZE[589]: $LOCALIZE[31012]</label>
-	        <altlabel>$LOCALIZE[589]: $LOCALIZE[31011]</altlabel>
-				  <include>TopLeftMenusButton</include>
+	                <label>$LOCALIZE[589]: $LOCALIZE[31012]</label>
+	                <altlabel>$LOCALIZE[589]: $LOCALIZE[31011]</altlabel>
+				    <include>TopLeftMenusButton</include>
 					<visible>Container.Content(MusicVideos)</visible>
 				</control>
-  			<control type="togglebutton" id="20">
-  				<description>Update Library</description>
-  				<label>653</label>
-  				<altlabel>13353</altlabel>
-  				<usealttexture>Library.IsScanningVideo</usealttexture>
-  				<onclick>Action(right)</onclick>
-  			  <include>TopLeftMenusButton</include>
-  			</control>
-  			<control type="button" id="99">
-  				<description>Current Playlist</description>
-  				<label>13350</label>
-  			  <include>TopLeftMenusButton</include>
-    			<onclick>$VAR[CurrentPlayList]</onclick>
-    			<visible>!String.IsEqual(Playlist.Length(video),0)</visible>
-  			</control>
-  			<include>OptionsTopMenuEnd</include>
+  			    <control type="togglebutton" id="20">
+  				    <description>Update Library</description>
+  				    <label>653</label>
+  				    <altlabel>13353</altlabel>
+  				    <usealttexture>Library.IsScanningVideo</usealttexture>
+  				    <onclick>Action(right)</onclick>
+  			        <include>TopLeftMenusButton</include>
+  			    </control>
+  			    <control type="button" id="99">
+  				    <description>Current Playlist</description>
+  				    <label>13350</label>
+  			        <include>TopLeftMenusButton</include>
+    			    <onclick>$VAR[CurrentPlayList]</onclick>
+    			    <visible>!String.IsEqual(Playlist.Length(video),0)</visible>
+  			    </control>
+  			    <include>OptionsTopMenuEnd</include>
 			</control>
-	  </control>
+	    </control>
 
     <!-- ================ -->
     <!-- Top Content Info -->

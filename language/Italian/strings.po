@@ -1065,3 +1065,11 @@ msgstr "Lyrics a Colori"
 msgctxt "#31440"
 msgid "Select the type of Lyrics"
 msgstr "Seleziona il tipo di Liyrics"
+
+msgctxt "#31441"
+msgid "Rotation On"
+msgstr "Rotazione On"
+
+msgctxt "#31442"
+msgid "Rotation Off"
+msgstr "Rotazione Off"

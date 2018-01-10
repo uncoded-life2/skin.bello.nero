@@ -136,7 +136,8 @@
 			<top>262</top>
 			<visible>Control.IsVisible(660)</visible>
 			<include>OpenCloseSlideAnimationTwo</include>
-			<control type="image"> <!-- cdArt view music -->
+			<!-- cdArt view music -->
+			<control type="image"> 
 			    <left>5</left>
 			    <top>3</top>
 	            <width>185</width>
@@ -147,7 +148,8 @@
 			        <effect type="slide" end="0,-85" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"/>
 					<effect type="fade" start="0" end="100" time="200" delay="200"/>
 		        </animation>
-				<visible>![Container.Content(Artists) | Container.Content(Songs) | Window.IsActive(musicplaylist)]</visible>
+				<include>cdArtRotateEffect</include>
+				<!-- <visible>![Container.Content(Artists) | Container.Content(Songs) | Window.IsActive(musicplaylist)]</visible> -->
             </control>
 			<control type="fixedlist" id="660">
 				<left>0</left>

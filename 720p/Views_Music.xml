@@ -13,7 +13,8 @@
 		<control type="group">
             <visible>!ListItem.IsParentFolder</visible>
 			<visible>[Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs) | Container.Content(MusicVideos)] | [String.Contains(Container.FolderPath,plugin://plugin,left) | Container.Content(Addons)] + !String.IsEmpty(ListItem.AddonName)</visible>
-			<control type="image"> <!-- cdArt view music -->
+			<!-- cdArt view music -->
+			<control type="image"> 
 			    <left>642</left>
 			    <top>173</top>
 	            <width>205</width>
@@ -23,7 +24,8 @@
 				<animation type="Conditional" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">
 			        <effect type="slide" end="0,-110" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"/>
 					<effect type="fade" start="0" end="100" time="300"/>
-		        </animation> 
+		        </animation>
+				<include>cdArtRotateEffect</include>
 				<!-- <visible>![Container.Content(Artists) | Container.Content(Songs) | Window.IsActive(musicplaylist)]</visible> -->
             </control>
       <include>ListView_ThumbAndFanart</include>
@@ -182,7 +184,8 @@
 				<animation type="Conditional" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">
 			        <effect type="slide" end="0,110" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"/>
 					<effect type="fade" start="0" end="100" time="300" delay="300"/>
-		        </animation> 
+		        </animation>
+				<include>cdArtRotateEffect</include>
 				<!-- <visible>![Container.Content(Artists) | Container.Content(Songs) | Window.IsActive(musicplaylist)]</visible> -->
             </control>
 			<control type="wraplist" id="51">
@@ -386,6 +389,7 @@
 			        <effect type="slide" end="0,-110" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"/>
 					<effect type="fade" start="0" end="100" time="300" delay="300"/>
 		        </animation> 
+				<include>cdArtRotateEffect</include>
 				<!-- <visible>![Container.Content(Artists) | Container.Content(Songs) | Window.IsActive(musicplaylist)]</visible> -->
             </control>
 			<control type="image">
@@ -551,6 +555,14 @@
 			<visible>Control.IsVisible(560)</visible>
 	        <include>CommonViews_VerticalAnimation</include>
 			<control type="panel" id="560">
+				<left>40</left>
+				<top>95</top>
+				<height>495</height>
+                <orientation>vertical</orientation>
+				<preloaditems>4</preloaditems>
+				<viewtype label="31085">icons</viewtype>
+                <scrolltime tween="Quadratic" easing="out">300</scrolltime>
+                <visible>Container.Content(albums)</visible>	
             <include>Thumbnails_PanelVars</include>
 				<visible>Container.Content(Albums) | Container.Content(Artists) | Container.Content(Songs) | Container.Content(MusicVideos) | Window.IsVisible(MusicPlaylist) | Container.Content(Genres) | String.IsEqual(Container.FolderPath,addons://sources/audio) | String.Contains(Container.FolderPath,plugin://plugin,left)</visible>
 				<itemlayout condition="!String.IsEqual(Container.FolderPath,addons://sources/audio) + !Skin.HasSetting(ShowSmallMusicThumbs)" height="248" width="239.5">
@@ -567,15 +579,17 @@
             <include>ThumbnailsSmall_ItemLayout</include>
 				</itemlayout>
 
-				<focusedlayout condition="!String.IsEqual(Container.FolderPath,addons://sources/audio) + !Skin.HasSetting(ShowSmallMusicThumbs)" height="248" width="239.5">
-            <include>ThumbnailsBig_FocusedLayout</include>
+				<focusedlayout condition="!String.IsEqual(Container.FolderPath,addons://sources/audio) + !Skin.HasSetting(ShowSmallMusicThumbs)" height="248" width="239.5">            
+			<!-- DiscArt view video -->
+			<include>ThumbnailsMusicDiscArtLayout</include>
+			<include>ThumbnailsBig_FocusedLayout</include>
 				</focusedlayout>
 				<focusedlayout condition="!String.IsEqual(Container.FolderPath,addons://sources/audio) + Skin.HasSetting(ShowSmallMusicThumbs)" height="166" width="171">
             <include>ThumbnailsSamll_FocusedLayout</include>
 				</focusedlayout>
 
 				<focusedlayout condition="[String.IsEqual(Container.FolderPath,addons://sources/audio) | String.Contains(Container.FolderPath,plugin://plugin,left)] + !Skin.HasSetting(ShowSmallMusicAddonsThumbs)" height="248" width="239.5">
-            <include>ThumbnailsBig_FocusedLayout</include>
+            <include>ThumbnailsBig_FocusedLayout</include>			
 				</focusedlayout>
 				<focusedlayout condition="[String.IsEqual(Container.FolderPath,addons://sources/audio) | String.Contains(Container.FolderPath,plugin://plugin,left)] + Skin.HasSetting(ShowSmallMusicAddonsThumbs)" height="166" width="171">
             <include>ThumbnailsSamll_FocusedLayout</include>
@@ -593,19 +607,7 @@
 				<label2>$VAR[MusicLabel2]</label2>
                 <visible>!Container.Content(MusicVideos) + !ListItem.IsParentFolder</visible>
 			</control>
-            <control type="image"> <!-- cdArt view music -->
-			    <left>508</left>
-			    <top>713</top>
-	            <width>285</width>
-	            <height>285</height>
-	            <aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-                <texture background="true">$VAR[MusicView_CdArt]</texture>				
-				<animation type="Conditional" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">
-			        <effect type="slide" end="0,-110" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"/>
-					<effect type="fade" start="0" end="100" time="300" delay="300"/>
-		        </animation>
-				<!-- <visible>![Container.Content(Artists) | Container.Content(Songs) | Window.IsActive(musicplaylist)]</visible> -->
-            </control>
+			
 			<control type="group">
 				<left>47</left>
 			  <top>595</top>
@@ -681,6 +683,7 @@
 			        <effect type="slide" end="0,110" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"/>
 					<effect type="fade" start="0" end="100" time="300" delay="300"/>
 		        </animation> 
+				<include>cdArtRotateEffect</include>
 				<!-- <visible>![Container.Content(Artists) | Container.Content(Songs) | Window.IsActive(musicplaylist)]</visible> -->
             </control>
 			<control type="image">
@@ -776,6 +779,7 @@
 			        <effect type="slide" end="-110,0" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"/>
 					<effect type="fade" start="0" end="100" time="300" delay="300"/>
 		        </animation>
+				<include>cdArtRotateEffect</include>
 				<!-- <visible>![Container.Content(Artists) | Container.Content(Songs) | Window.IsActive(musicplaylist)]</visible> -->
             </control>
 	    <include>CommonViews_VerticalAnimation</include>
@@ -1076,6 +1080,7 @@
 			            <effect type="slide" end="-110,0" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"/>
 					    <effect type="fade" start="0" end="100" time="300" delay="300"/>
 		            </animation> 
+					<include>cdArtRotateEffect</include>
 				    <!-- <visible>![Container.Content(Artists) | Container.Content(Songs) | Window.IsActive(musicplaylist)]</visible> -->
                 </control>
 				<control type="image">
