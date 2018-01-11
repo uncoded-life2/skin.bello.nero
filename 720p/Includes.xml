@@ -1635,19 +1635,20 @@
 	
 	<!-- cdArt Music View -->
 	<variable name="MusicView_CdArt">
-		<value condition="!String.IsEmpty(Skin.String(MusicLibraryPath))">$INFO[Skin.String(MusicLibraryPath)]$INFO[ListItem.Artist]/$INFO[ListItem.Artist]-$INFO[ListItem.Album]-$INFO[ListItem.Year]/cdart.png</value>
+	    <value condition="!String.IsEmpty(Skin.String(MusicLibraryPath))">smb://AKIRA/F/Multimedia/Musica/$INFO[ListItem.Artist]/$INFO[ListItem.Artist]-$INFO[ListItem.Album]-$INFO[ListItem.Year]/cdart.png</value>
+		<value condition="!String.IsEmpty(Skin.String(MusicArtPath))">$INFO[Skin.String(MusicArtPath)]$INFO[ListItem.Artist]/$INFO[ListItem.Artist]-$INFO[ListItem.Album]-$INFO[ListItem.Year]/cdart.png</value>
 		<value>$INFO[ListItem.Art(discart)]</value>
     </variable>
 	
 	<!-- ArtistLogo MusicVisualisation -->
 	<variable name="MusicLogo">
-		<value condition="!String.IsEmpty(Skin.String(MusicLibraryPath))">$INFO[Skin.String(MusicLibraryPath)]$INFO[MusicPlayer.Artist]/logo.png</value>
+		<value condition="!String.IsEmpty(Skin.String(MusicArtPath))">$INFO[Skin.String(MusicArtPath)]$INFO[MusicPlayer.Artist]/logo.png</value>
 		<value>$INFO[Player.Art(clearlogo)]</value>
     </variable>
 	
 	<!-- ArtistLogo Music View -->
 	<variable name="MusicView_Logo">
-		<value condition="!String.IsEmpty(Skin.String(MusicLibraryPath))">$INFO[Skin.String(MusicLibraryPath)]$INFO[ListItem.Artist]/logo.png</value>
+		<value condition="!String.IsEmpty(Skin.String(MusicArtPath))">$INFO[Skin.String(MusicArtPath)]$INFO[ListItem.Artist]/logo.png</value>
 		<value>$INFO[ListItem.Art(clearlogo)]</value>
     </variable>
 
@@ -1658,11 +1659,25 @@
 		<value condition="String.IsEmpty(Skin.String(OSD.DiscartSelect))">$LOCALIZE[31442]</value> <!-- Rotate -->
 	</variable>
 	
+	<!-- label cdArt On-Off&Rotation -->
+	<variable name="LabelcdArtSelect">
+		<value condition="String.IsEqual(Skin.String(OSD.cdArtSelect),Disabled)">$LOCALIZE[31012]</value> <!-- Disabled -->
+		<value condition="String.IsEqual(Skin.String(OSD.cdArtSelect),Off)">$LOCALIZE[31441]</value> <!-- Rotate Off -->		
+		<value condition="String.IsEmpty(Skin.String(OSD.cdArtSelect))">$LOCALIZE[31442]</value> <!-- Rotate -->
+	</variable>
+	
 	<!-- Select Discart On-Off&Rotation -->
 	<variable name="DiscartSelect"> 
 		<value condition="String.IsEmpty(Skin.String(OSD.DiscartSelect))">Skin.SetString(OSD.DiscartSelect,Disabled)</value>
         <value condition="String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled)">Skin.SetString(OSD.DiscartSelect,Off)</value>
 		<value condition="String.IsEqual(Skin.String(OSD.DiscartSelect),Off)">Skin.Reset(OSD.DiscartSelect)</value>		
+    </variable>
+	
+	<!-- Select cdArt On-Off&Rotation -->
+	<variable name="cdArtSelect"> 
+		<value condition="String.IsEmpty(Skin.String(OSD.cdArtSelect))">Skin.SetString(OSD.cdArtSelect,Disabled)</value>
+        <value condition="String.IsEqual(Skin.String(OSD.cdArtSelect),Disabled)">Skin.SetString(OSD.cdArtSelect,Off)</value>
+		<value condition="String.IsEqual(Skin.String(OSD.cdArtSelect),Off)">Skin.Reset(OSD.cdArtSelect)</value>		
     </variable>
 	
 	<!-- animation Discart -->

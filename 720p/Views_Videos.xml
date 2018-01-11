@@ -294,7 +294,7 @@
 					<effect type="fade" start="0" end="100" time="200" delay="200"/>
 		        </animation>
 				<include>DiscArtRotateEffect</include>
-			<visible>![String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+			<visible>![ListItem.IsParentFolder | String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
             </control>
 			<control type="fixedlist" id="66">
 				<left>45</left>
@@ -821,7 +821,7 @@
 					<effect type="fade" start="0" end="100" time="300" delay="300"/>
 		        </animation> 
 				<include>DiscArtRotateEffect</include>
-			<visible>![String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+			<visible>![ListItem.IsParentFolder | String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
             </control>
 			<control type="wraplist" id="51">
 				<left>-192</left>
@@ -1026,7 +1026,7 @@
 					<effect type="fade" start="0" end="100" time="300" delay="300"/>
 		        </animation>
 				<include>DiscArtRotateEffect</include>
-			<visible>![String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+			<visible>![ListItem.IsParentFolder | String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
             </control>
 			<control type="image">
 				<left>-300</left>
@@ -1745,7 +1745,7 @@
 					<effect type="fade" start="0" end="100" time="300" delay="300"/>
 		        </animation> 
 				<include>DiscArtRotateEffect</include>
-			<visible>![String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+			<visible>![ListItem.IsParentFolder | String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
             </control>
 			<control type="image">
 				<left>-50</left>
@@ -1875,7 +1875,7 @@
                 <effect type="fade" start="100" end="0" tween="sine" easing="out" time="300" delay="200"/>
             </animation>
 			<include>DiscArtRotateEffect</include>
-		    <visible>Control.IsVisible(55) + ![String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Window.IsActive(movieinformation) | Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogInfo.xml) | Window.IsActive(favourites) | Window.IsActive(playercontrols)] + String.IsEmpty(Window(Home).Property(infodialogs.active))</visible>
+		    <visible>Control.IsVisible(55) + ![ListItem.IsParentFolder | String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Window.IsActive(movieinformation) | Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogInfo.xml) | Window.IsActive(favourites) | Window.IsActive(playercontrols)] + String.IsEmpty(Window(Home).Property(infodialogs.active))</visible>
         </control>
 		<control type="group">
 			<visible>Control.IsVisible(55)</visible>
@@ -2084,7 +2084,7 @@
 		<control type="image">
 			<include>FullscreenDimensions</include>
 			<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
-			<texture background="true">$VAR[WallViewsGlows]</texture>
+			<texture background="true" colordiffuse="$VAR[Textures.GlobalColor]">$VAR[WallViewsGlows]</texture>
 			<animation effect="fade" time="300" tween="sine" easing="out">WindowOpen</animation>
 			<animation effect="fade" time="300" delay="250" tween="sine" easing="in">WindowClose</animation>
 			<animation effect="fade" time="300" tween="sine" easing="out">Visible</animation>
@@ -2107,7 +2107,7 @@
 					<effect type="fade" start="0" end="100" time="300" delay="300"/>
 		        </animation>
 				<include>DiscArtRotateEffect</include>
-				<visible>![String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+				<visible>![ListItem.IsParentFolder | String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
             </control>
 			<control type="fadelabel">
 				<left>0</left>
@@ -2227,7 +2227,7 @@
 					<effect type="fade" start="0" end="100" time="300" delay="300"/>
 		        </animation>
 				<include>DiscArtRotateEffect</include>
-				<visible>![String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+				<visible>![ListItem.IsParentFolder | String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
             </control>
 	    <include>CommonViews_VerticalAnimation</include>
 			<control type="fixedlist" id="57">
@@ -2689,7 +2689,7 @@
 					<effect type="fade" start="0" end="100" time="300" delay="300"/>
 		        </animation>
 				<include>DiscArtRotateEffect</include>
-				<visible>![String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+				<visible>![ListItem.IsParentFolder | String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
             </control>
 				<control type="image">
 					<left>285</left>
@@ -2992,7 +2992,7 @@
 					<effect type="fade" start="0" end="100" time="300" delay="300"/>
 		        </animation>
 				<include>DiscArtRotateEffect</include>
-				<visible>![String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+				<visible>![ListItem.IsParentFolder | String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
             </control>
 				<control type="image">
 					<left>285</left>
@@ -3330,8 +3330,7 @@
 						<height>186</height>
 						<aspectratio aligny="center" align="center">stretch</aspectratio>
 						<texture background="true">$INFO[ListItem.Art(discart)]</texture>
-						<animation effect="fade" start="100" end="0" time="350" delay="350">Hidden</animation>
-						<visible>!Control.IsVisible(6013) + !Control.IsVisible(6014)</visible>
+						<animation effect="fade" start="100" end="0" time="350" delay="350">Hidden</animation>						
 					    <animation type="WindowOpen">
 							<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out"/>
 							<effect type="zoom" start="625,260,186,186" end="560,198,346,346" time="980" delay="750" tween="sine" easing="out"/>
@@ -3365,7 +3364,7 @@
 					  <animation type="Conditional" condition="IsEmpty(ListItem.VideoResolution)">
 							<effect type="fade" start="100" end="0" time="200" delay="0" tween="sine" easing="out"/>
 						</animation>						
-				        <visible>![String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+				        <visible>![ListItem.IsParentFolder | String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
 					</control>
 				</control>
 			  <control type="group">
@@ -4004,7 +4003,7 @@
 		    	    <effect type="fade" start="0" end="100" time="300"/>
 	            </animation>
 				<include>DiscArtRotateEffect</include>
-				<visible>![String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+				<visible>![ListItem.IsParentFolder | String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
             </control>
 			<control type="fixedlist" id="59">
 				<left>45</left>

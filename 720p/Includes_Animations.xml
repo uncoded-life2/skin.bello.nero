@@ -722,7 +722,7 @@
 	</animation>	
     </include>
 	<include name="cdArtRotateEffect">
-	<animation type="conditional" condition="true" loop="true" reversible="false">
+	<animation type="conditional" condition="String.IsEqual(Skin.String(OSD.cdArtSelect),Off)" loop="true" reversible="false">
 	    <effect type="rotate" end="-360" center="auto" time="29300" reversible="false"/>
 	</animation>	
 	<animation type="conditional" condition="Player.HasAudio" loop="true" reversible="false">

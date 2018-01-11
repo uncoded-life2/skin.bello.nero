@@ -1073,3 +1073,7 @@ msgstr "Rotazione On"
 msgctxt "#31442"
 msgid "Rotation Off"
 msgstr "Rotazione Off"
+
+msgctxt "#31443"
+msgid "cdArt"
+msgstr "cdArt"

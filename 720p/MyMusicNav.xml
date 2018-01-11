@@ -51,7 +51,15 @@
   			    	<selected>Skin.HasSetting(Disable3DWallMusicView_ThumbGlow)</selected>
   			        <visible>Control.IsVisible(59) + [Container.Content(Albums) | Container.Content(Artists) | Container.Content(Songs)]</visible>
   			    </control>
-  			    <control type="togglebutton" id="297">
+				<!-- Top Left Menu cdArt Select Buttons -->				
+				<control type="button" id="297">  
+				   	<description>Show cdArt</description>
+  			        <include>TopLeftMenusButton</include>							
+					<label>$LOCALIZE[31443]: [COLOR=$VAR[Text.GlobalColor]]$VAR[LabelcdArtSelect][/COLOR]</label>
+					<onclick>$VAR[cdArtSelect]</onclick>
+					<visible>Container.Content(Albums) | Container.Content(Songs)</visible>
+				</control>
+  			    <control type="togglebutton" id="298">
   			        <description>Disable Thumb Glow</description>
   			        <include>TopLeftMenusButton</include>
                     <label>$LOCALIZE[31100]: $LOCALIZE[31011]</label>

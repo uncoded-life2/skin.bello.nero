@@ -143,13 +143,14 @@
 	            <width>185</width>
 	            <height>185</height>
 	            <aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-                <texture background="true">$VAR[MusicView_CdArt]</texture>				
+                <texture background="true" fallback="osd/cd.png">$VAR[MusicView_CdArt]</texture>				
 				<animation type="Conditional" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">
 			        <effect type="slide" end="0,-85" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"/>
 					<effect type="fade" start="0" end="100" time="200" delay="200"/>
 		        </animation>
 				<include>cdArtRotateEffect</include>
 				<!-- <visible>![Container.Content(Artists) | Container.Content(Songs) | Window.IsActive(musicplaylist)]</visible> -->
+				<visible>![Container.Content(Genres) + !ListItem.IsParentFolder] + !String.IsEmpty(ListItem.Art(thumb)) + !String.IsEqual(Skin.String(OSD.cdArtSelect),Disabled) + !Container.Content(Artists)</visible>
             </control>
 			<control type="fixedlist" id="660">
 				<left>0</left>

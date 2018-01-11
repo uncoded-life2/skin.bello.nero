@@ -99,8 +99,8 @@
 			<texture background="true" border="1">thumbs/poster_overlay.png</texture>
 	  </control>
 	</include>
-	
-	<include name="MusicLogoArtist"> <!-- Logo -->
+	<!-- Logo -->
+	<include name="MusicLogoArtist"> 
       <control type="image">
 	  	  <width>200</width>
 	  	  <height>85</height>
@@ -109,22 +109,23 @@
 	  	  <visible>Player.HasAudio + !Player.IsInternetStream</visible>	  	  
       </control>
     </include>
-	<include name="MusicLogoArtistViewMusic"> <!-- Logo view music -->
+	<!-- Logo view music -->
+	<include name="MusicLogoArtistViewMusic">
       <control type="image">
 	  	  <width>190</width>
 	  	  <height>60</height>
 	  	  <aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-        <texture background="true">$VAR[MusicView_Logo]</texture>
-	  	  <visible>Container.Content(Artists)</visible>	  	  
+          <texture background="true">$VAR[MusicView_Logo]</texture>
+		  <visible>![Container.Content(Albums) | Container.Content(Songs)]</visible>
       </control>
     </include>
-							
+	<!-- cdArt MusicVisualisation -->						
 	<include name="PlayerSquare">	
     <control type="image" id="1">
 		  <width>165</width>
 		  <height>165</height>
 		  <aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-      <texture background="true" diffuse="osd/cd_diffuse.png" fallback="osd/cd.png">$VAR[MusicCdArt]</texture> <!-- cdArt MusicVisualisation -->	      
+      <texture background="true" diffuse="osd/cd_diffuse.png" fallback="osd/cd.png">$VAR[MusicCdArt]</texture> 	      
 		  <include>CDImageAnim</include>
 		  <visible>Player.HasAudio + !Player.IsInternetStream</visible>		  
     </control>

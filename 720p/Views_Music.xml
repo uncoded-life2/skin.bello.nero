@@ -20,13 +20,14 @@
 	            <width>205</width>
 	            <height>205</height>
 	            <aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-                <texture background="true">$VAR[MusicView_CdArt]</texture>				
+                <texture background="true" fallback="osd/cd.png">$VAR[MusicView_CdArt]</texture>				
 				<animation type="Conditional" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">
 			        <effect type="slide" end="0,-110" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"/>
 					<effect type="fade" start="0" end="100" time="300"/>
 		        </animation>
 				<include>cdArtRotateEffect</include>
 				<!-- <visible>![Container.Content(Artists) | Container.Content(Songs) | Window.IsActive(musicplaylist)]</visible> -->
+				<visible>![Container.Content(Genres) + !ListItem.IsParentFolder] + !String.IsEmpty(ListItem.Art(thumb)) + !String.IsEqual(Skin.String(OSD.cdArtSelect),Disabled) + !Container.Content(Artists)</visible>
             </control>
       <include>ListView_ThumbAndFanart</include>
 		</control>
@@ -168,7 +169,7 @@
 	<include name="SlideView_Music">
 		<control type="group">
 			<visible>Control.IsVisible(51)</visible>
-	    <include>CommonViews_HorizontalAnimation</include>
+	        <include>CommonViews_HorizontalAnimation</include>
 			<control type="image">
 		    <include>FullscreenDimensions</include>
 			  <texture background="true">views/slide/top_bottom_shadows_music.png</texture>
@@ -180,13 +181,14 @@
 	            <width>285</width>
 	            <height>285</height>
 	            <aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-                <texture background="true">$VAR[MusicView_CdArt]</texture>				
+                <texture background="true" fallback="osd/cd.png">$VAR[MusicView_CdArt]</texture>				
 				<animation type="Conditional" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">
 			        <effect type="slide" end="0,110" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"/>
 					<effect type="fade" start="0" end="100" time="300" delay="300"/>
 		        </animation>
 				<include>cdArtRotateEffect</include>
 				<!-- <visible>![Container.Content(Artists) | Container.Content(Songs) | Window.IsActive(musicplaylist)]</visible> -->
+				<visible>![Container.Content(Genres) + !ListItem.IsParentFolder] + !String.IsEmpty(ListItem.Art(thumb)) + !String.IsEqual(Skin.String(OSD.cdArtSelect),Disabled) + !Container.Content(Artists)</visible>
             </control>
 			<control type="wraplist" id="51">
 				<left>-253</left>
@@ -372,7 +374,7 @@
 	<include name="GalleryView_Music">
 		<control type="group">
 			<visible>Control.IsVisible(52)</visible>
-      <include>CommonViews_HorizontalAnimation</include>
+            <include>CommonViews_HorizontalAnimation</include>
 			<control type="image">
 		    <include>FullscreenDimensions</include>
 				<texture background="true">views/gallery/top_bottom_shadows.png</texture>
@@ -384,14 +386,15 @@
 	            <width>305</width>
 	            <height>305</height>
 	            <aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-                <texture background="true">$VAR[MusicView_CdArt]</texture>				
-				<animation type="Conditional" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">
+                <texture background="true" fallback="osd/cd.png">$VAR[MusicView_CdArt]</texture>				
+				<animation type="Conditional" reversible="false" condition="!Container(52).OnNext + !Container(52).OnPrevious">
 			        <effect type="slide" end="0,-110" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"/>
 					<effect type="fade" start="0" end="100" time="300" delay="300"/>
-		        </animation> 
+		        </animation>				
 				<include>cdArtRotateEffect</include>
 				<!-- <visible>![Container.Content(Artists) | Container.Content(Songs) | Window.IsActive(musicplaylist)]</visible> -->
-            </control>
+				<visible>![Container.Content(Genres) + !ListItem.IsParentFolder] + !String.IsEmpty(ListItem.Art(thumb)) + !String.IsEqual(Skin.String(OSD.cdArtSelect),Disabled) + !Container.Content(Artists)</visible>
+            </control>			
 			<control type="image">
 				<left>-300</left>
 				<top>116</top>
@@ -416,7 +419,7 @@
 	      <preloaditems>2</preloaditems>
 	      <focusposition>5</focusposition>
 			  <pagecontrol>604</pagecontrol>
-				<visible>[Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs)] + ![String.Contains(Container.Folderpath,plugin://) | String.IsEmpty(Container.Folderpath)]</visible>
+				<visible>[Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs)] + ![String.Contains(Container.Folderpath,plugin://)]</visible>
 				<itemlayout width="58" height="380">
 					<control type="image">
 						<left>35</left>
@@ -443,15 +446,7 @@
 				</itemlayout>
 				<focusedlayout width="695" height="380">
 					<control type="group">
-						<left>46</left>
-	          <animation type="Focus" reversible="false" condition="Container(52).OnNext">
-	            <effect type="slide" start="26,0" end="0,0" time="150" tween="Cubic" easing="out"/>
-	            <effect type="fade" start="20" end="100" time="750" delay="0" tween="sine" easing="out"/>
-	          </animation>
-	          <animation type="Focus" reversible="false" condition="Container(52).OnPrevious">
-	            <effect type="slide" start="-26,0" end="0,0" time="150" tween="Cubic" easing="out"/>
-	            <effect type="fade" start="20" end="100" time="750" delay="0" tween="sine" easing="out"/>
-	          </animation>
+						<left>46</left>	                    
 						<control type="image">
 							<width>675</width>
 							<height>380</height>
@@ -462,20 +457,14 @@
 							<bordersize>6</bordersize>
 						</control>						
 					</control>
-				  <control type="image">
-					  <left>46</left>
-						<width>675</width>
-						<height>380</height>
-						<aspectratio aligny="center" align="center">stretch</aspectratio>
-						<texture>views/gallery/title_overlay.png</texture>
-						<bordersize>6</bordersize>
-				  </control>
-				    <!-- Logo -->
-	                    <control type="group">
-                            <left>507</left>
-		                    <top>305</top>
-                            <include>MusicLogoArtistViewMusic</include>
-		                </control>
+				    <control type="image">
+				      <left>46</left>
+				    	<width>675</width>
+				    	<height>380</height>
+				    	<aspectratio aligny="center" align="center">stretch</aspectratio>
+				    	<texture>views/gallery/title_overlay.png</texture>
+				    	<bordersize>6</bordersize>
+				    </control>				    
 					<!-- Navigation Arrows -->
 					<control type="image">
 						<left>50</left>
@@ -517,7 +506,19 @@
 					  <label>$VAR[MusicLabel2]</label>
 					</control>
 				</focusedlayout>
-			</control>
+			</control>	
+			<!-- Logo -->	       
+            <control type="group">
+				<left>770</left>
+				<top>87</top>
+	  	        <width>190</width>
+	  	        <height>60</height>
+	  	        <include>MusicLogoArtistViewMusic</include>
+		        <animation type="Conditional" reversible="false" condition="!Container(52).OnNext + !Container(52).OnPrevious">			        
+		        	<effect type="fade" start="0" end="100" time="150" delay="100"/>
+		        </animation>               
+	        	<visible>Container.Content(Artists)</visible>
+            </control>			
 			<control type="image">
 				<left>-300</left>
 				<top>157</top>
@@ -580,11 +581,13 @@
 				</itemlayout>
 
 				<focusedlayout condition="!String.IsEqual(Container.FolderPath,addons://sources/audio) + !Skin.HasSetting(ShowSmallMusicThumbs)" height="248" width="239.5">            
-			<!-- DiscArt view video -->
-			<include>ThumbnailsMusicDiscArtLayout</include>
+			<!-- cdArt view music -->
+			<include>ThumbnailsBig_MusicDiscArtLayout</include>
 			<include>ThumbnailsBig_FocusedLayout</include>
 				</focusedlayout>
 				<focusedlayout condition="!String.IsEqual(Container.FolderPath,addons://sources/audio) + Skin.HasSetting(ShowSmallMusicThumbs)" height="166" width="171">
+			<!-- cdArt view music -->
+			<include>ThumbnailsSamll_MusicDiscArtLayout</include>	
             <include>ThumbnailsSamll_FocusedLayout</include>
 				</focusedlayout>
 
@@ -670,7 +673,7 @@
 	<include name="TilesView_Music">
 		<control type="group">
 			<visible>Control.IsVisible(562)</visible>
-	    <include>CommonViews_HorizontalAnimation</include>
+	        <include>CommonViews_HorizontalAnimation</include>
 		    <!-- cdArt view music -->
 		    <control type="image"> 
 			    <left>90</left>
@@ -678,13 +681,14 @@
 	            <width>285</width>
 	            <height>285</height>
 	            <aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-                <texture background="true">$VAR[MusicView_CdArt]</texture>				
+                <texture background="true" fallback="osd/cd.png">$VAR[MusicView_CdArt]</texture>				
 				<animation type="Conditional" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">
 			        <effect type="slide" end="0,110" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"/>
 					<effect type="fade" start="0" end="100" time="300" delay="300"/>
 		        </animation> 
 				<include>cdArtRotateEffect</include>
 				<!-- <visible>![Container.Content(Artists) | Container.Content(Songs) | Window.IsActive(musicplaylist)]</visible> -->
+				<visible>![Container.Content(Genres) + !ListItem.IsParentFolder] + !String.IsEmpty(ListItem.Art(thumb)) + !String.IsEqual(Skin.String(OSD.cdArtSelect),Disabled) + !Container.Content(Artists)</visible>
             </control>
 			<control type="image">
 				<left>-50</left>
@@ -697,7 +701,7 @@
 			<control type="fixedlist" id="562">
 				<left>-355</left>
 				<top>130</top>
-        <width>1950</width>
+                <width>1950</width>
 				<height>465</height>
 				<onleft>562</onleft>
 				<onright>562</onright>
@@ -706,10 +710,10 @@
 				<orientation>horizontal</orientation>
 				<pagecontrol>607</pagecontrol>
 				<preloaditems>2</preloaditems>
-	      <focusposition>1</focusposition>
+	            <focusposition>1</focusposition>
 				<viewtype label="31090">icons</viewtype>
-        <scrolltime tween="quadratic" easing="out">350</scrolltime>
-	      <visible>Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs) | Container.Content(MusicVideos) | Window.IsVisible(MusicPlaylist)</visible>
+                <scrolltime tween="quadratic" easing="out">350</scrolltime>
+	            <visible>Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs) | Container.Content(MusicVideos) | Window.IsVisible(MusicPlaylist)</visible>
 				<itemlayout height="465" width="400">
 			    <include content="TilesViewLayout">
 			      <param name="textcolor" value="77ffffff"/>
@@ -723,25 +727,32 @@
 						<top>230</top>
 						<width>390</width>
 						<height>230</height>
-	          <colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+	                    <colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
 						<aspectratio aligny="center" align="center">stretch</aspectratio>
-					  <texture background="true">windows/bg/white.png</texture>
+					    <texture background="true">windows/bg/white.png</texture>
 						<bordersize>1</bordersize>
-	          <include>ThumbnailsFocusAnimation</include>
+	                    <include>ThumbnailsFocusAnimation</include>
 					</control>
 			    <include content="TilesViewLayout">
 			      <param name="textcolor" value="FF202020"/>
 			      <param name="shadowcolor" value="30FFFFFF"/>
 			      <param name="selectedcolor" value="FF202020"/>
-			    </include>
-				<!-- Logo -->
-	              <control type="group">
-                      <left>187</left>
-			      	<top>155</top>
-                      <include>MusicLogoArtistViewMusic</include>
-		          </control>
+			    </include>				
 				</focusedlayout>
 			</control>
+			<!-- Logo -->	       
+            <control type="group">
+				<left>380</left>
+				<top>605</top>
+	  	        <width>190</width>
+	  	        <height>60</height>
+	  	        <include>MusicLogoArtistViewMusic</include>		       
+				<animation type="Conditional" reversible="false" condition="!Container(562).OnNext + !Container(562).OnPrevious">
+				    <effect type="fade" start="0" end="100" time="442" delay="200"/>
+                    <effect type="slide" start="40" end="-117,0" center="auto" time="487" delay="25" loop="false" tween="cubic" easing="inout"/>
+		        </animation>
+	        	<visible>Container.Content(Artists)</visible>
+            </control>
 			<control type="scrollbar" id="607">
 				<left>44</left>
 				<top>592</top>
@@ -774,13 +785,14 @@
 	            <width>205</width>
 	            <height>205</height>
 	            <aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-                <texture background="true">$VAR[MusicView_CdArt]</texture>				
+                <texture background="true" fallback="osd/cd.png">$VAR[MusicView_CdArt]</texture>				
 				<animation type="Conditional" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">
 			        <effect type="slide" end="-110,0" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"/>
 					<effect type="fade" start="0" end="100" time="300" delay="300"/>
 		        </animation>
 				<include>cdArtRotateEffect</include>
 				<!-- <visible>![Container.Content(Artists) | Container.Content(Songs) | Window.IsActive(musicplaylist)]</visible> -->
+				<visible>![Container.Content(Genres) + !ListItem.IsParentFolder] + !String.IsEmpty(ListItem.Art(thumb)) + !String.IsEqual(Skin.String(OSD.cdArtSelect),Disabled) + !Container.Content(Artists)</visible>
             </control>
 	    <include>CommonViews_VerticalAnimation</include>
 			<control type="fixedlist" id="57">
@@ -1065,7 +1077,7 @@
 	                <width>347</width>
 				    <height>470</height>
 	                <aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-                    <texture background="true">$VAR[MusicView_CdArt]</texture>
+                    <texture background="true" fallback="osd/cd.png">$VAR[MusicView_CdArt]</texture>
 				    <animation type="WindowOpen">
 						<effect type="fade" start="0" end="100" time="600" delay="900"  tween="sine" easing="out"/>
 						<effect type="zoom" start="328,239,164,242" end="285,176,347,470" time="980" delay="750"  tween="sine" easing="out"/>
@@ -1082,6 +1094,7 @@
 		            </animation> 
 					<include>cdArtRotateEffect</include>
 				    <!-- <visible>![Container.Content(Artists) | Container.Content(Songs) | Window.IsActive(musicplaylist)]</visible> -->
+					<visible>![Container.Content(Genres) + !ListItem.IsParentFolder] + !String.IsEmpty(ListItem.Art(thumb)) + !String.IsEqual(Skin.String(OSD.cdArtSelect),Disabled) + !Container.Content(Artists)</visible>
                 </control>
 				<control type="image">
 					<left>460</left>

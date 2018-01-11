@@ -283,14 +283,14 @@
 					<control type="button" id="5115">
                         <include>SettingsButton</include>
                         <label>$LOCALIZE[31110]</label>
-                        <label2>$INFO[Skin.String(MusicLibraryPath)]</label2>
-                        <onclick>Skin.SetPath(MusicLibraryPath)</onclick>
+                        <label2>$INFO[Skin.String(MusicArtPath)]</label2>
+                        <onclick>Skin.SetPath(MusicArtPath)</onclick>
                     </control>
                     <control type="button" id="5116">
                         <include>SettingsButton</include>
                         <label>- $LOCALIZE[31111]</label>
-                        <onclick>Skin.Reset(MusicLibraryPath)</onclick>
-                        <visible>!String.IsEmpty(Skin.String(MusicLibraryPath))</visible>
+                        <onclick>Skin.Reset(MusicArtPath)</onclick>
+                        <visible>!String.IsEmpty(Skin.String(MusicArtPath))</visible>
                     </control>
 				</control>
 				

@@ -1,19 +1,21 @@
-v7.0.3n - for Kodi Leia 18.xx (10/01/2018)
-________________________________________________________________________________________________________
+v7.0.4n - for Kodi Leia 18.xx (11/01/2018)
 
-- Added rotating disc, Video and Music visuals
-  Note: For the Music Icons view you need to write your own direct path to the music arts,
-  inside "Includes_Views.xml (line 733) and (line 763)".
-  
+- Replaced screenshots and icon resources folder
+- Bugs correction, v7.0.3n
+- Changed some pictures, media folder
+- Added rotating disc, Video and Music visuals - rotation - fixed - off
+
+- Note: For the Music Icons View you need to write your own direct path to the music arts,
+  inside "Includes.xml (line 1638).
+________________________________________________________________________________________________________
+v7.0.3n - for Kodi Leia 18.xx (06/1/2017)
+
 - Added fullscreen music playback
 - Modify the new NeroPulse Home + Themes + Modifications Themes
 - correct Home weather clock
 - Weather optimized for operation with Yahoo Weather Add-on
 ________________________________________________________________________________________________________
-
-
 v7.0.2n - for Kodi Leia 18.xx (07/12/2017)
-________________________________________________________________________________________________________
 
 - Correction DiscArt View Posters
 - Modified DiscArt View Thumbnails
@@ -28,17 +30,12 @@ ________________________________________________________________________________
 - Added support icons 4k [2160]
 - Added icons source Video in Flags
 ________________________________________________________________________________________________________
-
-
 v7.0.1n - for Kodi Leia 18.xx (25/11/2017)
-________________________________________________________________________________________________________
 
 - Added 4K IncludeVideo e image flag 
 - Modified DiscArt View Posters
 ________________________________________________________________________________________________________
-
 v7.0.0n - for Kodi Leia 18.xx (28/10/2017)
-________________________________________________________________________________________________________
 
 - Update and changes to the functionality with Kodi-Leia 18.xx
 - Fixed Addon settings
@@ -53,16 +50,15 @@ ________________________________________________________________________________
 - WeatherAndClock Home no scroll
 - Added About
 ________________________________________________________________________________________________________
+v6.0.0n1 (06/11/2017) (Thanks to iCanuck!)
 
-v6.0.0n1
-(06/11/2017) (Thanks to iCanuck!)
 - Fixed classic menu overlay setting
 - Modified videoview visibility for plugins
 - Added default texture + text colors for all themes
 - Modified darkspot transparency
+________________________________________________________________________________________________________
+v6.0.0n (06/07/2017)
 
-v6.0.0n
-(06/07/2017)
 - Fork of Bello v6.0.0 (Thanks to Nessus!)
 - Added Nero Mod + Color Themes
 - Added Home Animation Setting
