@@ -1,7 +1,7 @@
 # ßειισ ηεrσ
 ### A Graphical User Interface for Kodi-Leia version 18.xx
 
-![Image of i.imgur.com](https://i.imgur.com/EO4aZOI.png)
+![Image of i.imgur.com](https://imgur.com/a/tTvUO)
 
 <br>[![Image of Yaktocat](https://mirrors.creativecommons.org/presskit/icons/cc.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Image of Yaktocat](https://mirrors.creativecommons.org/presskit/icons/by.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
