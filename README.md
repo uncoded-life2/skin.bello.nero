@@ -20,7 +20,7 @@
 <br>
 
 ### **Credits**
-To Kodi/XBMC Team and to all addon developers.
+I want to thank Nessus mainly for creating and making available Bello 6, a beautiful skin very elegant, very well made, unique, and of course also eQUIV and iCanuck skinner that year helped to carry out the project over the years trying to make also live the work previously done. I hope that my contribution with this new version for Leia, too, can please and be appreciated to the point of being able to understand the efforts and the passion I put into doing this task. I also thank the Team Kodi / XBMC, for all the work done in all these years to improve more and more Kodi software and all that orbits around it and finally all the developers that with their work make sure to make it better experience and use of Kodi.
 
 <br>
 
