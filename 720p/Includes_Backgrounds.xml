@@ -27,8 +27,15 @@
   			<include>FullscreenDimensions</include>
 				<colordiffuse>$VAR[BG.GlobalColor]</colordiffuse>
   			<texture background="true">special://skin/extras/backgrounds/SKINDEFAULT.jpg</texture>
-  			<include>QuickNavFadeEffect</include>
-  		</control>
+  			    <include>QuickNavFadeEffect</include>
+			<visible>!Window.IsVisible(MyPVRChannels.xml)</visible>
+			</control>
+			<control type="image">
+		        <include>FullscreenDimensions</include>
+			<texture background="true">special://skin/extras/backgrounds/pvr.png</texture>
+			    <include>QuickNavFadeEffect</include>
+			<visible>Window.IsVisible(MyPVRChannels.xml)</visible>		
+  		    </control>
       <control type="group">
         <visible>![[String.IsEqual(Container(20).ListItem.Property(defaultID),weather) | Window.IsVisible(weather)] + !String.IsEmpty(Skin.String(WeatherFanart.path))]</visible>
        <include>QuickNavFadeEffect</include>

@@ -1,5 +1,6 @@
 v7.0.4n - for Kodi Leia 18.xx (11/01/2018)
 
+- Modified PVR with increased channel lists
 - Replaced screenshots and icon resources folder
 - Bugs correction, v7.0.3n
 - Changed some pictures, media folder

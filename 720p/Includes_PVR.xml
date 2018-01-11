@@ -123,7 +123,7 @@
   		<control type="button" id="2">
   			<description>View as</description>  		    
   			<include>TopLeftMenusButton</include>
-			<enable>Window.IsActive(TVChannels) | Window.IsActive(TVChannels) | Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)</enable>
+			<enable>Window.IsActive(TVChannels) | Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)</enable>
   		</control>
 		<control type="button" id="136">
 			<description>Filter</description>

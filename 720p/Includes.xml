@@ -56,14 +56,14 @@
 		<include>BackgroundVignette</include>
 	</include>
 
-	<include name="BackgroundItemsPVR">
-		<include>BackgroundContent</include>
-		<include>BackgroundVignette</include>
+	<include name="BackgroundItemsPVR">	    
+		    <include>BackgroundContent</include>
+		    <include>BackgroundVignette</include>
 		<control type="image">
-		  <include>FullscreenDimensions</include>
+		    <include>FullscreenDimensions</include>
 			<texture background="true">windows/pvr/bg_overlay.png</texture>
-      <!-- <colordiffuse>D9FFFFFF</colordiffuse> -->
-		  <include>FanartFade</include>
+       <!-- <colordiffuse>D9FFFFFF</colordiffuse> -->
+		    <include>FanartFade</include>
 		</control>
 	</include>
 
